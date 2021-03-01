@@ -1,5 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%>
+    pageEncoding="ISO-8859-1"%><%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+    
+<c:url value="/View/user" var="url" />
 <!DOCTYPE html>
 <html lang="en">
 <!-- Basic -->
@@ -19,8 +21,8 @@
     <meta name="author" content="">
 
     <!-- Site Icons -->
-    <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
-    <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+    <link rel="shortcut icon" href="${url}/images/favicon.ico" type="image/x-icon">
+    <link rel="apple-touch-icon" href="${url}/images/apple-touch-icon.png">
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="css/bootstrap.min.css">
@@ -33,7 +35,7 @@
 
     <!--[if lt IE 9]>
       <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.${url}/js/1.4.2/respond.min.js"></script>
     <![endif]-->
 
 </head>
@@ -115,7 +117,7 @@
                     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-menu" aria-controls="navbars-rs-food" aria-expanded="false" aria-label="Toggle navigation">
                     <i class="fa fa-bars"></i>
                 </button>
-                <a class="navbar-brand" href="index.html"><img src="images/laleaf_logo.jpg" class="logo" alt="" style ="width:108px;height:108px;border-radius: 50%;"></a>
+                <a class="navbar-brand" href="index.html"><img src="${url}/images/laleaf_logo.jpg" class="logo" alt="" style ="width:108px;height:108px;border-radius: 50%;"></a>
                 </div>
                 <!-- End Header Navigation -->
 
@@ -165,17 +167,17 @@
                 <li class="cart-box">
                     <ul class="cart-list">
                         <li>
-                            <a href="#" class="photo"><img src="images/img-pro-01.jpg" class="cart-thumb" alt="" /></a>
+                            <a href="#" class="photo"><img src="${url}/images/img-pro-01.jpg" class="cart-thumb" alt="" /></a>
                             <h6><a href="#">Delica omtantur </a></h6>
                             <p>1x - <span class="price">$80.00</span></p>
                         </li>
                         <li>
-                            <a href="#" class="photo"><img src="images/img-pro-02.jpg" class="cart-thumb" alt="" /></a>
+                            <a href="#" class="photo"><img src="${url}/images/img-pro-02.jpg" class="cart-thumb" alt="" /></a>
                             <h6><a href="#">Omnes ocurreret</a></h6>
                             <p>1x - <span class="price">$60.00</span></p>
                         </li>
                         <li>
-                            <a href="#" class="photo"><img src="images/img-pro-03.jpg" class="cart-thumb" alt="" /></a>
+                            <a href="#" class="photo"><img src="${url}/images/img-pro-03.jpg" class="cart-thumb" alt="" /></a>
                             <h6><a href="#">Agam facilisis</a></h6>
                             <p>1x - <span class="price">$40.00</span></p>
                         </li>
@@ -225,7 +227,7 @@
         <div class="container">
             <div class="row">
 				<div class="col-lg-6">
-                    <div class="banner-frame"> <img class="img-fluid" src="images/about-img.jpg" alt="" />
+                    <div class="banner-frame"> <img class="img-fluid" src="${url}/images/about-img.jpg" alt="" />
                     </div>
                 </div>
                 <div class="col-lg-6">
@@ -264,7 +266,7 @@
                 </div>
                 <div class="col-sm-6 col-lg-3">
                     <div class="hover-team">
-                        <div class="our-team"> <img src="images/img-1.jpg" alt="" />
+                        <div class="our-team"> <img src="${url}/images/img-1.jpg" alt="" />
                             <div class="team-content">
                                 <h3 class="title">Williamson</h3> <span class="post">Web Developer</span> </div>
                             <ul class="social">
@@ -290,7 +292,7 @@
                 </div>
                 <div class="col-sm-6 col-lg-3">
                     <div class="hover-team">
-                        <div class="our-team"> <img src="images/img-2.jpg" alt="" />
+                        <div class="our-team"> <img src="${url}/images/img-2.jpg" alt="" />
                             <div class="team-content">
                                 <h3 class="title">Kristiana</h3> <span class="post">Web Developer</span> </div>
                             <ul class="social">
@@ -316,7 +318,7 @@
                 </div>
                 <div class="col-sm-6 col-lg-3">
                     <div class="hover-team">
-                        <div class="our-team"> <img src="images/img-3.jpg" alt="" />
+                        <div class="our-team"> <img src="${url}/images/img-3.jpg" alt="" />
                             <div class="team-content">
                                 <h3 class="title">Steve Thomas</h3> <span class="post">Web Developer</span> </div>
                             <ul class="social">
@@ -342,7 +344,7 @@
                 </div>
                 <div class="col-sm-6 col-lg-3">
                     <div class="hover-team">
-                        <div class="our-team"> <img src="images/img-1.jpg" alt="" />
+                        <div class="our-team"> <img src="${url}/images/img-1.jpg" alt="" />
                             <div class="team-content">
                                 <h3 class="title">Williamson</h3> <span class="post">Web Developer</span> </div>
                             <ul class="social">
@@ -376,7 +378,7 @@
         <div class="main-instagram owl-carousel owl-theme">
             <div class="item">
                 <div class="ins-inner-box">
-                    <img src="images/laleaf_ins.jpg" alt="" style ="width:248px;height:254px;"/>
+                    <img src="${url}/images/sources/laleaf_ins.jpg" alt="" style ="width:248px;height:254px;"/>
                     <div class="hov-in">
                         <a href="#"><i class="fab fa-instagram"></i></a>
                     </div>
@@ -384,7 +386,7 @@
             </div>
             <div class="item">
                 <div class="ins-inner-box">
-                    <img src="images/laleaf_ins1.jpg" alt="" style ="width:248px;height:254px;"/>
+                    <img src="${url}/images/sources/laleaf_ins1.jpg" alt="" style ="width:248px;height:254px;"/>
                     <div class="hov-in">
                         <a href="#"><i class="fab fa-instagram"></i></a>
                     </div>
@@ -392,7 +394,7 @@
             </div>
             <div class="item">
                 <div class="ins-inner-box">
-                    <img src="images/laleaf_ins2.jpg" alt="" style ="width:248px;height:254px;"/>
+                    <img src="${url}/images/sources/laleaf_ins2.jpg" alt="" style ="width:248px;height:254px;"/>
                     <div class="hov-in">
                         <a href="#"><i class="fab fa-instagram"></i></a>
                     </div>
@@ -400,7 +402,7 @@
             </div>
             <div class="item">
                 <div class="ins-inner-box">
-                    <img src="images/laleaf_ins3.jpg" alt=""  style ="width:248px;height:254px;"/>
+                    <img src="${url}/images/sources/laleaf_ins3.jpg" alt=""  style ="width:248px;height:254px;"/>
                     <div class="hov-in">
                         <a href="#"><i class="fab fa-instagram"></i></a>
                     </div>
@@ -408,7 +410,7 @@
             </div>
             <div class="item">
                 <div class="ins-inner-box">
-                    <img src="images/laleaf_ins4.jpg" alt="" style ="width:248px;height:254px;"/>
+                    <img src="${url}/images/sources/laleaf_ins4.jpg" alt="" style ="width:248px;height:254px;"/>
                     <div class="hov-in">
                         <a href="#"><i class="fab fa-instagram"></i></a>
                     </div>
@@ -416,7 +418,7 @@
             </div>
             <div class="item">
                 <div class="ins-inner-box">
-                    <img src="images/laleaf_ins5.jpg" alt="" style ="width:248px;height:254px;"/>
+                    <img src="${url}/images/sources/laleaf_ins5.jpg" alt="" style ="width:248px;height:254px;"/>
                     <div class="hov-in">
                         <a href="#"><i class="fab fa-instagram"></i></a>
                     </div>
@@ -424,7 +426,7 @@
             </div>
             <div class="item">
                 <div class="ins-inner-box">
-                    <img src="images/laleaf_ins6.jpg" alt="" style ="width:248px;height:254px;"/>
+                    <img src="${url}/images/sources/laleaf_ins6.jpg" alt="" style ="width:248px;height:254px;"/>
                     <div class="hov-in">
                         <a href="#"><i class="fab fa-instagram"></i></a>
                     </div>
@@ -432,7 +434,7 @@
             </div>
             <div class="item">
                 <div class="ins-inner-box">
-                    <img src="images/laleaf_ins7.jpg" alt="" style ="width:248px;height:254px;"/>
+                    <img src="${url}/images/sources/laleaf_ins7.jpg" alt="" style ="width:248px;height:254px;"/>
                     <div class="hov-in">
                         <a href="#"><i class="fab fa-instagram"></i></a>
                     </div>
@@ -440,7 +442,7 @@
             </div>
             <div class="item">
                 <div class="ins-inner-box">
-                    <img src="images/laleaf_ins8.jpg" alt="" style ="width:248px;height:254px;"/>
+                    <img src="${url}/images/sources/laleaf_ins8.jpg" alt="" style ="width:248px;height:254px;"/>
                     <div class="hov-in">
                         <a href="#"><i class="fab fa-instagram"></i></a>
                     </div>
@@ -448,7 +450,7 @@
             </div>
             <div class="item">
                 <div class="ins-inner-box">
-                    <img src="images/laleaf_ins4.jpg" alt="" style ="width:248px;height:254px;"/>
+                    <img src="${url}/images/sources/laleaf_ins4.jpg" alt="" style ="width:248px;height:254px;"/>
                     <div class="hov-in">
                         <a href="#"><i class="fab fa-instagram"></i></a>
                     </div>
@@ -553,21 +555,21 @@
     <a href="#" id="back-to-top" title="Back to top" style="display: none;">&uarr;</a>
 
     <!-- ALL JS FILES -->
-    <script src="js/jquery-3.2.1.min.js"></script>
-    <script src="js/popper.min.js"></script>
-    <script src="js/bootstrap.min.js"></script>
+    <script src="${url}/js/jquery-3.2.1.min.js"></script>
+    <script src="${url}/js/popper.min.js"></script>
+    <script src="${url}/js/bootstrap.min.js"></script>
     <!-- ALL PLUGINS -->
-    <script src="js/jquery.superslides.min.js"></script>
-    <script src="js/bootstrap-select.js"></script>
-    <script src="js/inewsticker.js"></script>
-    <script src="js/bootsnav.js."></script>
-    <script src="js/images-loded.min.js"></script>
-    <script src="js/isotope.min.js"></script>
-    <script src="js/owl.carousel.min.js"></script>
-    <script src="js/baguetteBox.min.js"></script>
-    <script src="js/form-validator.min.js"></script>
-    <script src="js/contact-form-script.js"></script>
-    <script src="js/custom.js"></script>
+    <script src="${url}/js/jquery.superslides.min.js"></script>
+    <script src="${url}/js/bootstrap-select.js"></script>
+    <script src="${url}/js/inewsticker.js"></script>
+    <script src="${url}/js/bootsnav.js."></script>
+    <script src="${url}/js/images-loded.min.js"></script>
+    <script src="${url}/js/isotope.min.js"></script>
+    <script src="${url}/js/owl.carousel.min.js"></script>
+    <script src="${url}/js/baguetteBox.min.js"></script>
+    <script src="${url}/js/form-validator.min.js"></script>
+    <script src="${url}/js/contact-form-script.js"></script>
+    <script src="${url}/js/custom.js"></script>
 </body>
 
 </html>

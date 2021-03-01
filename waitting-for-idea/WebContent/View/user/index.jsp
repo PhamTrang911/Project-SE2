@@ -1,5 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%>
+    pageEncoding="ISO-8859-1"%><%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+    
+<c:url value="/View/user" var="url" />
 <!DOCTYPE html>
 <html lang="en">
 <!-- Basic -->
@@ -19,17 +21,17 @@
     <meta name="author" content="">
 
     <!-- Site Icons -->
-    <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
-    <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+    <link rel="shortcut icon" href="${url}/images/favicon.ico" type="image/x-icon">
+    <link rel="apple-touch-icon" href="${url}/images/apple-touch-icon.png">
 
     <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="${url}/css/bootstrap.min.css" type="text/css">
     <!-- Site CSS -->
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="${url}/css/style.css" type="text/css">
     <!-- Responsive CSS -->
-    <link rel="stylesheet" href="css/responsive.css">
+    <link rel="stylesheet" href="${url}/css/responsive.css" type="text/css">
     <!-- Custom CSS -->
-    <link rel="stylesheet" href="css/custom.css">
+    <link rel="stylesheet" href="${url}/css/custom.css" type="text/css">
 
     <!--[if lt IE 9]>
       <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
@@ -115,7 +117,7 @@
                     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-menu" aria-controls="navbars-rs-food" aria-expanded="false" aria-label="Toggle navigation">
                     <i class="fa fa-bars"></i>
                 </button>
-                    <a class="navbar-brand" href="index.html"><img src="images/laleaf_logo.jpg" class="logo" alt="" style ="width:108px;height:108px;border-radius: 50%;"></a>
+                    <a class="navbar-brand" href="index.html"><img src="${url}/images/laleaf_logo.jpg" class="logo" alt="" style ="width:108px;height:108px;border-radius: 50%;"></a>
                 </div>
                 <!-- End Header Navigation -->
 
@@ -167,17 +169,17 @@
                 <li class="cart-box">
                     <ul class="cart-list">
                         <li>
-                            <a href="#" class="photo"><img src="images/img-pro-01.jpg" class="cart-thumb" alt="" /></a>
+                            <a href="#" class="photo"><img src="${url}/images/sources/img-pro-01.jpg" class="cart-thumb" alt="" /></a>
                             <h6><a href="#">Delica omtantur </a></h6>
                             <p>1x - <span class="price">$80.00</span></p>
                         </li>
                         <li>
-                            <a href="#" class="photo"><img src="images/img-pro-02.jpg" class="cart-thumb" alt="" /></a>
+                            <a href="#" class="photo"><img src="${url}/images/sources/img-pro-02.jpg" class="cart-thumb" alt="" /></a>
                             <h6><a href="#">Omnes ocurreret</a></h6>
                             <p>1x - <span class="price">$60.00</span></p>
                         </li>
                         <li>
-                            <a href="#" class="photo"><img src="images/img-pro-03.jpg" class="cart-thumb" alt="" /></a>
+                            <a href="#" class="photo"><img src="${url}/images/sources/img-pro-03.jpg" class="cart-thumb" alt="" /></a>
                             <h6><a href="#">Agam facilisis</a></h6>
                             <p>1x - <span class="price">$40.00</span></p>
                         </li>
@@ -210,7 +212,7 @@
     <div id="slides-shop" class="cover-slides">
         <ul class="slides-container">
             <li class="text-center">
-                <img src="images/plant_cover2.jpg" alt="">
+                <img src="${url}/images/plant_cover2.jpg" alt="">
                 <div class="container">
                     <div class="row">
                         <div class="col-md-12">
@@ -222,7 +224,7 @@
                 </div>
             </li>
             <li class="text-center">
-                <img src="images/plant_cover.jpg" alt="">
+                <img src="${url}/images/plant_cover.jpg" alt="">
                 <div class="container">
                     <div class="row">
                         <div class="col-md-12">
@@ -234,7 +236,7 @@
                 </div>
             </li>
             <li class="text-center">
-                <img src="images/plant_cover3.jpg" alt="">
+                <img src="${url}/images/plant_cover3.jpg" alt="">
                 <div class="container">
                     <div class="row">
                         <div class="col-md-12">
@@ -259,19 +261,19 @@
             <div class="row">
                 <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
                     <div class="shop-cat-box">
-                        <img class="img-fluid" src="images/laleaf_categories.jpg" alt="" />
+                        <img class="img-fluid" src="${url}/images/laleaf_categories.jpg" alt="" />
                         <a class="btn hvr-hover" href="#">Shop Now</a>
                     </div>
                 </div>
                 <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
                     <div class="shop-cat-box">
-                        <img class="img-fluid" src="images/laleaf_categories2.jpg" alt="" />
+                        <img class="img-fluid" src="${url}/images/laleaf_categories2.jpg" alt="" />
                         <a class="btn hvr-hover" href="#">Shop Now</a>
                     </div>
                 </div>
                 <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
                     <div class="shop-cat-box">
-                        <img class="img-fluid" src="images/laleaf_categories3.jpg" alt="" />
+                        <img class="img-fluid" src="${url}/images/laleaf_categories3.jpg" alt="" />
                         <a class="btn hvr-hover" href="#">Shop Now</a>
                     </div>
                 </div>
@@ -285,12 +287,12 @@
 			<div class="row">
 				<div class="col-lg-6 col-md-6 col-sm-12">
 					<div class="offer-box-products">
-						<a class="navbar-brand" href="shop.html"> <img class="img-fluid" src="images/add-img-01.png" alt="" style ="width:212px;height:212px;"/></a>
+						<a class="navbar-brand" href="shop.html"> <img class="img-fluid" src="${url}/images/add-img-01.png" alt="" style ="width:212px;height:212px;"/></a>
 					</div>
 				</div>
 				<div class="col-lg-6 col-md-6 col-sm-12">
 					<div class="offer-box-products">
-						<a class="navbar-brand" href="shop.html"> <img class="img-fluid" src="images/add-img-02.png" alt="" style ="width:212px;height:212px;"/></a>
+						<a class="navbar-brand" href="shop.html"> <img class="img-fluid" src="${url}/images/add-img-02.png" alt="" style ="width:212px;height:212px;"/></a>
 					</div>
 				</div>
 			</div>
@@ -327,7 +329,7 @@
                             <div class="type-lb">
                                 <p class="sale">Sale</p>
                             </div>
-                            <img src="images/laleaf.jpg" class="img-fluid" alt="Image">
+                            <img src="${url}/images/laleaf.jpg" class="img-fluid" alt="Image">
                             <div class="mask-icon">
                                 <ul>
                                     <li><a href="#" data-toggle="tooltip" data-placement="right" title="View"><i class="fas fa-eye"></i></a></li>
@@ -350,7 +352,7 @@
                             <div class="type-lb">
                                 <p class="new">New</p>
                             </div>
-                            <img src="images/laleaf2.jpg" class="img-fluid" alt="Image">
+                            <img src="${url}/images/laleaf2.jpg" class="img-fluid" alt="Image">
                             <div class="mask-icon">
                                 <ul>
                                     <li><a href="#" data-toggle="tooltip" data-placement="right" title="View"><i class="fas fa-eye"></i></a></li>
@@ -373,7 +375,7 @@
                             <div class="type-lb">
                                 <p class="sale">Sale</p>
                             </div>
-                            <img src="images/laleaf3.jpg" class="img-fluid" alt="Image">
+                            <img src="${url}/images/laleaf3.jpg" class="img-fluid" alt="Image">
                             <div class="mask-icon">
                                 <ul>
                                     <li><a href="#" data-toggle="tooltip" data-placement="right" title="View"><i class="fas fa-eye"></i></a></li>
@@ -396,7 +398,7 @@
                             <div class="type-lb">
                                 <p class="sale">Sale</p>
                             </div>
-                            <img src="images/laleaf4.jpg" class="img-fluid" alt="Image">
+                            <img src="${url}/images/laleaf4.jpg" class="img-fluid" alt="Image">
                             <div class="mask-icon">
                                 <ul>
                                     <li><a href="#" data-toggle="tooltip" data-placement="right" title="View"><i class="fas fa-eye"></i></a></li>
@@ -432,7 +434,7 @@
                 <div class="col-md-6 col-lg-4 col-xl-4">
                     <div class="blog-box">
                         <div class="blog-img">
-                            <img class="img-fluid" src="images/laleaf_blog.jpg" alt="" />
+                            <img class="img-fluid" src="${url}/images/laleaf_blog.jpg" alt="" />
                         </div>
                         <div class="blog-content">
                             <div class="title-blog">
@@ -450,7 +452,7 @@
                 <div class="col-md-6 col-lg-4 col-xl-4">
                     <div class="blog-box">
                         <div class="blog-img">
-                            <img class="img-fluid" src="images/laleaf_blog2.jpg" alt="" />
+                            <img class="img-fluid" src="${url}/images/laleaf_blog2.jpg" alt="" />
                         </div>
                         <div class="blog-content">
                             <div class="title-blog">
@@ -470,7 +472,7 @@
                 <div class="col-md-6 col-lg-4 col-xl-4">
                     <div class="blog-box">
                         <div class="blog-img">
-                            <img class="img-fluid" src="images/laleaf_blog3.jpg" alt="" />
+                            <img class="img-fluid" src="${url}/images/laleaf_blog3.jpg" alt="" />
                         </div>
                         <div class="blog-content">
                             <div class="title-blog">
@@ -497,7 +499,7 @@
         <div class="main-instagram owl-carousel owl-theme">
             <div class="item">
                 <div class="ins-inner-box">
-                    <img src="images/laleaf_ins.jpg" alt="" style ="width:248px;height:254px;"/>
+                    <img src="${url}/images/laleaf_ins.jpg" alt="" style ="width:248px;height:254px;"/>
                     <div class="hov-in">
                         <a href="#"><i class="fab fa-instagram"></i></a>
                     </div>
@@ -505,7 +507,7 @@
             </div>
             <div class="item">
                 <div class="ins-inner-box">
-                    <img src="images/laleaf_ins1.jpg" alt="" style ="width:248px;height:254px;"/>
+                    <img src="${url}/images/laleaf_ins1.jpg" alt="" style ="width:248px;height:254px;"/>
                     <div class="hov-in">
                         <a href="#"><i class="fab fa-instagram"></i></a>
                     </div>
@@ -513,7 +515,7 @@
             </div>
             <div class="item">
                 <div class="ins-inner-box">
-                    <img src="images/laleaf_ins2.jpg" alt="" style ="width:248px;height:254px;"/>
+                    <img src="${url}/images/laleaf_ins2.jpg" alt="" style ="width:248px;height:254px;"/>
                     <div class="hov-in">
                         <a href="#"><i class="fab fa-instagram"></i></a>
                     </div>
@@ -521,7 +523,7 @@
             </div>
             <div class="item">
                 <div class="ins-inner-box">
-                    <img src="images/laleaf_ins3.jpg" alt=""  style ="width:248px;height:254px;"/>
+                    <img src="${url}/images/laleaf_ins3.jpg" alt=""  style ="width:248px;height:254px;"/>
                     <div class="hov-in">
                         <a href="#"><i class="fab fa-instagram"></i></a>
                     </div>
@@ -529,7 +531,7 @@
             </div>
             <div class="item">
                 <div class="ins-inner-box">
-                    <img src="images/laleaf_ins4.jpg" alt="" style ="width:248px;height:254px;"/>
+                    <img src="${url}/images/laleaf_ins4.jpg" alt="" style ="width:248px;height:254px;"/>
                     <div class="hov-in">
                         <a href="#"><i class="fab fa-instagram"></i></a>
                     </div>
@@ -537,7 +539,7 @@
             </div>
             <div class="item">
                 <div class="ins-inner-box">
-                    <img src="images/laleaf_ins5.jpg" alt="" style ="width:248px;height:254px;"/>
+                    <img src="${url}/images/laleaf_ins5.jpg" alt="" style ="width:248px;height:254px;"/>
                     <div class="hov-in">
                         <a href="#"><i class="fab fa-instagram"></i></a>
                     </div>
@@ -545,7 +547,7 @@
             </div>
             <div class="item">
                 <div class="ins-inner-box">
-                    <img src="images/laleaf_ins6.jpg" alt="" style ="width:248px;height:254px;"/>
+                    <img src="${url}/images/laleaf_ins6.jpg" alt="" style ="width:248px;height:254px;"/>
                     <div class="hov-in">
                         <a href="#"><i class="fab fa-instagram"></i></a>
                     </div>
@@ -553,7 +555,7 @@
             </div>
             <div class="item">
                 <div class="ins-inner-box">
-                    <img src="images/laleaf_ins7.jpg" alt="" style ="width:248px;height:254px;"/>
+                    <img src="${url}/images/laleaf_ins7.jpg" alt="" style ="width:248px;height:254px;"/>
                     <div class="hov-in">
                         <a href="#"><i class="fab fa-instagram"></i></a>
                     </div>
@@ -561,7 +563,7 @@
             </div>
             <div class="item">
                 <div class="ins-inner-box">
-                    <img src="images/laleaf_ins8.jpg" alt="" style ="width:248px;height:254px;"/>
+                    <img src="${url}/images/laleaf_ins8.jpg" alt="" style ="width:248px;height:254px;"/>
                     <div class="hov-in">
                         <a href="#"><i class="fab fa-instagram"></i></a>
                     </div>
@@ -569,7 +571,7 @@
             </div>
             <div class="item">
                 <div class="ins-inner-box">
-                    <img src="images/laleaf_ins4.jpg" alt="" style ="width:248px;height:254px;"/>
+                    <img src="${url}/images/laleaf_ins4.jpg" alt="" style ="width:248px;height:254px;"/>
                     <div class="hov-in">
                         <a href="#"><i class="fab fa-instagram"></i></a>
                     </div>
@@ -674,21 +676,21 @@
     <a href="#" id="back-to-top" title="Back to top" style="display: none;">&uarr;</a>
 
     <!-- ALL JS FILES -->
-    <script src="js/jquery-3.2.1.min.js"></script>
-    <script src="js/popper.min.js"></script>
-    <script src="js/bootstrap.min.js"></script>
+    <script src="${url}/js/jquery-3.2.1.min.js"></script>
+    <script src="${url}/js/popper.min.js"></script>
+    <script src="${url}/js/bootstrap.min.js"></script>
     <!-- ALL PLUGINS -->
-    <script src="js/jquery.superslides.min.js"></script>
-    <script src="js/bootstrap-select.js"></script>
-    <script src="js/inewsticker.js"></script>
-    <script src="js/bootsnav.js."></script>
-    <script src="js/images-loded.min.js"></script>
-    <script src="js/isotope.min.js"></script>
-    <script src="js/owl.carousel.min.js"></script>
-    <script src="js/baguetteBox.min.js"></script>
-    <script src="js/form-validator.min.js"></script>
-    <script src="js/contact-form-script.js"></script>
-    <script src="js/custom.js"></script>
+    <script src="${url}/js/jquery.superslides.min.js"></script>
+    <script src="${url}/js/bootstrap-select.js"></script>
+    <script src="${url}/js/inewsticker.js"></script>
+    <script src="${url}/js/bootsnav.js"></script>
+    <script src="${url}/js/images-loded.min.js"></script>
+    <script src="${url}/js/isotope.min.js"></script>
+    <script src="${url}/js/owl.carousel.min.js"></script>
+    <script src="${url}/js/baguetteBox.min.js"></script>
+    <script src="${url}/js/form-validator.min.js"></script>
+    <script src="${url}/js/contact-form-script.js"></script>
+    <script src="${url}/js/custom.js"></script>
 </body>
 
 </html>

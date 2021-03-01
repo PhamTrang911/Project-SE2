@@ -8,9 +8,9 @@ public class DbConnect {
 //    private static String USER_NAME = "tslwrpevkasnbl";
 //    private static String PASSWORD = "7db9edb113037a7ead5352e0e18c9a248a57c4d4e9afb7994b05010b449200c8";
     
-    private static String DB_URL = "jdbc:mysql://localhost:3306/treestore?usessl=false";
-    private static String USER_NAME = "root";
-    private static String PASSWORD = "Tuntun99!";
+    private static String DB_URL = "jdbc:mysql://sql12.freemysqlhosting.et:3306/sql12395850?usessl=false";
+    private static String USER_NAME = "sql12395850";
+    private static String PASSWORD = "yVSitKAG2H";
     
     public static Connection getConnection()  {
 		Connection conn = null;

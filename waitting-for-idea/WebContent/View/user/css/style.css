@@ -1169,7 +1169,7 @@
 /*------------------------------------------------------------------ Instagram Feed -------------------------------------------------------------------*/
  .instagram-box{
      padding: 70px 0px;
-     background: url(../images/ins-bg.jpg) no-repeat center center;
+     background: url(../images/sources/ins-bg.jpg) no-repeat center center;
      background-size: auto auto;
      -webkit-background-size: cover;
      -moz-background-size: cover;
@@ -2189,7 +2189,7 @@
 }
  .new-account-login h5 {
      font-size: 18px;
-     color: #1111111;
+     color: #111111;
      font-weight: 600;
 }
  .new-account-login h5 a:hover{
