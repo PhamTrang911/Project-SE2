@@ -37,7 +37,12 @@
       <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
       <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
-
+    <script type="text/javascript">
+    function redirect_url(url )
+    {
+    	window.location(url)
+    }
+    </script>
 </head>
 
 <body>
@@ -66,9 +71,9 @@
                 </div>
                 <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
 					<div class="login-box">
-						<select id="basic" class="selectpicker show-tick form-control" data-placeholder="Sign In">
-							<option>Register Here</option>
-							<option>Sign In</option>
+						<select id="basic" class="selectpicker show-tick form-control" data-placeholder="Sign In" onchange="redirect_url(this.value)">
+							<option >Register Here</option>
+							<option value="loginUser">Sign In</option>
 						</select>
 					</div>
                     <div class="text-slid-box">

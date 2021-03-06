@@ -9,4 +9,40 @@
     <welcome-file>default.htm</welcome-file>
     <welcome-file>default.jsp</welcome-file>
   </welcome-file-list>
+  
+  <servlet>
+  	<servlet-name>Admin</servlet-name>
+  	<servlet-class>com.servlet.adminServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  	<servlet-name>Admin</servlet-name>
+  	<url-pattern>/admins</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+  	<servlet-name>Loginuser</servlet-name>
+  	<servlet-class>com.servlet.loginServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  	<servlet-name>Loginuser</servlet-name>
+  	<url-pattern>/loginUser</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+  	<servlet-name>Loginadmin</servlet-name>
+  	<servlet-class>com.servlet.loginAdminServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  	<servlet-name>Loginadmin</servlet-name>
+  	<url-pattern>/loginAdmin</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+  	<servlet-name>userHome</servlet-name>
+  	<servlet-class>com.servlet.userServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  	<servlet-name>userHome</servlet-name>
+  	<url-pattern>/Home</url-pattern>
+  </servlet-mapping>
 </web-app>

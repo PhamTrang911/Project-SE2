@@ -4,22 +4,31 @@ import java.io.IOException;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import com.dao.userDao;
+import com.dao.adminDao;
 
-public class userServlet extends HttpServlet{
+@WebServlet("/loginAdmin/*")
+public class loginAdminServlet extends HttpServlet{
+
+
+	
+	/**
+	 * 
+	 */
 	private static final long serialVersionUID = 1L;
-	private userDao ud;
+	private adminDao ad;
+	
 	@Override
 	public void init() throws ServletException {
 		// TODO Auto-generated method stub
 		super.init();
-		ud = new userDao();
+		ad = new adminDao();
 	}
-	
+
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		// TODO Auto-generated method stub
@@ -28,15 +37,11 @@ public class userServlet extends HttpServlet{
 		String action = req.getPathInfo();
 		
 		if(action == null) {
-			showHomePage(req, resp);
+			showLoginAdmin(req, resp);
 		}else{
 			switch (action) {
-			case "/shop":
-				
-				break;
-			case "/myAccount":
-				
-				break;
+			case "/login":
+				loginAdmin(req, resp);
 			default:
 				break;
 			}
@@ -54,14 +59,21 @@ public class userServlet extends HttpServlet{
 		}
 	}
 	
-	public void showHomePage(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-		RequestDispatcher rd = req.getRequestDispatcher("View/user/shop.jsp");
-		rd.forward(req, resp);
+	private void showLoginAdmin(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		request.getRequestDispatcher("View/admin/login.jsp").forward(request, response);
+		return;
 	}
 	
-	public void accountInfo(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-		req.setAttribute("user", ud.getUserByEmail(req.getSession().getAttribute("user_email")));
-		RequestDispatcher rd = req.getRequestDispatcher("View/user/my-account.jsp");
-		rd.forward(req, resp);
+	private void loginAdmin(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		String username = request.getParameter("username");
+		String password = request.getParameter("password");
+		boolean isSuccess = ad.login(username, password);
+		if(isSuccess) {
+			response.sendRedirect(request.getContextPath()+"/admins");
+		}else {
+			request.setAttribute("isFalse", isSuccess);
+			response.sendRedirect(request.getContextPath()+"/loginAdmin");
+		}
+		return;
 	}
 }

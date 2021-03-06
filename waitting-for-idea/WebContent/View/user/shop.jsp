@@ -25,13 +25,13 @@
     <link rel="apple-touch-icon" href="${url}/images/apple-touch-icon.png">
 
     <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="${url}/css/bootstrap.min.css">
     <!-- Site CSS -->
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="${url}/css/style.css">
     <!-- Responsive CSS -->
-    <link rel="stylesheet" href="css/responsive.css">
+    <link rel="stylesheet" href="${url}/css/responsive.css">
     <!-- Custom CSS -->
-    <link rel="stylesheet" href="css/custom.css">
+    <link rel="stylesheet" href="${url}/css/custom.css">
 
     <!--[if lt IE 9]>
       <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
@@ -139,9 +139,9 @@
                         <li class="dropdown">
                             <a href="#" class="nav-link dropdown-toggle arrow" data-toggle="dropdown">Account</a>
                             <ul class="dropdown-menu">
-								<li><a href="my-account.html">My Account</a></li>
-                                <li><a href="cart.html">Cart</a></li>
-                                <li><a href="checkout.html">Checkout</a></li>
+								<li><a href="${pageContext.request.contextPath}/my-account">My Account</a></li>
+                                <li><a href="${pageContext.request.contextPath}/cart">Cart</a></li>
+                                <li><a href="${pageContext.request.contextPath}/checkout">Checkout</a></li>
                             </ul>
                         </li>
                     </ul>
@@ -264,7 +264,7 @@
                                                     <div class="type-lb">
                                                         <p class="sale">Sale</p>
                                                     </div>
-                                                    <img src="${url}/images/img-pro-01.jpg" class="img-fluid" alt="Image">
+                                                    <img src="${url}/images/sources/img-pro-01.jpg" class="img-fluid" alt="Image">
                                                     <div class="mask-icon">
                                                         <ul>
                                                             <li><a href="#" data-toggle="tooltip" data-placement="right" title="View"><i class="fas fa-eye"></i></a></li>
@@ -286,7 +286,7 @@
                                                     <div class="type-lb">
                                                         <p class="new">New</p>
                                                     </div>
-                                                    <img src="${url}/images/img-pro-02.jpg" class="img-fluid" alt="Image">
+                                                    <img src="${url}/images/sources/img-pro-02.jpg" class="img-fluid" alt="Image">
                                                     <div class="mask-icon">
                                                         <ul>
                                                             <li><a href="#" data-toggle="tooltip" data-placement="right" title="View"><i class="fas fa-eye"></i></a></li>
@@ -308,7 +308,7 @@
                                                     <div class="type-lb">
                                                         <p class="sale">Sale</p>
                                                     </div>
-                                                    <img src="${url}/images/img-pro-03.jpg" class="img-fluid" alt="Image">
+                                                    <img src="${url}/images/sources/img-pro-03.jpg" class="img-fluid" alt="Image">
                                                     <div class="mask-icon">
                                                         <ul>
                                                             <li><a href="#" data-toggle="tooltip" data-placement="right" title="View"><i class="fas fa-eye"></i></a></li>
@@ -330,7 +330,7 @@
                                                     <div class="type-lb">
                                                         <p class="new">New</p>
                                                     </div>
-                                                    <img src="${url}/images/img-pro-01.jpg" class="img-fluid" alt="Image">
+                                                    <img src="${url}/images/sources/img-pro-01.jpg" class="img-fluid" alt="Image">
                                                     <div class="mask-icon">
                                                         <ul>
                                                             <li><a href="#" data-toggle="tooltip" data-placement="right" title="View"><i class="fas fa-eye"></i></a></li>
@@ -352,7 +352,7 @@
                                                     <div class="type-lb">
                                                         <p class="sale">Sale</p>
                                                     </div>
-                                                    <img src="${url}/images/img-pro-02.jpg" class="img-fluid" alt="Image">
+                                                    <img src="${url}/images/sources/img-pro-02.jpg" class="img-fluid" alt="Image">
                                                     <div class="mask-icon">
                                                         <ul>
                                                             <li><a href="#" data-toggle="tooltip" data-placement="right" title="View"><i class="fas fa-eye"></i></a></li>
@@ -374,7 +374,7 @@
                                                     <div class="type-lb">
                                                         <p class="sale">Sale</p>
                                                     </div>
-                                                    <img src="${url}/images/img-pro-03.jpg" class="img-fluid" alt="Image">
+                                                    <img src="${url}/images/sources/img-pro-03.jpg" class="img-fluid" alt="Image">
                                                     <div class="mask-icon">
                                                         <ul>
                                                             <li><a href="#" data-toggle="tooltip" data-placement="right" title="View"><i class="fas fa-eye"></i></a></li>
@@ -396,7 +396,7 @@
                                                     <div class="type-lb">
                                                         <p class="sale">Sale</p>
                                                     </div>
-                                                    <img src="${url}/images/img-pro-01.jpg" class="img-fluid" alt="Image">
+                                                    <img src="${url}/images/sources/img-pro-01.jpg" class="img-fluid" alt="Image">
                                                     <div class="mask-icon">
                                                         <ul>
                                                             <li><a href="#" data-toggle="tooltip" data-placement="right" title="View"><i class="fas fa-eye"></i></a></li>
@@ -418,7 +418,7 @@
                                                     <div class="type-lb">
                                                         <p class="sale">Sale</p>
                                                     </div>
-                                                    <img src="${url}/images/img-pro-02.jpg" class="img-fluid" alt="Image">
+                                                    <img src="${url}/images/sources/img-pro-02.jpg" class="img-fluid" alt="Image">
                                                     <div class="mask-icon">
                                                         <ul>
                                                             <li><a href="#" data-toggle="tooltip" data-placement="right" title="View"><i class="fas fa-eye"></i></a></li>
@@ -440,7 +440,7 @@
                                                     <div class="type-lb">
                                                         <p class="new">New</p>
                                                     </div>
-                                                    <img src="${url}/images/img-pro-03.jpg" class="img-fluid" alt="Image">
+                                                    <img src="${url}/images/sources/img-pro-03.jpg" class="img-fluid" alt="Image">
                                                     <div class="mask-icon">
                                                         <ul>
                                                             <li><a href="#" data-toggle="tooltip" data-placement="right" title="View"><i class="fas fa-eye"></i></a></li>
@@ -467,7 +467,7 @@
                                                         <div class="type-lb">
                                                             <p class="new">New</p>
                                                         </div>
-                                                        <img src="${url}/images/img-pro-01.jpg" class="img-fluid" alt="Image">
+                                                        <img src="${url}/images/sources/img-pro-01.jpg" class="img-fluid" alt="Image">
                                                         <div class="mask-icon">
                                                             <ul>
                                                                 <li><a href="#" data-toggle="tooltip" data-placement="right" title="View"><i class="fas fa-eye"></i></a></li>
@@ -499,7 +499,7 @@
                                                         <div class="type-lb">
                                                             <p class="sale">Sale</p>
                                                         </div>
-                                                        <img src="${url}/images/img-pro-02.jpg" class="img-fluid" alt="Image">
+                                                        <img src="${url}/images/sources/img-pro-02.jpg" class="img-fluid" alt="Image">
                                                         <div class="mask-icon">
                                                             <ul>
                                                                 <li><a href="#" data-toggle="tooltip" data-placement="right" title="View"><i class="fas fa-eye"></i></a></li>
@@ -531,7 +531,7 @@
                                                         <div class="type-lb">
                                                             <p class="sale">Sale</p>
                                                         </div>
-                                                        <img src="${url}/images/img-pro-03.jpg" class="img-fluid" alt="Image">
+                                                        <img src="${url}/images/sources/img-pro-03.jpg" class="img-fluid" alt="Image">
                                                         <div class="mask-icon">
                                                             <ul>
                                                                 <li><a href="#" data-toggle="tooltip" data-placement="right" title="View"><i class="fas fa-eye"></i></a></li>

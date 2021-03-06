@@ -17,59 +17,113 @@ public class productDao {
 		conn = DbConnect.getConnection();
 	}
 	
-	public ArrayList<Product> lstProduct() throws SQLException{
+	public ArrayList<Product> lstProduct() {
 		ArrayList<Product> products = new ArrayList<Product>();
 		String sql = "SELECT * FROM product"; 
-		PreparedStatement ps = conn.prepareStatement(sql);
-		ResultSet rs = ps.executeQuery();
-		while(rs.next()) {
-			 int product_id = rs.getInt("product_id");
-			 int catalog_id = rs.getInt("catalog_id");
-			 String name = rs.getString("name");
-			 float price = rs.getFloat("price");
-			 String status = rs.getString("status");
-			 String description = rs.getString("description");
-			 int discount = rs.getInt("discount");
-			 String image_link = rs.getString("image_link");
-			 Date created = rs.getDate("created");
-			 
-			 Product p = new Product(product_id, catalog_id, name, price, status, description, discount, image_link, created);
-			 products.add(p);
+		PreparedStatement ps;
+		ResultSet rs;
+		try {
+			ps = conn.prepareStatement(sql);
+			rs = ps.executeQuery();
+
+			while(rs.next()) {
+				 int product_id = rs.getInt("product_id");
+				 int catalog_id = rs.getInt("catalog_id");
+				 String name = rs.getString("name");
+				 float price = rs.getFloat("price");
+				 String status = rs.getString("status");
+				 String description = rs.getString("description");
+				 int discount = rs.getInt("discount");
+				 String image_link = rs.getString("image_link");
+				 Date created = rs.getDate("created");
+				 
+				 Product p = new Product(product_id, catalog_id, name, price, status, description, discount, image_link, created);
+				 products.add(p);
+			}
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
 		}
 		
 		return products;
 	}
 	
-	public Product getProductByName(String sname) throws SQLException {
+	public Product getProductById(int id) {
 		Product p = null;
-		String sql = "SELECT * FROM product WHERE name="+"\""+sname+"\"";
-		PreparedStatement ps = conn.prepareStatement(sql);
-		ResultSet rs = ps.executeQuery();
-		while(rs.next()) {
-			int product_id = rs.getInt("product_id");
-			 int catalog_id = rs.getInt("catalog_id");
-			 String name = rs.getString("name");
-			 float price = rs.getFloat("price");
-			 String status = rs.getString("status");
-			 String description = rs.getString("description");
-			 int discount = rs.getInt("discount");
-			 String image_link = rs.getString("image_link");
-			 Date created = rs.getDate("created");
-			 
-			 p = new Product(product_id, catalog_id, name, price, status, description, discount, image_link, created);
+		String sql = "SELECT * FROM product WHERE name="+"\""+id+"\"";
+		try {
+			PreparedStatement ps = conn.prepareStatement(sql);
+			ResultSet rs = ps.executeQuery();
+			while(rs.next()) {
+				int product_id = rs.getInt("product_id");
+				 int catalog_id = rs.getInt("catalog_id");
+				 String name = rs.getString("name");
+				 float price = rs.getFloat("price");
+				 String status = rs.getString("status");
+				 String description = rs.getString("description");
+				 int discount = rs.getInt("discount");
+				 String image_link = rs.getString("image_link");
+				 Date created = rs.getDate("created");
+				 
+				 p = new Product(product_id, catalog_id, name, price, status, description, discount, image_link, created);
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
 		}
 		return p;
 	}
 	
-	public void insertProduct(Product p) throws SQLException {
+	public Product getProductByName(String sname) {
+		Product p = null;
+		String sql = "SELECT * FROM product WHERE name="+"\""+sname+"\"";
+		try {
+			PreparedStatement ps = conn.prepareStatement(sql);
+			ResultSet rs = ps.executeQuery();
+			while(rs.next()) {
+				int product_id = rs.getInt("product_id");
+				 int catalog_id = rs.getInt("catalog_id");
+				 String name = rs.getString("name");
+				 float price = rs.getFloat("price");
+				 String status = rs.getString("status");
+				 String description = rs.getString("description");
+				 int discount = rs.getInt("discount");
+				 String image_link = rs.getString("image_link");
+				 Date created = rs.getDate("created");
+				 
+				 p = new Product(product_id, catalog_id, name, price, status, description, discount, image_link, created);
+			}
+		} catch (Exception e) {
+			// TODO: handle exception
+		}
+		return p;
+	}
+	
+	public void insertProduct(Product p) {
 		String sql = "INSERT INTO product (catalog_id,name,price,status,description,discount,image_link,created) VALUES(?,?,?,?,?,?,?,?)";
-		PreparedStatement ps = conn.prepareStatement(sql);
-		ps.setInt(1, p.getCatalog_id());
-		ps.setString(2, p.getName());
-		ps.setFloat(3, p.getPrice());
-		ps.setString(4, p.getStatus());
-		ps.setString(5, p.getDescription());
-		ps.setInt(6, p.getDiscount());
-		ps.setString(7, p.getImage_link());
+		try {
+			PreparedStatement ps = conn.prepareStatement(sql);
+			ps.setInt(1, p.getCatalog_id());
+			ps.setString(2, p.getName());
+			ps.setFloat(3, p.getPrice());
+			ps.setString(4, p.getStatus());
+			ps.setString(5, p.getDescription());
+			ps.setInt(6, p.getDiscount());
+			ps.setString(7, p.getImage_link());
+			ps.execute();
+		} catch (Exception e) {
+			// TODO: handle exception
+		}
+	}
+	
+	public void updateProduct(Product p){
+		String sql = "UPDATE product SET catalog_id="+p.getCatalog_id()+",name="+p.getName()+",price="+p.getPrice()+",status="+p.getStatus()+",description="+p.getDescription()+",discount="+p.getDiscount()+",image_link="+p.getImage_link()+"WHERE product_id="+p.getProduct_id();
+		PreparedStatement ps;
+		try {
+			ps = conn.prepareStatement(sql);
+			ps.execute();
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 	}
 }

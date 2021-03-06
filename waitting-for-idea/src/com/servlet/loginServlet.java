@@ -4,13 +4,20 @@ import java.io.IOException;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
+import com.dao.adminDao;
 import com.dao.userDao;
+@WebServlet("/loginUser/*")
+public class loginServlet extends HttpServlet{
 
-public class userServlet extends HttpServlet{
+	/**
+	 * 
+	 */
 	private static final long serialVersionUID = 1L;
 	private userDao ud;
 	@Override
@@ -28,15 +35,11 @@ public class userServlet extends HttpServlet{
 		String action = req.getPathInfo();
 		
 		if(action == null) {
-			showHomePage(req, resp);
+			showLoginUser(req, resp);
 		}else{
 			switch (action) {
-			case "/shop":
-				
-				break;
-			case "/myAccount":
-				
-				break;
+			case "/login":
+				loginUser(req, resp);
 			default:
 				break;
 			}
@@ -54,14 +57,25 @@ public class userServlet extends HttpServlet{
 		}
 	}
 	
-	public void showHomePage(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-		RequestDispatcher rd = req.getRequestDispatcher("View/user/shop.jsp");
-		rd.forward(req, resp);
+	private void showLoginUser(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		request.getRequestDispatcher("View/user/login.jsp").forward(request, response);;
+		return;
 	}
 	
-	public void accountInfo(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-		req.setAttribute("user", ud.getUserByEmail(req.getSession().getAttribute("user_email")));
-		RequestDispatcher rd = req.getRequestDispatcher("View/user/my-account.jsp");
-		rd.forward(req, resp);
+	private void loginUser(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		String email = request.getParameter("email");
+		String password = request.getParameter("password");
+		
+		HttpSession session;
+		boolean isSuccess = ud.login(email, password);
+		if(isSuccess) {
+			session = request.getSession();
+			session.setAttribute("user_email", email);
+			response.sendRedirect(request.getContextPath()+"/Home");
+		}else {
+			response.sendRedirect(request.getContextPath()+"/loginUser");
+		}
+		return;
 	}
+
 }

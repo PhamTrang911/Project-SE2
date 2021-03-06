@@ -167,17 +167,17 @@
                 <li class="cart-box">
                     <ul class="cart-list">
                         <li>
-                            <a href="#" class="photo"><img src="${url}/images/img-pro-01.jpg" class="cart-thumb" alt="" /></a>
+                            <a href="#" class="photo"><img src="${url}/images/sources/img-pro-01.jpg" class="cart-thumb" alt="" /></a>
                             <h6><a href="#">Delica omtantur </a></h6>
                             <p>1x - <span class="price">$80.00</span></p>
                         </li>
                         <li>
-                            <a href="#" class="photo"><img src="${url}/images/img-pro-02.jpg" class="cart-thumb" alt="" /></a>
+                            <a href="#" class="photo"><img src="${url}/images/sources/img-pro-02.jpg" class="cart-thumb" alt="" /></a>
                             <h6><a href="#">Omnes ocurreret</a></h6>
                             <p>1x - <span class="price">$60.00</span></p>
                         </li>
                         <li>
-                            <a href="#" class="photo"><img src="${url}/images/img-pro-03.jpg" class="cart-thumb" alt="" /></a>
+                            <a href="#" class="photo"><img src="${url}/images/sources/img-pro-03.jpg" class="cart-thumb" alt="" /></a>
                             <h6><a href="#">Agam facilisis</a></h6>
                             <p>1x - <span class="price">$40.00</span></p>
                         </li>
@@ -227,7 +227,7 @@
         <div class="container">
             <div class="row">
 				<div class="col-lg-6">
-                    <div class="banner-frame"> <img class="img-fluid" src="${url}/images/about-img.jpg" alt="" />
+                    <div class="banner-frame"> <img class="img-fluid" src="${url}/images/sources/about-img.jpg" alt="" />
                     </div>
                 </div>
                 <div class="col-lg-6">
@@ -266,7 +266,7 @@
                 </div>
                 <div class="col-sm-6 col-lg-3">
                     <div class="hover-team">
-                        <div class="our-team"> <img src="${url}/images/img-1.jpg" alt="" />
+                        <div class="our-team"> <img src="${url}/images/sources/img-1.jpg" alt="" />
                             <div class="team-content">
                                 <h3 class="title">Williamson</h3> <span class="post">Web Developer</span> </div>
                             <ul class="social">

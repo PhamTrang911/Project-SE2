@@ -21,17 +21,17 @@
     <meta name="author" content="">
 
     <!-- Site Icons -->
-    <link rel="shortcut icon" href="${url}/images/favicon.ico" type="image/x-icon">
-    <link rel="apple-touch-icon" href="${url}/images/apple-touch-icon.png">
+    <link rel="shortcut icon" href="${url}/images/sources/favicon.ico" type="image/x-icon">
+    <link rel="apple-touch-icon" href="${url}/images/sources/apple-touch-icon.png">
 
     <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="${url}/css/bootstrap.min.css">
     <!-- Site CSS -->
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="${url}/css/style.css">
     <!-- Responsive CSS -->
-    <link rel="stylesheet" href="css/responsive.css">
+    <link rel="stylesheet" href="${url}/css/responsive.css">
     <!-- Custom CSS -->
-    <link rel="stylesheet" href="css/custom.css">
+    <link rel="stylesheet" href="${url}/css/custom.css">
 
     <!--[if lt IE 9]>
       <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
