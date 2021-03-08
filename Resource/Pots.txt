@@ -1,0 +1,26 @@
+
+INSERT INTO product (catalog_id, name, price, status, description, discount, image_link) VALUES (2, pot1, 15, AVAILABLE, size 10x10x15 color red, 0,"https://i.ibb.co/4PZqqLd/1.jpg");
+INSERT INTO product (catalog_id, name, price, status, description, discount, image_link) VALUES (2, pot2, 15, AVAILABLE, size 10x10x15 color grey, 0,"https://i.ibb.co/3shhgR3/2.png");
+INSERT INTO product (catalog_id, name, price, status, description, discount, image_link) VALUES (2, pot3, 13, AVAILABLE, size 8x8x20 color grey, 0,"https://i.ibb.co/P5bkch8/3.jpg");
+INSERT INTO product (catalog_id, name, price, status, description, discount, image_link) VALUES (2, pot4, 17, AVAILABLE, size 12x12x10 color red, 0,"https://i.ibb.co/CnQJ9N2/4.jpg");
+INSERT INTO product (catalog_id, name, price, status, description, discount, image_link) VALUES (2, pot5, 20, AVAILABLE, size 112x12x15 color brown, 0,"https://i.ibb.co/FHy51qy/5.jpg");
+INSERT INTO product (catalog_id, name, price, status, description, discount, image_link) VALUES (2, pot6, 10, AVAILABLE, size 10x10x12 color red, 0,"https://i.ibb.co/h8rNB6D/6.jpg");
+INSERT INTO product (catalog_id, name, price, status, description, discount, image_link) VALUES (2, pot7, 15, AVAILABLE, size 15x15x7 color pink, 0,"https://i.ibb.co/stC3rMj/7.jpg");
+INSERT INTO product (catalog_id, name, price, status, description, discount, image_link) VALUES (2, pot8, 10, AVAILABLE, size 8x8x15 color orange, 0,"https://i.ibb.co/N9LZ1wb/8.jpg");
+INSERT INTO product (catalog_id, name, price, status, description, discount, image_link) VALUES (2, pot9, 15, AVAILABLE, size 10x10x20 color black, 0,"https://i.ibb.co/4pBQjwL/9.jpg");
+INSERT INTO product (catalog_id, name, price, status, description, discount, image_link) VALUES (2, pot10, 20, AVAILABLE, size 11x11x16 color orange, 0,"https://i.ibb.co/X5SvWw7/10.jpg");
+INSERT INTO product (catalog_id, name, price, status, description, discount, image_link) VALUES (2, pot11, 10, AVAILABLE, size 10x10x17 color brown, 0,"https://i.ibb.co/2srBjHF/11.jpg");
+INSERT INTO product (catalog_id, name, price, status, description, discount, image_link) VALUES (2, pot12, 14, AVAILABLE, size 9x9x17 color red, 0,"https://i.ibb.co/zFxVDz6/12.jpg");
+INSERT INTO product (catalog_id, name, price, status, description, discount, image_link) VALUES (2, pot13, 19, AVAILABLE, size 10x10x13 color brown, 0,"https://i.ibb.co/Xtj2hpj/13.jpg");
+INSERT INTO product (catalog_id, name, price, status, description, discount, image_link) VALUES (2, pot14, 20, AVAILABLE, size 10x10x18 color orange, 0,"https://i.ibb.co/BVZnhwd/14.jpg");
+INSERT INTO product (catalog_id, name, price, status, description, discount, image_link) VALUES (2, pot15, 15, AVAILABLE, size 12x12x16 color black, 0,"https://i.ibb.co/wc4t6cJ/15.jpg");
+INSERT INTO product (catalog_id, name, price, status, description, discount, image_link) VALUES (2, pot16, 18, AVAILABLE, size 9x9x11 color green, 0,"https://i.ibb.co/N7ysCvh/16.jpg");
+INSERT INTO product (catalog_id, name, price, status, description, discount, image_link) VALUES (2, pot17, 22, AVAILABLE, size 13x13x17 color black, 0,"https://i.ibb.co/G74KfbD/17.jpg");
+INSERT INTO product (catalog_id, name, price, status, description, discount, image_link) VALUES (2, pot18, 20, AVAILABLE, size 10x10x14 color white, 0,"https://i.ibb.co/zPB8n82/18.jpg");
+INSERT INTO product (catalog_id, name, price, status, description, discount, image_link) VALUES (2, pot19, 25, AVAILABLE, size 10x10x18 color white, 0,"https://i.ibb.co/HdCVTRG/19.jpg");
+INSERT INTO product (catalog_id, name, price, status, description, discount, image_link) VALUES (2, pot20, 14, AVAILABLE, size 8x8x15 color orange, 0,"https://i.ibb.co/HdmLJNp/20.jpg");
+INSERT INTO product (catalog_id, name, price, status, description, discount, image_link) VALUES (2, pot21, 25, AVAILABLE, size 10x10x20 color white, 0,"https://i.ibb.co/rZZ2hpv/21.jpg");
+INSERT INTO product (catalog_id, name, price, status, description, discount, image_link) VALUES (2, pot22, 12, AVAILABLE, size 8x8x14 color black, 0,"https://i.ibb.co/M7z2jkB/22.jpg");
+INSERT INTO product (catalog_id, name, price, status, description, discount, image_link) VALUES (2, pot23, 14, AVAILABLE, size 8x8x12 color green, 0,"https://i.ibb.co/L6TTNsS/23.jpg");
+INSERT INTO product (catalog_id, name, price, status, description, discount, image_link) VALUES (2, pot24, 15, AVAILABLE, size 9x9x12 color pink, 0,"https://i.ibb.co/KmZ8PPH/24.jpg");
+INSERT INTO product (catalog_id, name, price, status, description, discount, image_link) VALUES (2, pot25, 18, AVAILABLE, size 9x9x15 color yellow, 0,"https://i.ibb.co/6yVpGXQ/25.jpg");
