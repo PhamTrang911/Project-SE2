@@ -33,7 +33,7 @@ public class userDao {
 
 	public User getUserByEmail(Object attribute) {
 		String email = (String) attribute;
-		String sql = "SELECT * FROM users WHERE emai=\""+email+"\"";
+		String sql = "SELECT * FROM users WHERE email=\""+email+"\"";
 		User u = null;
 		try {
 			PreparedStatement ps = conn.prepareStatement(sql);
@@ -54,5 +54,23 @@ public class userDao {
 		}
 		
 		return u;
+	}
+	
+	public boolean insertUser(User u) {
+		String sql = "INSERT INTO users (name,phone,dob,address,password) value (?,?,?,?,?)";
+		boolean created = false;
+		try {
+			PreparedStatement ps = conn.prepareStatement(sql);
+			ps.setString(1, u.getName());
+			ps.setString(2, u.getPhone());
+			ps.setString(3, u.getDob());
+			ps.setString(4, u.getAddress());
+			ps.setString(5, u.getPassword());
+			created = ps.execute();
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return created;
 	}
 }

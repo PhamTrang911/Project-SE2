@@ -33,11 +33,10 @@ public class productDao {
 				 float price = rs.getFloat("price");
 				 String status = rs.getString("status");
 				 String description = rs.getString("description");
-				 int discount = rs.getInt("discount");
 				 String image_link = rs.getString("image_link");
 				 Date created = rs.getDate("created");
 				 
-				 Product p = new Product(product_id, catalog_id, name, price, status, description, discount, image_link, created);
+				 Product p = new Product(product_id, catalog_id, name, price, status, description, image_link, created);
 				 products.add(p);
 			}
 		} catch (SQLException e) {
@@ -61,11 +60,10 @@ public class productDao {
 				 float price = rs.getFloat("price");
 				 String status = rs.getString("status");
 				 String description = rs.getString("description");
-				 int discount = rs.getInt("discount");
 				 String image_link = rs.getString("image_link");
 				 Date created = rs.getDate("created");
 				 
-				 p = new Product(product_id, catalog_id, name, price, status, description, discount, image_link, created);
+				 p = new Product(product_id, catalog_id, name, price, status, description, image_link, created);
 			}
 		} catch (SQLException e) {
 			e.printStackTrace();
@@ -86,16 +84,40 @@ public class productDao {
 				 float price = rs.getFloat("price");
 				 String status = rs.getString("status");
 				 String description = rs.getString("description");
-				 int discount = rs.getInt("discount");
 				 String image_link = rs.getString("image_link");
 				 Date created = rs.getDate("created");
 				 
-				 p = new Product(product_id, catalog_id, name, price, status, description, discount, image_link, created);
+				 p = new Product(product_id, catalog_id, name, price, status, description, image_link, created);
 			}
 		} catch (Exception e) {
 			// TODO: handle exception
 		}
 		return p;
+	}
+	
+	public ArrayList<Product> getProductByCatalog(int catalog_id) {
+		ArrayList<Product> lst = new ArrayList<Product>();
+		
+		String sql = "SELECT * FROM product WHERE catalog_id="+catalog_id;
+		try {
+			PreparedStatement ps = conn.prepareStatement(sql);
+			ResultSet rs = ps.executeQuery();
+			while(rs.next()) {
+				int product_id = rs.getInt("product_id");
+				 String name = rs.getString("name");
+				 float price = rs.getFloat("price");
+				 String status = rs.getString("status");
+				 String description = rs.getString("description");
+				 String image_link = rs.getString("image_link");
+				 Date created = rs.getDate("created");
+				 
+				 Product p = new Product(product_id, catalog_id, name, price, status, description, image_link, created);
+				 lst.add(p);
+			}
+		} catch (Exception e) {
+			// TODO: handle exception
+		}
+		return lst;
 	}
 	
 	public void insertProduct(Product p) {
@@ -107,7 +129,6 @@ public class productDao {
 			ps.setFloat(3, p.getPrice());
 			ps.setString(4, p.getStatus());
 			ps.setString(5, p.getDescription());
-			ps.setInt(6, p.getDiscount());
 			ps.setString(7, p.getImage_link());
 			ps.execute();
 		} catch (Exception e) {
@@ -116,7 +137,7 @@ public class productDao {
 	}
 	
 	public void updateProduct(Product p){
-		String sql = "UPDATE product SET catalog_id="+p.getCatalog_id()+",name="+p.getName()+",price="+p.getPrice()+",status="+p.getStatus()+",description="+p.getDescription()+",discount="+p.getDiscount()+",image_link="+p.getImage_link()+"WHERE product_id="+p.getProduct_id();
+		String sql = "UPDATE product SET catalog_id="+p.getCatalog_id()+",name="+p.getName()+",price="+p.getPrice()+",status="+p.getStatus()+",description="+p.getDescription()+",image_link="+p.getImage_link()+"WHERE product_id="+p.getProduct_id();
 		PreparedStatement ps;
 		try {
 			ps = conn.prepareStatement(sql);

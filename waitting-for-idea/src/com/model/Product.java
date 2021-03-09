@@ -9,12 +9,10 @@ public class Product {
 	private float price;
 	private String status;
 	private String description;
-	private int discount;
 	private String image_link;
 	private Date created;
 	
-	public Product(int product_id,int catalog_id, String name, float price, String status, String description,
-			int discount, String image_link, Date created) {
+	public Product(int product_id,int catalog_id, String name, float price, String status, String description, String image_link, Date created) {
 		super();
 		this.product_id = product_id;
 		this.catalog_id = catalog_id;
@@ -22,7 +20,6 @@ public class Product {
 		this.price = price;
 		this.status = status;
 		this.description = description;
-		this.discount = discount;
 		this.image_link = image_link;
 		this.created = created;
 	}
@@ -61,12 +58,6 @@ public class Product {
 	}
 	public void setDescription(String description) {
 		this.description = description;
-	}
-	public int getDiscount() {
-		return discount;
-	}
-	public void setDiscount(int discount) {
-		this.discount = discount;
 	}
 	public String getImage_link() {
 		return image_link;

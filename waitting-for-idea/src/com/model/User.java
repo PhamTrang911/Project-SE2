@@ -71,4 +71,13 @@ public class User {
 		this.password = password;
 		this.created = created;
 	}
+	public User(String name, String email, String phone, String dob, String address, String password) {
+		super();
+		this.name = name;
+		this.email = email;
+		this.phone = phone;
+		this.dob = dob;
+		this.address = address;
+		this.password = password;
+	}
 }
