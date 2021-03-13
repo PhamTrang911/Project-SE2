@@ -72,11 +72,15 @@ public class userServlet extends HttpServlet{
 	
 	public void showCart(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		User u = ud.getUserByEmail(req.getSession().getAttribute("user_email"));
-		ArrayList<Cart> cart = cd.allInCartOfUser(u.getUser_id());
-		req.setAttribute("cart", cart);
-		RequestDispatcher rd = req.getRequestDispatcher("/View/user/cart.jsp");
-		rd.forward(req, resp);
-		return;
+		if(u != null) {
+			ArrayList<Cart> cart = cd.allInCartOfUser(u.getUser_id());
+			req.setAttribute("cart", cart);
+			RequestDispatcher rd = req.getRequestDispatcher("/View/user/cart.jsp");
+			rd.forward(req, resp);
+			return;
+		}else {
+			resp.sendRedirect(req.getContextPath()+"/login");
+		}
 	}
 	
 	public void accountInfo(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {

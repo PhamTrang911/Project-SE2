@@ -9,10 +9,23 @@ public class Product {
 	private float price;
 	private String status;
 	private String description;
+	private float discount;
 	private String image_link;
 	private Date created;
 	
-	public Product(int product_id,int catalog_id, String name, float price, String status, String description, String image_link, Date created) {
+	public Product(int catalog_id, String name, float price, String status, String description, float discount,
+			String image_link) {
+		super();
+		this.catalog_id = catalog_id;
+		this.name = name;
+		this.price = price;
+		this.status = status;
+		this.description = description;
+		this.discount = discount;
+		this.image_link = image_link;
+	}
+	public Product(int product_id, int catalog_id, String name, float price, String status, String description,
+			float discount, String image_link, Date created) {
 		super();
 		this.product_id = product_id;
 		this.catalog_id = catalog_id;
@@ -20,6 +33,7 @@ public class Product {
 		this.price = price;
 		this.status = status;
 		this.description = description;
+		this.discount = discount;
 		this.image_link = image_link;
 		this.created = created;
 	}
@@ -70,6 +84,12 @@ public class Product {
 	}
 	public void setCreated(Date created) {
 		this.created = created;
+	}
+	public float getDiscount() {
+		return discount;
+	}
+	public void setDiscount(float discount) {
+		this.discount = discount;
 	}
 	
 }

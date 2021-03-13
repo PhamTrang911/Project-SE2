@@ -29,14 +29,15 @@ public class productDao {
 			while(rs.next()) {
 				 int product_id = rs.getInt("product_id");
 				 int catalog_id = rs.getInt("catalog_id");
-				 String name = rs.getString("name");
+				 String name = rs.getString("NAME");
 				 float price = rs.getFloat("price");
-				 String status = rs.getString("status");
+				 String status = rs.getString("STATUS");
 				 String description = rs.getString("description");
+				 float dis = rs.getFloat("discount");
 				 String image_link = rs.getString("image_link");
 				 Date created = rs.getDate("created");
 				 
-				 Product p = new Product(product_id, catalog_id, name, price, status, description, image_link, created);
+				 Product p = new Product(product_id, catalog_id, name, price, status, description, dis, image_link, created);
 				 products.add(p);
 			}
 		} catch (SQLException e) {
@@ -49,21 +50,22 @@ public class productDao {
 	
 	public Product getProductById(int id) {
 		Product p = null;
-		String sql = "SELECT * FROM product WHERE name="+"\""+id+"\"";
+		String sql = "SELECT * FROM product WHERE product_id="+id;
 		try {
 			PreparedStatement ps = conn.prepareStatement(sql);
 			ResultSet rs = ps.executeQuery();
 			while(rs.next()) {
 				int product_id = rs.getInt("product_id");
 				 int catalog_id = rs.getInt("catalog_id");
-				 String name = rs.getString("name");
+				 String name = rs.getString("NAME");
 				 float price = rs.getFloat("price");
-				 String status = rs.getString("status");
+				 String status = rs.getString("STATUS");
 				 String description = rs.getString("description");
+				 float dis = rs.getFloat("discount");
 				 String image_link = rs.getString("image_link");
 				 Date created = rs.getDate("created");
 				 
-				 p = new Product(product_id, catalog_id, name, price, status, description, image_link, created);
+				 p = new Product(product_id, catalog_id, name, price, status, description, dis, image_link, created);
 			}
 		} catch (SQLException e) {
 			e.printStackTrace();
@@ -71,23 +73,24 @@ public class productDao {
 		return p;
 	}
 	
-	public Product getProductByName(String sname) {
-		Product p = null;
-		String sql = "SELECT * FROM product WHERE name="+"\""+sname+"\"";
+	public  ArrayList<Product> getProductByName(String sname) {
+		 ArrayList<Product> p = null;
+		String sql = "SELECT * FROM product WHERE NAME="+"\""+sname+"\"";
 		try {
 			PreparedStatement ps = conn.prepareStatement(sql);
 			ResultSet rs = ps.executeQuery();
 			while(rs.next()) {
 				int product_id = rs.getInt("product_id");
 				 int catalog_id = rs.getInt("catalog_id");
-				 String name = rs.getString("name");
+				 String name = rs.getString("NAME");
 				 float price = rs.getFloat("price");
-				 String status = rs.getString("status");
+				 String status = rs.getString("STATUS");
 				 String description = rs.getString("description");
+				 float dis = rs.getFloat("discount");
 				 String image_link = rs.getString("image_link");
 				 Date created = rs.getDate("created");
 				 
-				 p = new Product(product_id, catalog_id, name, price, status, description, image_link, created);
+				 p.add(new Product(product_id, catalog_id, name, price, status, description, dis, image_link, created));
 			}
 		} catch (Exception e) {
 			// TODO: handle exception
@@ -104,14 +107,15 @@ public class productDao {
 			ResultSet rs = ps.executeQuery();
 			while(rs.next()) {
 				int product_id = rs.getInt("product_id");
-				 String name = rs.getString("name");
+				 String name = rs.getString("NAME");
 				 float price = rs.getFloat("price");
-				 String status = rs.getString("status");
+				 String status = rs.getString("STATUS");
 				 String description = rs.getString("description");
+				 float dis = rs.getFloat("discount");
 				 String image_link = rs.getString("image_link");
 				 Date created = rs.getDate("created");
 				 
-				 Product p = new Product(product_id, catalog_id, name, price, status, description, image_link, created);
+				 Product p = new Product(product_id, catalog_id, name, price, status, description, dis, image_link, created);
 				 lst.add(p);
 			}
 		} catch (Exception e) {
@@ -121,7 +125,7 @@ public class productDao {
 	}
 	
 	public void insertProduct(Product p) {
-		String sql = "INSERT INTO product (catalog_id,name,price,status,description,discount,image_link,created) VALUES(?,?,?,?,?,?,?,?)";
+		String sql = "INSERT INTO product (catalog_id,NAME,price,STATUS,description,discount,image_link) VALUES(?,?,?,?,?,?,?)";
 		try {
 			PreparedStatement ps = conn.prepareStatement(sql);
 			ps.setInt(1, p.getCatalog_id());
@@ -129,6 +133,7 @@ public class productDao {
 			ps.setFloat(3, p.getPrice());
 			ps.setString(4, p.getStatus());
 			ps.setString(5, p.getDescription());
+			ps.setFloat(6, p.getDiscount());
 			ps.setString(7, p.getImage_link());
 			ps.execute();
 		} catch (Exception e) {
@@ -137,14 +142,33 @@ public class productDao {
 	}
 	
 	public void updateProduct(Product p){
-		String sql = "UPDATE product SET catalog_id="+p.getCatalog_id()+",name="+p.getName()+",price="+p.getPrice()+",status="+p.getStatus()+",description="+p.getDescription()+",image_link="+p.getImage_link()+"WHERE product_id="+p.getProduct_id();
+		String sql = "UPDATE product SET catalog_id= ?,NAME= ?,price= ?,STATUS= ?,description= ?,discount= ?,image_link= ? WHERE product_id="+p.getProduct_id();
 		PreparedStatement ps;
 		try {
 			ps = conn.prepareStatement(sql);
+			ps.setInt(1, p.getCatalog_id());
+			ps.setString(2, p.getName());
+			ps.setFloat(3, p.getPrice());
+			ps.setString(4, p.getStatus());
+			ps.setString(5, p.getDescription());
+			ps.setFloat(6, p.getDiscount());
+			ps.setString(7, p.getImage_link());
 			ps.execute();
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
+	}
+	
+	public void deleteProduct(int pid) {
+		String sql = "DELETE FROM product WHERE product_id="+pid;
+		try {
+			PreparedStatement ps = conn.prepareStatement(sql);
+			ps.execute();
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
 	}
 }

@@ -26,7 +26,7 @@ private Connection conn;
 			ResultSet rs = ps.executeQuery();
 			while(rs.next()) {
 				int id = rs.getInt("catalog_id");
-				String name = rs.getString("catalog_name");
+				String name = rs.getString("NAME");
 				
 				Catalog c = new Catalog(id, name);
 				lst.add(c);
@@ -38,7 +38,7 @@ private Connection conn;
 		return lst;
 	}
 	
-	public String getNameById(int id) {
+	public Catalog getNameById(int id) {
 		String sql = "SELECT * FROM catalog WHERE catalog_id = "+id;
 		String name = null;
 		PreparedStatement ps;
@@ -52,6 +52,43 @@ private Connection conn;
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		return name;
+		return new Catalog(id, name);
+	}
+	
+	public boolean insert(String name) {
+		String sql = "INSERT INTO catalog (NAME) value ("+name+")";
+		try {
+			PreparedStatement ps = conn.prepareStatement(sql);
+			return ps.execute();
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		return false;
+	}
+	
+	public boolean update(int id, String name) {
+		String sql = "UPDATE catalog SET NAME=\""+name+"\" WHERE catalog_id="+id;
+		try {
+			PreparedStatement ps = conn.prepareStatement(sql);
+			return ps.execute();
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return false;
+	}
+	
+	public boolean delete(int id) {
+		String sql = "DELETE FROM catalog WHERE catalog_id="+id;
+		try {
+			PreparedStatement ps = conn.prepareStatement(sql);
+			return ps.execute();
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return false;
 	}
 }

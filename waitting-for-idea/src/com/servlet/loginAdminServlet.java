@@ -8,10 +8,11 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import com.dao.adminDao;
 
-@WebServlet("/loginAdmin/*")
+@WebServlet("/admin/*")
 public class loginAdminServlet extends HttpServlet{
 
 
@@ -41,7 +42,14 @@ public class loginAdminServlet extends HttpServlet{
 		}else{
 			switch (action) {
 			case "/login":
+				showLoginAdmin(req, resp);
+				break;
+			case "/submit":
 				loginAdmin(req, resp);
+				break;
+			case "/logout":
+				logout(req, resp);
+				break;
 			default:
 				break;
 			}
@@ -60,20 +68,27 @@ public class loginAdminServlet extends HttpServlet{
 	}
 	
 	private void showLoginAdmin(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		request.getRequestDispatcher("View/admin/login.jsp").forward(request, response);
+		request.getRequestDispatcher("/View/admin/login.jsp").forward(request, response);
 		return;
 	}
 	
 	private void loginAdmin(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		String username = request.getParameter("username");
-		String password = request.getParameter("password");
+		String username = request.getParameter("admin-username");
+		String password = request.getParameter("admin-password");
 		boolean isSuccess = ad.login(username, password);
 		if(isSuccess) {
-			response.sendRedirect(request.getContextPath()+"/admins");
+			HttpSession s = request.getSession();
+			s.setAttribute("admin-username", username);
+			response.sendRedirect(request.getContextPath()+"/adminitration");
+			return;
 		}else {
-			request.setAttribute("isFalse", isSuccess);
-			response.sendRedirect(request.getContextPath()+"/loginAdmin");
+			response.sendRedirect(request.getContextPath()+"/admin");
 		}
-		return;
+	}
+	
+	private void logout(HttpServletRequest request, HttpServletResponse response) throws IOException {
+		HttpSession s = request.getSession();
+		s.removeAttribute("admin-username");
+		response.sendRedirect(request.getContextPath()+"/user");
 	}
 }

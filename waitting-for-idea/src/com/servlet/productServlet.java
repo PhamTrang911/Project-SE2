@@ -6,6 +6,7 @@ import java.util.ArrayList;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -13,6 +14,7 @@ import javax.servlet.http.HttpServletResponse;
 import com.dao.productDao;
 import com.model.Product;
 
+@WebServlet("/product/*")
 public class productServlet extends HttpServlet{
 	private productDao pd;
 
@@ -37,7 +39,7 @@ public class productServlet extends HttpServlet{
 		String action = request.getPathInfo();
 		
 		switch (action) {
-		case "/products":
+		case "/all":
 			listProduct(request, response);
 			break;
 

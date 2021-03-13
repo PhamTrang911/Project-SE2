@@ -44,5 +44,12 @@ public class Discount {
 		this.minPayment = minPayment;
 		this.percentage = percentage;
 	}
+	public Discount(String name, String description, float minPayment, float percentage) {
+		super();
+		this.name = name;
+		this.description = description;
+		this.minPayment = minPayment;
+		this.percentage = percentage;
+	}
 	
 }

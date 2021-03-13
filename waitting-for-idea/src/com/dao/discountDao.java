@@ -3,6 +3,7 @@ package com.dao;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.util.ArrayList;
 
 import com.dbconnect.DbConnect;
@@ -28,7 +29,7 @@ public class discountDao {
 				String name = rs.getString("name");
 				String description = rs.getString("description");
 				float min = rs.getFloat("minPayment");
-				float amount = rs.getFloat("amount");
+				float amount = rs.getFloat("percentage");
 				
 				Discount d = new Discount(id,name, description, min, amount);
 				discount.add(d);
@@ -51,7 +52,7 @@ public class discountDao {
 				String name = rs.getString("name");
 				String description = rs.getString("description");
 				float min = rs.getFloat("minPayment");
-				float amount = rs.getFloat("amount");
+				float amount = rs.getFloat("percentage");
 				
 				discount = new Discount(id,name, description, min, amount);
 			}
@@ -59,5 +60,49 @@ public class discountDao {
 			// TODO: handle exception
 		}
 		return discount;
+	}
+	
+	public boolean add(Discount d) {
+		String sql = "INSERT INTO discount (name,description,minPayment,percentage) value (?,?,?,?)";
+		try {
+			PreparedStatement ps = conn.prepareStatement(sql);
+			ps.setString(1, d.getName());
+			ps.setString(2, d.getDescription());
+			ps.setFloat(3, d.getMinPayment());
+			ps.setFloat(4, d.getPercentage());
+			return ps.execute();
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return false;
+	}
+	
+	public boolean update(Discount d) {
+		String sql = "UPDATE discount SET (name,description,minPayment,percentage) value (?,?,?,?) WHER discount_id="+d.getDiscount_id();
+		try {
+			PreparedStatement ps = conn.prepareStatement(sql);
+			ps.setString(1, d.getName());
+			ps.setString(2, d.getDescription());
+			ps.setFloat(3, d.getMinPayment());
+			ps.setFloat(4, d.getPercentage());
+			return ps.execute();
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return false;
+	}
+	
+	public boolean delete(int id) {
+		String sql = "DELETE FROM discount WHERE discount_id="+id;
+		try {
+			PreparedStatement ps = conn.prepareStatement(sql);
+			return ps.execute();
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return false;
 	}
 }
