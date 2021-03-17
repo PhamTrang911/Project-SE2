@@ -1,6 +1,7 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
-<c:url value="/view/admin/assets" var="url" />
+
+<c:url value="/View/admin/assets" var="url" />
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -61,7 +62,7 @@
 				<div class="card-content p-2">
 					<div class="text-center"></div>
 					<div class="card-title text-uppercase text-center py-3">Login</div>
-					<form action="${pageContext.request.contextPath}/admin/login"
+					<form action="${pageContext.request.contextPath}/admin/submit"
 						method="post">
 						<div class="form-group">
 							<label for="exampleInputUsername" class="sr-only">Username</label>
