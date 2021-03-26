@@ -77,78 +77,20 @@
                                 </tr>
                             </thead>
                             <tbody>
-                                <tr>
-                                    <td class="thumbnail-img">
-                                        <a href="#">
-									<img class="img-fluid" src="${url}/images/img-pro-01.jpg" alt="" />
-								</a>
-                                    </td>
-                                    <td class="name-pr">
-                                        <a href="#">
-									Lorem ipsum dolor sit amet
-								</a>
-                                    </td>
-                                    <td class="price-pr">
-                                        <p>$ 80.0</p>
-                                    </td>
-                                    <td class="quantity-box"><input type="number" size="4" value="1" min="0" step="1" class="c-input-text qty text"></td>
-                                    <td class="total-pr">
-                                        <p>$ 80.0</p>
-                                    </td>
+                                <c:forEach items="${carts}" var="c">
+                                	<tr>
+                                    <td class="thumbnail-img"><img class="img-fluid" src="${c.image_link}" alt="" /></td>
+                                    <td class="name-pr">${c.name}</td>
+                                    <td class="price-pr"><p class="price">${c.price}</p></td>
+                                    <td class="quantity-box"><input class="number" type="number" size="4" value="1" min="0" step="1"></td>
                                     <td class="remove-pr">
                                         <a href="#">
 									<i class="fas fa-times"></i>
 								</a>
                                     </td>
                                 </tr>
-                                <tr>
-                                    <td class="thumbnail-img">
-                                        <a href="#">
-									<img class="img-fluid" src="${url}/images/img-pro-02.jpg" alt="" />
-								</a>
-                                    </td>
-                                    <td class="name-pr">
-                                        <a href="#">
-									Lorem ipsum dolor sit amet
-								</a>
-                                    </td>
-                                    <td class="price-pr">
-                                        <p>$ 60.0</p>
-                                    </td>
-                                    <td class="quantity-box"><input type="number" size="4" value="1" min="0" step="1" class="c-input-text qty text"></td>
-                                    <td class="total-pr">
-                                        <p>$ 80.0</p>
-                                    </td>
-                                    <td class="remove-pr">
-                                        <a href="#">
-									<i class="fas fa-times"></i>
-								</a>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td class="thumbnail-img">
-                                        <a href="#">
-									<img class="img-fluid" src="${url}/images/img-pro-03.jpg" alt="" />
-								</a>
-                                    </td>
-                                    <td class="name-pr">
-                                        <a href="#">
-									Lorem ipsum dolor sit amet
-								</a>
-                                    </td>
-                                    <td class="price-pr">
-                                        <p>$ 30.0</p>
-                                    </td>
-                                    <td class="quantity-box"><input type="number" size="4" value="1" min="0" step="1" class="c-input-text qty text"></td>
-                                    <td class="total-pr">
-                                        <p>$ 80.0</p>
-                                    </td>
-                                    <td class="remove-pr">
-                                        <a href="#">
-									<i class="fas fa-times"></i>
-								</a>
-                                    </td>
-                                </tr>
+                                </c:forEach>
+                                
                             </tbody>
                         </table>
                     </div>
@@ -159,7 +101,12 @@
                 <div class="col-lg-6 col-sm-6">
                     <div class="coupon-box">
                         <div class="input-group input-group-sm">
-                            <input class="form-control" placeholder="Enter your coupon code" aria-label="Coupon code" type="text">
+                            <select id="discount" class="form-control">
+                            		<option selected>None</option>
+                            	<c:forEach items="${discount}" var="dis">
+                            		<option></option>
+                            	</c:forEach>
+                            </select>
                             <div class="input-group-append">
                                 <button class="btn btn-theme" type="button">Apply Coupon</button>
                             </div>
@@ -180,29 +127,25 @@
                         <h3>Order summary</h3>
                         <div class="d-flex">
                             <h4>Sub Total</h4>
-                            <div class="ml-auto font-weight-bold"> $ 130 </div>
+                            <div id="sum" class="ml-auto font-weight-bold"></div>
                         </div>
                         <div class="d-flex">
                             <h4>Discount</h4>
-                            <div class="ml-auto font-weight-bold"> $ 40 </div>
+                            <div id="disc" class="ml-auto font-weight-bold"></div>
                         </div>
                         <hr class="my-1">
                         <div class="d-flex">
-                            <h4>Coupon Discount</h4>
-                            <div class="ml-auto font-weight-bold"> $ 10 </div>
-                        </div>
-                        <div class="d-flex">
                             <h4>Tax</h4>
-                            <div class="ml-auto font-weight-bold"> $ 2 </div>
+                            <div id="tax" class="ml-auto font-weight-bold"></div>
                         </div>
                         <div class="d-flex">
                             <h4>Shipping Cost</h4>
-                            <div class="ml-auto font-weight-bold"> Free </div>
+                            <div id="ship" class="ml-auto font-weight-bold"></div>
                         </div>
                         <hr>
                         <div class="d-flex gr-total">
                             <h5>Grand Total</h5>
-                            <div class="ml-auto h5"> $ 388 </div>
+                            <div id="total" class="ml-auto h5"></div>
                         </div>
                         <hr> </div>
                 </div>
@@ -300,7 +243,6 @@
     </div>
     <!-- End Instagram Feed  -->
 
-
     <!-- Start Footer  -->
     <footer>
         <div class="footer-main">
@@ -374,8 +316,6 @@
         </div>
     </footer>
     <!-- End Footer  -->
-
-   
 
     <a href="#" id="back-to-top" title="Back to top" style="display: none;">&uarr;</a>
 

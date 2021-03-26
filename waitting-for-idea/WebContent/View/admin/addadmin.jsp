@@ -39,7 +39,6 @@
 							</div>
 
 							<div class="form-footer"><a class="btn btn-danger" href="${pageContext.request.contextPath}/adminitration/homepage">Cancel</a>
-								</button>
 								<button type="submit" class="btn btn-success">
 									<i class="fa fa-check-square-o"></i>Add
 								</button>

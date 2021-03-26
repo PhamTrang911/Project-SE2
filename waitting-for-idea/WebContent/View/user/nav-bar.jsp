@@ -73,8 +73,8 @@
                         <li class="nav-item"><a class="nav-link" href="${pageContext.request.contextPath}/contact-us">Contact Us</a></li>
                         <li class="dropdown">
                             <a href="${pageContext.request.contextPath}/user/profile" class="nav-link dropdown-toggle" data-toggle="dropdown">Account</a>
-                            <ul class="dropdown-menu">
-                                <li><a href="${pageContext.request.contextPath}/user/cart">Cart</a></li>
+                            <ul class="dropdown-menu" id="drop">
+                                <li style="display:flex; flex-flow:row; justify-content: space-between; padding-right: 25px; align-items:center;"><a href="${pageContext.request.contextPath}/user/cart">Cart</a><p id="number" style="text-align:center; width:20px; color:white;">${cart}</p></li>
                                 <li><a href="${pageContext.request.contextPath}/user/history">Ordered</a></li>
                             </ul>
                         </li>
@@ -84,14 +84,10 @@
 
                 <!-- Start Atribute Navigation -->
                 <div class="login-box">
-                <c:choose >
-				    <c:when test="${sessionScope.user_email == null}">
+                <% if(session.getAttribute("user_email")==null){ %>
 						<a href="${pageContext.request.contextPath}/login" id="basic">Login</a>
-				    </c:when>    
-				    <c:otherwise>
-				    	
-				    </c:otherwise>
-				</c:choose>
+						<%}%>
+						
 				</div>
                 <!-- End Atribute Navigation -->
             </div>
@@ -128,5 +124,21 @@
     <script src="${url}/js/form-validator.min.js"></script>
     <script src="${url}/js/contact-form-script.js"></script>
     <script src="${url}/js/custom.js"></script>
+    <script type="text/javascript">
+    	if(document.getElementById("basic")==null){
+    		var b = document.createElement("a");
+    		b.href = "${pageContext.request.contextPath}/user/logout";
+    		b.innerHTML = "Log Out";
+    		var li = document.createElement("li");
+    		li.appendChild(b);
+    		document.getElementById("drop").appendChild(li);
+    	}
+    	let a = document.getElementById("number");
+    	if(a.innerHTML != "0"){
+    		a.style.backgroundColor = "red";
+    	}else{
+    		a.innerHTML = "";
+    	}
+    </script>
 </body>
 </html>

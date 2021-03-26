@@ -25,13 +25,13 @@
     <link rel="apple-touch-icon" href="${url}/images/apple-touch-icon.png">
 
     <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="${url}/css/bootstrap.min.css">
     <!-- Site CSS -->
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="${url}/css/style.css">
     <!-- Responsive CSS -->
-    <link rel="stylesheet" href="css/responsive.css">
+    <link rel="stylesheet" href="${url}/css/responsive.css">
     <!-- Custom CSS -->
-    <link rel="stylesheet" href="css/custom.css">
+    <link rel="stylesheet" href="${url}/css/custom.css">
 
     <!--[if lt IE 9]>
       <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
@@ -49,10 +49,6 @@
             <div class="row">
                 <div class="col-lg-12">
                     <h2>ABOUT US</h2>
-                    <ul class="breadcrumb">
-                        <li class="breadcrumb-item"><a href="#">Home</a></li>
-                        <li class="breadcrumb-item active">ABOUT US</li>
-                    </ul>
                 </div>
             </div>
         </div>
@@ -129,7 +125,7 @@
                 </div>
                 <div class="col-sm-6 col-lg-3">
                     <div class="hover-team">
-                        <div class="our-team"> <img src="${url}/images/img-2.jpg" alt="" />
+                        <div class="our-team"> <img src="${url}/images/sources/img-2.jpg" alt="" />
                             <div class="team-content">
                                 <h3 class="title">Kristiana</h3> <span class="post">Web Developer</span> </div>
                             <ul class="social">
@@ -155,7 +151,7 @@
                 </div>
                 <div class="col-sm-6 col-lg-3">
                     <div class="hover-team">
-                        <div class="our-team"> <img src="${url}/images/img-3.jpg" alt="" />
+                        <div class="our-team"> <img src="${url}/images/sources/img-3.jpg" alt="" />
                             <div class="team-content">
                                 <h3 class="title">Steve Thomas</h3> <span class="post">Web Developer</span> </div>
                             <ul class="social">
@@ -181,7 +177,7 @@
                 </div>
                 <div class="col-sm-6 col-lg-3">
                     <div class="hover-team">
-                        <div class="our-team"> <img src="${url}/images/img-1.jpg" alt="" />
+                        <div class="our-team"> <img src="${url}/images/sources/img-1.jpg" alt="" />
                             <div class="team-content">
                                 <h3 class="title">Williamson</h3> <span class="post">Web Developer</span> </div>
                             <ul class="social">
@@ -215,7 +211,7 @@
         <div class="main-instagram owl-carousel owl-theme">
             <div class="item">
                 <div class="ins-inner-box">
-                    <img src="${url}/images/sources/laleaf_ins.jpg" alt="" style ="width:248px;height:254px;"/>
+                    <img src="${url}/images/laleaf_ins.jpg" alt="" style ="width:248px;height:254px;"/>
                     <div class="hov-in">
                         <a href="#"><i class="fab fa-instagram"></i></a>
                     </div>
@@ -223,7 +219,7 @@
             </div>
             <div class="item">
                 <div class="ins-inner-box">
-                    <img src="${url}/images/sources/laleaf_ins1.jpg" alt="" style ="width:248px;height:254px;"/>
+                    <img src="${url}/images/laleaf_ins1.jpg" alt="" style ="width:248px;height:254px;"/>
                     <div class="hov-in">
                         <a href="#"><i class="fab fa-instagram"></i></a>
                     </div>
@@ -231,7 +227,7 @@
             </div>
             <div class="item">
                 <div class="ins-inner-box">
-                    <img src="${url}/images/sources/laleaf_ins2.jpg" alt="" style ="width:248px;height:254px;"/>
+                    <img src="${url}/images/laleaf_ins2.jpg" alt="" style ="width:248px;height:254px;"/>
                     <div class="hov-in">
                         <a href="#"><i class="fab fa-instagram"></i></a>
                     </div>
@@ -239,7 +235,7 @@
             </div>
             <div class="item">
                 <div class="ins-inner-box">
-                    <img src="${url}/images/sources/laleaf_ins3.jpg" alt=""  style ="width:248px;height:254px;"/>
+                    <img src="${url}/images/laleaf_ins3.jpg" alt=""  style ="width:248px;height:254px;"/>
                     <div class="hov-in">
                         <a href="#"><i class="fab fa-instagram"></i></a>
                     </div>
@@ -247,7 +243,7 @@
             </div>
             <div class="item">
                 <div class="ins-inner-box">
-                    <img src="${url}/images/sources/laleaf_ins4.jpg" alt="" style ="width:248px;height:254px;"/>
+                    <img src="${url}/images/laleaf_ins4.jpg" alt="" style ="width:248px;height:254px;"/>
                     <div class="hov-in">
                         <a href="#"><i class="fab fa-instagram"></i></a>
                     </div>
@@ -255,7 +251,7 @@
             </div>
             <div class="item">
                 <div class="ins-inner-box">
-                    <img src="${url}/images/sources/laleaf_ins5.jpg" alt="" style ="width:248px;height:254px;"/>
+                    <img src="${url}/images/laleaf_ins5.jpg" alt="" style ="width:248px;height:254px;"/>
                     <div class="hov-in">
                         <a href="#"><i class="fab fa-instagram"></i></a>
                     </div>
@@ -263,7 +259,7 @@
             </div>
             <div class="item">
                 <div class="ins-inner-box">
-                    <img src="${url}/images/sources/laleaf_ins6.jpg" alt="" style ="width:248px;height:254px;"/>
+                    <img src="${url}/images/laleaf_ins6.jpg" alt="" style ="width:248px;height:254px;"/>
                     <div class="hov-in">
                         <a href="#"><i class="fab fa-instagram"></i></a>
                     </div>
@@ -271,7 +267,7 @@
             </div>
             <div class="item">
                 <div class="ins-inner-box">
-                    <img src="${url}/images/sources/laleaf_ins7.jpg" alt="" style ="width:248px;height:254px;"/>
+                    <img src="${url}/images/laleaf_ins7.jpg" alt="" style ="width:248px;height:254px;"/>
                     <div class="hov-in">
                         <a href="#"><i class="fab fa-instagram"></i></a>
                     </div>
@@ -279,7 +275,7 @@
             </div>
             <div class="item">
                 <div class="ins-inner-box">
-                    <img src="${url}/images/sources/laleaf_ins8.jpg" alt="" style ="width:248px;height:254px;"/>
+                    <img src="${url}/images/laleaf_ins8.jpg" alt="" style ="width:248px;height:254px;"/>
                     <div class="hov-in">
                         <a href="#"><i class="fab fa-instagram"></i></a>
                     </div>
@@ -287,7 +283,7 @@
             </div>
             <div class="item">
                 <div class="ins-inner-box">
-                    <img src="${url}/images/sources/laleaf_ins4.jpg" alt="" style ="width:248px;height:254px;"/>
+                    <img src="${url}/images/laleaf_ins4.jpg" alt="" style ="width:248px;height:254px;"/>
                     <div class="hov-in">
                         <a href="#"><i class="fab fa-instagram"></i></a>
                     </div>
