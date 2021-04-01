@@ -66,7 +66,7 @@ public class broadnewDao {
 	}
 	
 	public boolean update(BroadNew bn) {
-		String sql = "UPDATE broardnew SET (title,content,image_link,author) value (?,?,?,?) WHERE broadnew_id="+bn.getBroadNew_id();
+		String sql = "UPDATE broardnew SET title=?,content=?,image_link=?,author=? WHERE broadnew_id="+bn.getBroadNew_id();
 		try {
 			PreparedStatement ps = conn.prepareStatement(sql);
 			ps.setString(1, bn.getTitle());

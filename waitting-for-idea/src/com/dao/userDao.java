@@ -24,14 +24,14 @@ public class userDao {
 			ResultSet rs = ps.executeQuery();
 			while(rs.next()) {
 				int id = rs.getInt("user_id");
-				String name = rs.getString("NAME");
+				String name = rs.getString("first_name");
+				String name2 = rs.getString("last_name");
 				String email = rs.getString("email");
 				String phone = rs.getString("phone");
 				String dob = rs.getString("dob");
-				String address = rs.getString("address");
 				String password = rs.getString("PASSWORD");
 				Date created = rs.getDate("created");
-				us.add(new User(id, name, email, phone, dob, address, password, created));
+				us.add(new User(id, name, name2, email, phone, dob, password, created));
 			}
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
@@ -65,13 +65,13 @@ public class userDao {
 			ResultSet rs = ps.executeQuery();
 			while(rs.next()) {
 				int id = rs.getInt("user_id");
-				String name = rs.getString("NAME");
+				String name = rs.getString("first_name");
+				String name2 = rs.getString("last_name");
 				String phone = rs.getString("phone");
 				String dob = rs.getString("dob");
-				String address = rs.getString("address");
 				String password = rs.getString("PASSWORD");
 				Date created = rs.getDate("created");
-				u = new User(id, name, email, phone, dob, address, password, created);
+				u=new User(id, name, name2, email, phone, dob, password, created);
 			}
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
@@ -82,15 +82,15 @@ public class userDao {
 	}
 	
 	public boolean insertUser(User u) {
-		String sql = "UPDATE INTO users (NAME,email,phone,dob,address,PASSWORD) value (?,?,?,?,?,?)";
+		String sql = "UPDATE INTO users (first_name,last_name,email,phone,dob,PASSWORD) value (?,?,?,?,?,?)";
 		boolean created = false;
 		try {
 			PreparedStatement ps = conn.prepareStatement(sql);
-			ps.setString(1, u.getName());
-			ps.setString(2, u.getEmail());
-			ps.setString(3, u.getPhone());
-			ps.setString(4, u.getDob());
-			ps.setString(5, u.getAddress());
+			ps.setString(1, u.getFirstName());
+			ps.setString(2, u.getLastName());
+			ps.setString(3, u.getEmail());
+			ps.setString(4, u.getPhone());
+			ps.setString(5, u.getDob());
 			ps.setString(6, u.getPassword());
 			created = ps.execute();
 		} catch (SQLException e) {
@@ -101,15 +101,16 @@ public class userDao {
 	}
 	
 	public boolean updateUser(User u) {
-		String sql = "UPDATE users SET (NAME,phone,dob,address,PASSWORD) value (?,?,?,?,?) WHERE email="+u.getEmail();
+		String sql = "UPDATE users SET first_name=?,last_name=?,phone=?,dob=?,PASSWORD=? WHERE email=?";
 		boolean created = false;
 		try {
 			PreparedStatement ps = conn.prepareStatement(sql);
-			ps.setString(1, u.getName());
-			ps.setString(2, u.getPhone());
-			ps.setString(3, u.getDob());
-			ps.setString(4, u.getAddress());
+			ps.setString(1, u.getFirstName());
+			ps.setString(2, u.getLastName());
+			ps.setString(3, u.getPhone());
+			ps.setString(4, u.getDob());
 			ps.setString(5, u.getPassword());
+			ps.setString(6, u.getEmail());
 			created = ps.execute();
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block

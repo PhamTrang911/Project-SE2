@@ -32,6 +32,23 @@ private Connection conn;
 		return r;
 	}
 	
+	public ArrayList<Review> listReview(int pId){
+		ArrayList<Review> r = new ArrayList<Review>();
+		String sql = "SELECT * FROM review WHERE product_id="+pId;
+		try {
+			PreparedStatement ps = conn.prepareStatement(sql);
+			ResultSet rs = ps.executeQuery();
+			while(rs.next()) {
+				r.add(new Review(rs.getInt(1), rs.getInt(2), rs.getString(3), rs.getString(4), rs.getString(5), rs.getDate(6)));
+			}
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		return r;
+	}
+	
 	public Review getOneById(int id) {
 		String sql = "SELECT * FROM review WHERE review_id="+id;
 		Review r = null;

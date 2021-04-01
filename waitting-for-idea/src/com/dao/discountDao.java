@@ -42,7 +42,7 @@ public class discountDao {
 	
 	public Discount getById(int id) {
 		Discount discount = null;
-		String sql = "SELECT * FROM discount WHERE id="+id;
+		String sql = "SELECT * FROM discount WHERE discount_id="+id;
 		PreparedStatement ps;
 		ResultSet rs;
 		try {
@@ -78,8 +78,8 @@ public class discountDao {
 		return false;
 	}
 	
-	public boolean update(Discount d) {
-		String sql = "UPDATE discount SET (name,description,minPayment,percentage) value (?,?,?,?) WHER discount_id="+d.getDiscount_id();
+	public boolean update(int id,Discount d) {
+		String sql = "UPDATE discount SET NAME=?,description=?,minPayment=?,percentage=? WHERE discount_id="+id;
 		try {
 			PreparedStatement ps = conn.prepareStatement(sql);
 			ps.setString(1, d.getName());

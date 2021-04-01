@@ -213,7 +213,7 @@ public class adminServlet extends HttpServlet{
 	}
 	
 	private void listOrdered(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		request.setAttribute("lsitOrdered", od.listOrder());
+		request.setAttribute("listOrdered", od.listOrder());
 		request.getRequestDispatcher("/View/admin/show-order.jsp").forward(request, response);;
 	}
 
@@ -244,7 +244,7 @@ public class adminServlet extends HttpServlet{
 
 	private void showListReview(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		request.setAttribute("reviewlist", rd.listReview());
-		request.getRequestDispatcher("/View/admin/show-review").forward(request, response);	
+		request.getRequestDispatcher("/View/admin/show-review.jsp").forward(request, response);	
 	}
 
 	private void addDiscount(HttpServletRequest request, HttpServletResponse response) throws IOException {
@@ -270,7 +270,8 @@ public class adminServlet extends HttpServlet{
 	}
 	
 	private void updateDis(HttpServletRequest request, HttpServletResponse response) throws IOException {
-		dd.update(new Discount(request.getParameter("name"), request.getParameter("des"), Float.parseFloat(request.getParameter("min")), Float.parseFloat(request.getParameter("percent"))));
+		Discount d = new Discount(request.getParameter("name"), request.getParameter("des"), Float.parseFloat(request.getParameter("min")), Float.parseFloat(request.getParameter("percent")));
+		dd.update(Integer.parseInt(request.getParameter("id")),d);
 		response.sendRedirect(request.getContextPath()+"/adminitration/listDiscount");
 	}
 	
@@ -287,11 +288,11 @@ public class adminServlet extends HttpServlet{
 	
 	private void userEditForm(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		request.setAttribute("user", ud.getUserByEmail(request.getParameter("user-email")));
-		request.getRequestDispatcher("/View/admin/user.jsp").forward(request, response);
+		request.getRequestDispatcher("/View/admin/edituser.jsp").forward(request, response);
 	}
 	
 	private void userEdit(HttpServletRequest request, HttpServletResponse response) throws IOException {
-		ud.updateUser(new User(request.getParameter("user-name"),request.getParameter("user-email"),request.getParameter("user-phone"),request.getParameter("user-dob"),request.getParameter("user-address"),request.getParameter("user-password")));
+		ud.updateUser(new User(request.getParameter("firstName"),request.getParameter("lastName"),request.getParameter("user-email"),request.getParameter("user-phone"),request.getParameter("user-dob"),request.getParameter("user-password")));
 		response.sendRedirect(request.getContextPath()+"/adminitration/listUser");
 	}
 	
@@ -335,7 +336,7 @@ public class adminServlet extends HttpServlet{
 	private void addBroadnew(HttpServletRequest request, HttpServletResponse response) throws IOException {
 		BroadNew bn = new BroadNew(request.getParameter("new-title"), request.getParameter("new-content"), request.getParameter("new-link"), request.getParameter("new-author"));
 		bd.insert(bn);
-		response.sendRedirect(request.getContextPath()+"/adminitration/listBroadnew");
+		response.sendRedirect(request.getContextPath()+"/adminitration/listBoardnew");
 	}
 
 	private void showEditBroadnewForm(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -356,14 +357,14 @@ public class adminServlet extends HttpServlet{
 	}
 	
 	private void updateNew(HttpServletRequest request, HttpServletResponse response) throws IOException {
-		BroadNew bn = new BroadNew(request.getParameter("new-title"), request.getParameter("new-content"),request.getParameter("new-image_link"),request.getParameter("new-author"));
+		BroadNew bn = new BroadNew(request.getParameter("new-title"), request.getParameter("new-content"),request.getParameter("new-link"),request.getParameter("new-author"));
 		bd.update(bn);
-		response.sendRedirect(request.getContextPath()+"/adminitration/listBroadnew");
+		response.sendRedirect(request.getContextPath()+"/adminitration/listBoardnew");
 	}
 	
 	private void deleteNew(HttpServletRequest request, HttpServletResponse response) throws IOException {
-		bd.delete(Integer.parseInt(request.getParameter("broadnew-id")));
-		response.sendRedirect(request.getContextPath()+"/adminitration/listBroadnew");
+		bd.delete(Integer.parseInt(request.getParameter("boardnew-id")));
+		response.sendRedirect(request.getContextPath()+"/adminitration/listBoardnew");
 	}
 
 	private void index(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {

@@ -4,11 +4,11 @@ import java.util.Date;
 
 public class User {
 	private int user_id;
-	private String name;
+	private String firstName;
+	private String lastName;
 	private String email;
 	private String phone;
 	private String dob;
-	private String address;
 	private String password;
 	private Date created;
 	public int getUser_id() {
@@ -16,12 +16,6 @@ public class User {
 	}
 	public void setUser_id(int user_id) {
 		this.user_id = user_id;
-	}
-	public String getName() {
-		return name;
-	}
-	public void setName(String name) {
-		this.name = name;
 	}
 	public String getEmail() {
 		return email;
@@ -41,12 +35,6 @@ public class User {
 	public void setDob(String dob) {
 		this.dob = dob;
 	}
-	public String getAddress() {
-		return address;
-	}
-	public void setAddress(String address) {
-		this.address = address;
-	}
 	public String getPassword() {
 		return password;
 	}
@@ -59,25 +47,37 @@ public class User {
 	public void setCreated(Date created) {
 		this.created = created;
 	}
-	public User(int user_id, String name, String email, String phone, String dob, String address, String password,
+	public String getFirstName() {
+		return firstName;
+	}
+	public void setFirstName(String firstName) {
+		this.firstName = firstName;
+	}
+	public String getLastName() {
+		return lastName;
+	}
+	public void setLastName(String lastName) {
+		this.lastName = lastName;
+	}
+	public User(int user_id, String firstName, String lastName, String email, String phone, String dob, String password,
 			Date created) {
 		super();
 		this.user_id = user_id;
-		this.name = name;
+		this.firstName = firstName;
+		this.lastName = lastName;
 		this.email = email;
 		this.phone = phone;
 		this.dob = dob;
-		this.address = address;
 		this.password = password;
 		this.created = created;
 	}
-	public User(String name, String email, String phone, String dob, String address, String password) {
+	public User(String firstName, String lastName, String email, String phone, String dob, String password) {
 		super();
-		this.name = name;
+		this.firstName = firstName;
+		this.lastName = lastName;
 		this.email = email;
 		this.phone = phone;
 		this.dob = dob;
-		this.address = address;
 		this.password = password;
 	}
 }

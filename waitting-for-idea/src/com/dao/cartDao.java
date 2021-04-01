@@ -24,7 +24,7 @@ public class cartDao {
 			ps = conn.prepareStatement(sql);
 			ResultSet rs = ps.executeQuery();
 			while(rs.next()) {
-				cs.add(new Cart(rs.getInt(1), rs.getInt(2), rs.getInt(3), rs.getInt(4), rs.getDate(5)));
+				cs.add(new Cart(rs.getInt(1), rs.getInt(2), rs.getInt(3), rs.getString(4),rs.getFloat(5), rs.getString(6), rs.getInt(7), rs.getDate(8)));
 			}
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
@@ -41,7 +41,7 @@ public class cartDao {
 			ps = conn.prepareStatement(sql);
 			ResultSet rs = ps.executeQuery();
 			while(rs.next()) {
-				cs.add(new Cart(rs.getInt(1), rs.getInt(2), rs.getInt(3), rs.getInt(4), rs.getDate(5)));
+				cs.add(new Cart(rs.getInt(1), rs.getInt(2), rs.getInt(3), rs.getString(4),rs.getFloat(5), rs.getString(6), rs.getInt(7), rs.getDate(8)));
 			}
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
@@ -52,13 +52,16 @@ public class cartDao {
 	
 	public boolean insert(Cart c) {
 		boolean success = false;
-		String sql = "INSERT INTO cart (user_id,product_id,amount) value (?,?,?)";
+		String sql = "INSERT INTO cart (user_id,product_id,product_name,p_price,p_image,quantity) value (?,?,?,?,?,?)";
 		PreparedStatement ps;
 		try {
 			ps = conn.prepareStatement(sql);
 			ps.setInt(1, c.getUser_id());
 			ps.setInt(2, c.getProduct_id());
-			ps.setInt(3, c.getAmount());
+			ps.setString(3, c.getP_name());
+			ps.setFloat(4, c.getP_price());
+			ps.setString(5, c.getP_image());
+			ps.setInt(6, c.getAmount());
 			success = ps.execute();
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
@@ -84,6 +87,20 @@ public class cartDao {
 	public boolean delete(int cart_id) {
 		boolean success = false;
 		String sql = "DELETE FROM cart WHERE cart_id="+cart_id;
+		PreparedStatement ps;
+		try {
+			ps = conn.prepareStatement(sql);
+			success = ps.execute();
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return success;
+	}
+	
+	public boolean clear() {
+		boolean success = false;
+		String sql = "DELETE FROM cart";
 		PreparedStatement ps;
 		try {
 			ps = conn.prepareStatement(sql);

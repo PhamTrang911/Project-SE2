@@ -5,11 +5,9 @@ import java.util.Date;
 public class Order {
 	private int ordered_id;
 	private int user_id;
-	private int product_id;
-	private int amount;
-	private String message;
-	private int discount_id;
+	private String carts;
 	private float totalPayment;
+	private String shipping_address;
 	private String status;
 	private Date created;
 	public int getOrdered_id() {
@@ -24,29 +22,11 @@ public class Order {
 	public void setUser_id(int user_id) {
 		this.user_id = user_id;
 	}
-	public int getProduct_id() {
-		return product_id;
+	public String getCarts() {
+		return carts;
 	}
-	public void setProduct_id(int product_id) {
-		this.product_id = product_id;
-	}
-	public int getAmount() {
-		return amount;
-	}
-	public void setAmount(int amount) {
-		this.amount = amount;
-	}
-	public String getMessage() {
-		return message;
-	}
-	public void setMessage(String message) {
-		this.message = message;
-	}
-	public int getDiscount_id() {
-		return discount_id;
-	}
-	public void setDiscount_id(int discount_id) {
-		this.discount_id = discount_id;
+	public void setCarts(String carts) {
+		this.carts = carts;
 	}
 	public float getTotalPayment() {
 		return totalPayment;
@@ -66,28 +46,29 @@ public class Order {
 	public void setCreated(Date created) {
 		this.created = created;
 	}
-	public Order(int ordered_id, int user_id, int product_id, int amount, String message, int discount_id,
-			float totalPayment, String status, Date created) {
+	public String getShipping_address() {
+		return shipping_address;
+	}
+	public void setShipping_address(String shipping_address) {
+		this.shipping_address = shipping_address;
+	}
+	public Order(int ordered_id, int user_id, String carts, float totalPayment, String shipping_address, String status,
+			Date created) {
 		super();
 		this.ordered_id = ordered_id;
 		this.user_id = user_id;
-		this.product_id = product_id;
-		this.amount = amount;
-		this.message = message;
-		this.discount_id = discount_id;
+		this.carts = carts;
 		this.totalPayment = totalPayment;
+		this.shipping_address = shipping_address;
 		this.status = status;
 		this.created = created;
 	}
-	public Order(int user_id, int product_id, int amount, String message, int discount_id, float totalPayment,
-			String status) {
+	public Order(int user_id, String carts, float totalPayment, String shipping_address, String status) {
 		super();
 		this.user_id = user_id;
-		this.product_id = product_id;
-		this.amount = amount;
-		this.message = message;
-		this.discount_id = discount_id;
+		this.carts = carts;
 		this.totalPayment = totalPayment;
+		this.shipping_address = shipping_address;
 		this.status = status;
 	}
 	

@@ -66,7 +66,7 @@ public class signupServlet extends HttpServlet{
 			request.getRequestDispatcher("View/user/login.jsp").forward(request, response);
 			return;
 		}else {
-			response.sendRedirect(request.getContextPath()+"/login");
+			response.sendRedirect(request.getContextPath()+"/login/signup");
 		}
 		
 	}

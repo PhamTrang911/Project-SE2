@@ -2,7 +2,7 @@ package com.model;
 
 import java.util.Date;
 
-public class Product {
+public class Product implements Comparable<Product>{
 	private int product_id;
 	private int catalog_id;
 	private String name;
@@ -90,6 +90,10 @@ public class Product {
 	}
 	public void setDiscount(float discount) {
 		this.discount = discount;
+	}
+	@Override
+	public int compareTo(Product o) {
+		return this.name.compareToIgnoreCase(o.getName());
 	}
 	
 }

@@ -23,7 +23,7 @@ public class orderedDao {
 			PreparedStatement ps = conn.prepareStatement(sql);
 			ResultSet rs = ps.executeQuery();
 			while(rs.next()) {
-				r.add(new Order(rs.getInt(1), rs.getInt(2), rs.getInt(3), rs.getInt(4), rs.getString(5), rs.getInt(6), rs.getFloat(7), rs.getString(8), rs.getDate(9)));
+				r.add(new Order(rs.getInt(1), rs.getInt(2), rs.getString(3), rs.getInt(4), rs.getString(5), rs.getString(6), rs.getDate(7)));
 			}
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
@@ -40,7 +40,7 @@ public class orderedDao {
 			PreparedStatement ps = conn.prepareStatement(sql);
 			ResultSet rs = ps.executeQuery();
 			while(rs.next()) {
-				r = new Order(rs.getInt(1), rs.getInt(2), rs.getInt(3), rs.getInt(4), rs.getString(5), rs.getInt(6), rs.getFloat(7), rs.getString(8), rs.getDate(9));
+				r = new Order(rs.getInt(1), rs.getInt(2), rs.getString(3), rs.getInt(4), rs.getString(5), rs.getString(6), rs.getDate(7));
 			}
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -49,16 +49,14 @@ public class orderedDao {
 	}
 	
 	public boolean insert(Order r) {
-		String sql = "INSERT INTO ordered (user_id,product_id,amount,message,discount_id,total_payment,STATUS) value (?,?,?,?,?,?,?)";
+		String sql = "INSERT INTO ordered (user_id,cart_ids,total_payment,shipping_address,STATUS) value (?,?,?,?,?)";
 		try {
 			PreparedStatement ps = conn.prepareStatement(sql);
 			ps.setInt(1, r.getUser_id());
-			ps.setInt(2, r.getProduct_id());
-			ps.setInt(3, r.getAmount());
-			ps.setString(4, r.getMessage());
-			ps.setInt(5, r.getDiscount_id());
-			ps.setFloat(6, r.getTotalPayment());
-			ps.setString(7, r.getStatus());
+			ps.setString(2, r.getCarts());
+			ps.setFloat(3, r.getTotalPayment());
+			ps.setString(4, r.getShipping_address());
+			ps.setString(5, r.getStatus());
 			return ps.execute();
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -67,16 +65,14 @@ public class orderedDao {
 	}
 	
 	public boolean update(Order r) {
-		String sql = "UPDATE ordered SET (user_id,product_id,amount,message,discount_id,total_payment,STATUS) value (?,?,?,?,?,?,?) WHERE ordered_id="+r.getOrdered_id();
+		String sql = "UPDATE ordered SET (user_id,cart_ids,total_payment,shipping_address,STATUS) value (?,?,?,?,?) WHERE ordered_id="+r.getOrdered_id();
 		try {
 			PreparedStatement ps = conn.prepareStatement(sql);
 			ps.setInt(1, r.getUser_id());
-			ps.setInt(2, r.getProduct_id());
-			ps.setInt(3, r.getAmount());
-			ps.setString(4, r.getMessage());
-			ps.setInt(5, r.getDiscount_id());
-			ps.setFloat(6, r.getTotalPayment());
-			ps.setString(7, r.getStatus());
+			ps.setString(2, r.getCarts());
+			ps.setFloat(3, r.getTotalPayment());
+			ps.setString(4, r.getShipping_address());
+			ps.setString(5, r.getStatus());
 			return ps.execute();
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -96,7 +92,7 @@ public class orderedDao {
 	}
 	
 	public void approveReject(int id, String s) {
-		String sql = "UPDATE ordered SET (STATUS) value (?) WHERE ordered_id="+id;
+		String sql = "UPDATE ordered SET (STATUS) =\""+s+"\" WHERE ordered_id="+id;
 		try {
 			PreparedStatement ps = conn.prepareStatement(sql);
 			ps.setString(1, s);

@@ -54,4 +54,12 @@ public class Review {
 		this.content = content;
 		this.created = created;
 	}
+	public Review(int product_id, String name, String email, String content) {
+		super();
+		this.product_id = product_id;
+		this.name = name;
+		this.email = email;
+		this.content = content;
+	}
+
 }
