@@ -228,11 +228,11 @@ input {
         <div class="form-container sign-up-container">
             <form action="${pageContext.request.contextPath}/login/signup">
                 <h1>Create Account</h1>
-                <input type="text" placeholder="Name" name="name" required="required"/>
+                <input type="text" placeholder="FirstName" name="first_name" required="required"/>
+                <input type="text" placeholder="LastName" name="last_name" required="required"/>
                 <input type="text" placeholder="Email" name="email" required="required"/>
                 <input type="number" placeholder="Phone number" name="phone" required="required"/>
-                <input type="text" placeholder="Date of Birth" name="dob" required="required"/>
-                <input type="text" placeholder="Address" name="address" />
+                <input type="date" placeholder="yy-mm-dd" name="dob" required="required"/>
                 <input type="password" placeholder="Password" name="password" required="required"/>
                 <button>Sign Up</button>
             </form>

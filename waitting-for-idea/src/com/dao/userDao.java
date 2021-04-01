@@ -82,7 +82,7 @@ public class userDao {
 	}
 	
 	public boolean insertUser(User u) {
-		String sql = "UPDATE INTO users (first_name,last_name,email,phone,dob,PASSWORD) value (?,?,?,?,?,?)";
+		String sql = "INSERT INTO users (first_name,last_name,email,phone,dob,PASSWORD) value (?,?,?,?,?,?)";
 		boolean created = false;
 		try {
 			PreparedStatement ps = conn.prepareStatement(sql);

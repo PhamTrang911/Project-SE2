@@ -17,33 +17,29 @@
 
 							<div class="form-group">
 								<label for="input-1">Name</label> <input type="text"
-									class="form-control" id="input-2" "Họ tên" value="${user.firstName}"
+									class="form-control" id="input-2" value="${user.firstName}"
 									name="firstName" required>
 							</div>
 							<div class="form-group">
 								<label for="input-1">Name</label> <input type="text"
-									class="form-control" id="input-2" "Họ tên" value="${user.lastName}"
+									class="form-control" id="input-2" value="${user.lastName}"
 									name=lastName required>
 							</div>
 							<div class="form-group">
 								<label for="input-2">Email</label> <input type="text"
-									class="form-control" id="input-3" "Địa chỉ
-									Email" readonly="readonly" value="${user.email}" name="user-email">
+									class="form-control" id="input-3" readonly="readonly" value="${user.email}" name="user-email">
 							</div>
 							<div class="form-group">
 								<label for="input-3">Phone</label> <input type="text"
-									class="form-control" id="input-4" "Số điện
-									thoại" value="${user.phone}" name="user-phone" required>
+									class="form-control" id="input-4" value="${user.phone}" name="user-phone" required>
 							</div>
 							<div class="form-group">
 								<label for="input-3">Date of Birth</label> <input type="text"
-									class="form-control" id="input-5"
-									"Username" value="${user.dob}" name="user-dob" required>
+									class="form-control" id="input-5" value="${user.dob}" name="user-dob" required>
 							</div>
 							<div class="form-group">
 								<label for="input-4">Password</label> <input type="password"
-									class="form-control" id="myinput" "Mật
-									khẩu" value="${user.password}" name="user-password"> <input
+									class="form-control" id="myinput" value="${user.password}" name="user-password"> <input
 									type="checkbox" onclick="myFunction1()">Show password
 								<script>
 									function myFunction1() {

@@ -29,20 +29,21 @@ public class signupServlet extends HttpServlet{
 		req.setCharacterEncoding("utf-8");
 		
 		String action = req.getPathInfo();
-		
 		if(action == null) {
-			showSignin(req, resp);
 		}else{
 			switch (action) {
+			case "/form":
+				showSignin(req, resp);
+				break;
 			case "/signup":
 				submitInfo(req, resp);
+				break;
 			case "/signin":
 				signIn(req, resp);
 			default:
 				break;
 			}
 		}
-		return;
 	}
 
 	@Override
@@ -56,19 +57,15 @@ public class signupServlet extends HttpServlet{
 	}
 	
 	private void showSignin(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		request.getRequestDispatcher("signup.jsp").forward(request, response);;
+		request.getRequestDispatcher("/signup.jsp").forward(request, response);
 		return;
 	}
 	
 	private void submitInfo(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		User u = new User(request.getParameter("name"),request.getParameter("phone"),request.getParameter("dob"),request.getParameter("email"),request.getParameter("address"),request.getParameter("password"));
-		if(ud.insertUser(u)) {
-			request.getRequestDispatcher("View/user/login.jsp").forward(request, response);
-			return;
-		}else {
-			response.sendRedirect(request.getContextPath()+"/login/signup");
-		}
-		
+		User u = new User(request.getParameter("first_name"),request.getParameter("last_name"),request.getParameter("phone"),request.getParameter("dob"),request.getParameter("email"),request.getParameter("password"));
+		ud.insertUser(u);
+		response.sendRedirect(request.getContextPath()+"/login/form");
+		return;
 	}
 	
 	private void signIn(HttpServletRequest req, HttpServletResponse resp) throws IOException, ServletException {
@@ -80,7 +77,7 @@ public class signupServlet extends HttpServlet{
 			resp.sendRedirect(req.getContextPath()+"/user");
 			return;
 		}else {
-			resp.sendRedirect(req.getContextPath()+"/login");
+			resp.sendRedirect(req.getContextPath()+"/login/form");
 		}
 	}
 }

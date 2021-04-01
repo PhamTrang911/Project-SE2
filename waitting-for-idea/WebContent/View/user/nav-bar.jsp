@@ -85,7 +85,7 @@
                 <!-- Start Atribute Navigation -->
                 <div class="login-box">
                 <% if(session.getAttribute("user_email")==null){ %>
-						<a href="${pageContext.request.contextPath}/login" id="basic">Login</a>
+						<a href="${pageContext.request.contextPath}/login/form" id="basic">Login</a>
 						<%}%>
 						
 				</div>
