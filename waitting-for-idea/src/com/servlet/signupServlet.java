@@ -30,11 +30,9 @@ public class signupServlet extends HttpServlet{
 		
 		String action = req.getPathInfo();
 		if(action == null) {
+			showSignin(req, resp);
 		}else{
 			switch (action) {
-			case "/form":
-				showSignin(req, resp);
-				break;
 			case "/signup":
 				submitInfo(req, resp);
 				break;
@@ -64,7 +62,7 @@ public class signupServlet extends HttpServlet{
 	private void submitInfo(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		User u = new User(request.getParameter("first_name"),request.getParameter("last_name"),request.getParameter("phone"),request.getParameter("dob"),request.getParameter("email"),request.getParameter("password"));
 		ud.insertUser(u);
-		response.sendRedirect(request.getContextPath()+"/login/form");
+		response.sendRedirect(request.getContextPath()+"/login");
 		return;
 	}
 	
@@ -77,7 +75,7 @@ public class signupServlet extends HttpServlet{
 			resp.sendRedirect(req.getContextPath()+"/user");
 			return;
 		}else {
-			resp.sendRedirect(req.getContextPath()+"/login/form");
+			resp.sendRedirect(req.getContextPath()+"/login");
 		}
 	}
 }
