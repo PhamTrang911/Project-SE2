@@ -17,7 +17,6 @@
                         
                         <th scope="col">Name</th>
                         <th scope="col">Email</th>
-                        <th scope="col">Id</th>
                         <th scope="col">Product</th>
                         <th scope="col">Content</th>
                         <th scope="col">Date</th>
@@ -31,11 +30,10 @@
                         <td>${review.name}</td>
         				<td>${review.email}</td>
         				<td>${review.product_id}</td>
-        				<td>${review.product_name}</td>
         				<td>${review.content}</td>
         				<td>${review.created}</td>
         				 <td>
-                         <button class="btn btn-danger"><a href="${pageContext.request.contextPath}/adminitration/reviewdelete?id=${review.id}">Remove</a></button>
+                         <button class="btn btn-danger"><a href="${pageContext.request.contextPath}/adminitration/reviewdelete?id=${review.review_id}">Remove</a></button>
                         </td>
                      </tr>
                     </c:forEach>

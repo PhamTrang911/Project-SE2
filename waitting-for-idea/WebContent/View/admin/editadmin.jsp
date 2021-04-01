@@ -19,12 +19,12 @@
 							<div class="form-group">
 								<label for="input-1">Username</label> <input type="text"
 									class="form-control" id="input-1" placeholder="Username"
-									name="username" value="${admin.username}">
+									name="username" value="${admin.username}" required>
 							</div>
 							<div class="form-group">
 								<label for="input-1">Password</label> <input type="password"
 									class="form-control" id="myinput" name="password"
-									value="${admin.password}"> <input type="checkbox"
+									value="${admin.password}" required> <input type="checkbox"
 									onclick="myFunction1()">Show password
 								<script>
 									function myFunction1() {

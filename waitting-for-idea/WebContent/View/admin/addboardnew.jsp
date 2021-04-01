@@ -16,17 +16,17 @@
 							<div class="form-group">
 								<label for="input-2">Title</label> <input type="text"
 									class="form-control" id="input-2" placeholder="News"
-									name="new-title">
+									name="new-title" required>
 							</div>
 							<div class="form-group">
 								<label for="input-3">Content</label>
 								<textarea class="form-control" rows="4" id="input-17"
-									name="new-content"></textarea>
+									name="new-content"  required></textarea>
 							</div>
 							<div class="form-group">
 								<label for="input-3">Image Link</label>
 								<textarea class="form-control" rows="1" id="input-17"
-									name="new-link"></textarea>
+									name="new-link"  required></textarea>
 							</div>
 
 							<div class="form-group">
@@ -42,10 +42,7 @@
 							</div>
 
 							<div class="form-footer">
-
-								<button class="btn btn-danger">
-									<i class="fa fa-times"></i><a href="${pageContext.request.contextPath}/adminitration/listBoardnew">Cancel</a>
-								</button>
+								<a class="btn btn-danger"href="${pageContext.request.contextPath}/adminitration/listBoardnew"><i class="fa fa-times"></i>Cancel</a>
 								<button type="submit" class="btn btn-success">
 									<i class="fa fa-check-square-o"></i>Add
 								</button>

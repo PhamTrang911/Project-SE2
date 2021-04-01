@@ -63,10 +63,6 @@
             <div class="row">
                 <div class="col-lg-12">
                     <h2>Shop</h2>
-                    <ul class="breadcrumb">
-                        <li class="breadcrumb-item"><a href="#">Home</a></li>
-                        <li class="breadcrumb-item active">Shop</li>
-                    </ul>
                 </div>
             </div>
         </div>
@@ -332,7 +328,7 @@
                             <h4>Contact Us</h4>
                             <ul>
                                 <li>
-                                    <p><i class="fas fa-map-marker-alt"></i>Address: Michael I. Days 3756 <br>Preston Street Wichita,<br> KS 67213 </p>
+                                    <p><i class="fas fa-map-marker-alt"></i>Address: Km9 Nguyen Trai Street <br>Thanh Xuan<br>Ha Noi </p>
                                 </li>
                                 <li>
                                     <p><i class="fas fa-phone-square"></i>Phone: <a href="tel:+1-888705770">+1-888 705 770</a></p>
@@ -357,9 +353,17 @@ if(null!=<%=request.getAttribute("index")%>){
 	document.getElementById("c").value = <%=request.getAttribute("index")%>;
 }
 function filter(value){
-	window.location = "http://localhost:8080/waitting-for-idea/product/"+value;
+	window.location = "https://laleaf.herokuapp.com/product/"+value;
 }
 </script>
+
+<c:if test="${not empty add}">
+    <script>
+    window.addEventListener("load",function(){
+         alert("${add}");
+    }
+    </script>
+    </c:if>
     <!-- ALL JS FILES -->
     <script src="${url}/js/jquery-3.2.1.min.js"></script>
     <script src="${url}/js/popper.min.js"></script>

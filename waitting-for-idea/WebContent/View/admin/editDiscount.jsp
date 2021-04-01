@@ -9,30 +9,31 @@
 			<div class="col-lg-8">
 				<div class="card">
 					<div class="card-body">
-						<div class="card-title">Edit Topic</div>
+						<div class="card-title">Edit Discount</div>
 						<hr>
 
-						<form action="${pageContext.request.contextPath}/admin/discountedit"
+						<form action="${pageContext.request.contextPath}/adminitration/discountedit"
 							method="post">
+							<input hidden name="id" value="${dis.discount_id}">
 							<div class="form-group">
 								<label for="input-1">Name </label> <input type="text"
 									class="form-control" id="input-1" name="name"
-									value="${dis.name }">
+									value="${dis.name}" required>
 							</div>
 							<div class="form-group">
 								<label for="input-1">Description </label> <input type="text"
 									class="form-control" id="input-1" name="des"
-									value="${des.description }">
+									value="${dis.description}" required>
 							</div>
 							<div class="form-group">
 								<label for="input-1">Min Payment </label> <input type="number"
 									class="form-control" id="input-1" name="min"
-									value="${des.minPayment }">
+									value="${dis.minPayment}" required>
 							</div>
 							<div class="form-group">
 								<label for="input-1">Percentage </label> <input type="number"
 									class="form-control" id="input-1" name="percent"
-									value="${des.percentage }">
+									value="${dis.percentage}" required>
 							</div>
 							<div class="form-footer">
 									<a class="btn btn-danger" href="${pageContext.request.contextPath}/adminitration/listDiscount">Cancel</a>

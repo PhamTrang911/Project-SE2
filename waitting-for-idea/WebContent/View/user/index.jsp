@@ -37,6 +37,11 @@
       <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
       <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
+    <style type="text/css">
+    .hovers{
+    	color: green;
+    }
+    	</style>
 </head>
 
 <body>
@@ -97,19 +102,19 @@
                 <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
                     <div class="shop-cat-box">
                         <img class="img-fluid" src="${url}/images/laleaf_categories.jpg" alt="" />
-                        <a class="btn hvr-hover" href="#">Shop Now</a>
+                        <a class="btn hvr-hover" href="${pageContext.request.contextPath}/product">Shop Now</a>
                     </div>
                 </div>
                 <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
                     <div class="shop-cat-box">
                         <img class="img-fluid" src="${url}/images/laleaf_categories2.jpg" alt="" />
-                        <a class="btn hvr-hover" href="#">Shop Now</a>
+                        <a class="btn hvr-hover" href="${pageContext.request.contextPath}/product">Shop Now</a>
                     </div>
                 </div>
                 <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
                     <div class="shop-cat-box">
                         <img class="img-fluid" src="${url}/images/laleaf_categories3.jpg" alt="" />
-                        <a class="btn hvr-hover" href="#">Shop Now</a>
+                        <a class="btn hvr-hover" href="${pageContext.request.contextPath}/product">Shop Now</a>
                     </div>
                 </div>
             </div>
@@ -122,137 +127,17 @@
 			<div class="row">
 				<div class="col-lg-6 col-md-6 col-sm-12">
 					<div class="offer-box-products">
-						<a class="navbar-brand" href="shop.html"> <img class="img-fluid" src="${url}/images/add-img-01.png" alt="" style ="width:212px;height:212px;"/></a>
+						<a class="navbar-brand" href="${pageContext.request.contextPath}/product"> <img class="img-fluid" src="${url}/images/add-img-01.png" alt="" style ="width:212px;height:212px;"/></a>
 					</div>
 				</div>
 				<div class="col-lg-6 col-md-6 col-sm-12">
 					<div class="offer-box-products">
-						<a class="navbar-brand" href="shop.html"> <img class="img-fluid" src="${url}/images/add-img-02.png" alt="" style ="width:212px;height:212px;"/></a>
+						<a class="navbar-brand" href="${pageContext.request.contextPath}/product"> <img class="img-fluid" src="${url}/images/add-img-02.png" alt="" style ="width:212px;height:212px;"/></a>
 					</div>
 				</div>
 			</div>
 		</div>
 	</div>
-
-    <!-- Start Products  -->
-    <div class="products-box">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12">
-                    <div class="title-all text-center">
-                        <h1>Plants</h1>
-                        <p>Invite a Friend, Take $10 Off</p>
-                    </div>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-lg-12">
-                    <div class="special-menu text-center">
-                        <div class="button-group filter-button-group">
-                            <button class="active" data-filter="*">All</button>
-                            <button data-filter=".top-featured">Top featured</button>
-                            <button data-filter=".best-seller">Best seller</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="row special-list">
-                <div class="col-lg-3 col-md-6 special-grid best-seller">
-                    <div class="products-single fix">
-                        <div class="box-img-hover">
-                            <div class="type-lb">
-                                <p class="sale">Sale</p>
-                            </div>
-                            <img src="${url}/images/laleaf.jpg" class="img-fluid" alt="Image">
-                            <div class="mask-icon">
-                                <ul>
-                                    <li><a href="#" data-toggle="tooltip" data-placement="right" title="View"><i class="fas fa-eye"></i></a></li>
-                                    <li><a href="#" data-toggle="tooltip" data-placement="right" title="Compare"><i class="fas fa-sync-alt"></i></a></li>
-                                    <li><a href="#" data-toggle="tooltip" data-placement="right" title="Add to Wishlist"><i class="far fa-heart"></i></a></li>
-                                </ul>
-                                <a class="cart" href="#">Add to Cart</a>
-                            </div>
-                        </div>
-                        <div class="why-text">
-                            <h4>Faux String of Pearls</h4>
-                            <h5> $65</h5>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-lg-3 col-md-6 special-grid top-featured">
-                    <div class="products-single fix">
-                        <div class="box-img-hover">
-                            <div class="type-lb">
-                                <p class="new">New</p>
-                            </div>
-                            <img src="${url}/images/laleaf2.jpg" class="img-fluid" alt="Image">
-                            <div class="mask-icon">
-                                <ul>
-                                    <li><a href="#" data-toggle="tooltip" data-placement="right" title="View"><i class="fas fa-eye"></i></a></li>
-                                    <li><a href="#" data-toggle="tooltip" data-placement="right" title="Compare"><i class="fas fa-sync-alt"></i></a></li>
-                                    <li><a href="#" data-toggle="tooltip" data-placement="right" title="Add to Wishlist"><i class="far fa-heart"></i></a></li>
-                                </ul>
-                                <a class="cart" href="#">Add to Cart</a>
-                            </div>
-                        </div>
-                        <div class="why-text">
-                            <h4>Faux Orchid Phalaenopsis </h4>
-                            <h5> $75</h5>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-lg-3 col-md-6 special-grid top-featured">
-                    <div class="products-single fix">
-                        <div class="box-img-hover">
-                            <div class="type-lb">
-                                <p class="sale">Sale</p>
-                            </div>
-                            <img src="${url}/images/laleaf3.jpg" class="img-fluid" alt="Image">
-                            <div class="mask-icon">
-                                <ul>
-                                    <li><a href="#" data-toggle="tooltip" data-placement="right" title="View"><i class="fas fa-eye"></i></a></li>
-                                    <li><a href="#" data-toggle="tooltip" data-placement="right" title="Compare"><i class="fas fa-sync-alt"></i></a></li>
-                                    <li><a href="#" data-toggle="tooltip" data-placement="right" title="Add to Wishlist"><i class="far fa-heart"></i></a></li>
-                                </ul>
-                                <a class="cart" href="#">Add to Cart</a>
-                            </div>
-                        </div>
-                        <div class="why-text">
-                            <h4>Faux Pothos </h4>
-                            <h5> $85</h5>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-lg-3 col-md-6 special-grid best-seller">
-                    <div class="products-single fix">
-                        <div class="box-img-hover">
-                            <div class="type-lb">
-                                <p class="sale">Sale</p>
-                            </div>
-                            <img src="${url}/images/laleaf4.jpg" class="img-fluid" alt="Image">
-                            <div class="mask-icon">
-                                <ul>
-                                    <li><a href="#" data-toggle="tooltip" data-placement="right" title="View"><i class="fas fa-eye"></i></a></li>
-                                    <li><a href="#" data-toggle="tooltip" data-placement="right" title="Compare"><i class="fas fa-sync-alt"></i></a></li>
-                                    <li><a href="#" data-toggle="tooltip" data-placement="right" title="Add to Wishlist"><i class="far fa-heart"></i></a></li>
-                                </ul>
-                                <a class="cart" href="#">Add to Cart</a>
-                            </div>
-                        </div>
-                        <div class="why-text">
-                            <h4>Pink Anthurium </h4>
-                            <h5> $68</h5>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- End Products  -->
 
     <!-- Start Blog  -->
     <div class="latest-blog">
@@ -266,61 +151,25 @@
                 </div>
             </div>
             <div class="row">
-                <div class="col-md-6 col-lg-4 col-xl-4">
+                <c:forEach items="${blogs}" var="blog">
+                	<div class="col-md-6 col-lg-4 col-xl-4">
                     <div class="blog-box">
                         <div class="blog-img">
-                            <img class="img-fluid" src="${url}/images/laleaf_blog.jpg" alt="" />
+                            <img class="img-fluid" style="height:300px" src="${blog.image_link}" alt="" />
                         </div>
                         <div class="blog-content">
                             <div class="title-blog">
-                                <h3>The Biggest Plant Trends Coming in 2021 </h3>
-                                <p>New year, new plants. We’re rounding up our predictions for the biggest plant trends you can expect for the new year.  In 2020, we added so many p...</p>
+                                <a class="h3 hovers" style="text-decoration:none;" href="${pageContext.request.contextPath}/blog/view?id=${blog.broadNew_id}">${blog.title}</a>
                             </div>
-                            <ul class="option-blog">
-                                <li><a href="#"><i class="far fa-heart"></i></a></li>
-                                <li><a href="#"><i class="fas fa-eye"></i></a></li>
-                                <li><a href="#"><i class="far fa-comments"></i></a></li>
-                            </ul>
                         </div>
                     </div>
                 </div>
-                <div class="col-md-6 col-lg-4 col-xl-4">
-                    <div class="blog-box">
-                        <div class="blog-img">
-                            <img class="img-fluid" src="${url}/images/laleaf_blog2.jpg" alt="" />
-                        </div>
-                        <div class="blog-content">
-                            <div class="title-blog">
-                                <h3>Best Time to Water Your Plants</h3>
-                                <p>When watering your houseplants, keep in mind the time of day. The best time to water indoor plants is during the morning hours, before the sunshine...</p>
-                                <br>
-                                <br>
-                            </div>
-                            <ul class="option-blog">
-                                <li><a href="#"><i class="far fa-heart"></i></a></li>
-                                <li><a href="#"><i class="fas fa-eye"></i></a></li>
-                                <li><a href="#"><i class="far fa-comments"></i></a></li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-6 col-lg-4 col-xl-4">
-                    <div class="blog-box">
-                        <div class="blog-img">
-                            <img class="img-fluid" src="${url}/images/laleaf_blog3.jpg" alt="" />
-                        </div>
-                        <div class="blog-content">
-                            <div class="title-blog">
-                                <h3>The Best Plant to Send to Your Best Friend </h3>
-                                <p>“I love a plant with a story. Anything that has special meaning behind it to gift to a friend?” Kat, Portland</p>
-                                <br>
-                            </div>
-                            <ul class="option-blog">
-                                <li><a href="#"><i class="far fa-heart"></i></a></li>
-                                <li><a href="#"><i class="fas fa-eye"></i></a></li>
-                                <li><a href="#"><i class="far fa-comments"></i></a></li>
-                            </ul>
-                        </div>
+                </c:forEach>
+            </div>
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="title-all text-center">
+                        <a class="btn btn-success" href="${pageContext.request.contextPath}/blog/all">View All Blogs</a>
                     </div>
                 </div>
             </div>
@@ -465,7 +314,7 @@
                             <h4>Contact Us</h4>
                             <ul>
                                 <li>
-                                    <p><i class="fas fa-map-marker-alt"></i>Address: Michael I. Days 3756 <br>Preston Street Wichita,<br> KS 67213 </p>
+                                    <p><i class="fas fa-map-marker-alt"></i>Address: Km9 Nguyen Trai Street <br>Thanh Xuan<br>Ha Noi </p>
                                 </li>
                                 <li>
                                     <p><i class="fas fa-phone-square"></i>Phone: <a href="tel:+1-888705770">+1-888 705 770</a></p>

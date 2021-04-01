@@ -38,15 +38,20 @@
       <script src="https://oss.maxcdn.com/libs/respond.${url}/js/1.4.2/respond.min.js"></script>
     <![endif]-->
 <style type="text/css">
-#show{
-	height: 300px;
-	width: 250px;
+.w1{
+	width:10%;
+}
+.w3{
+	width:30%;
+}
+.w5{
+	width:50%;
 }
 </style>
 </head>
 
 <body>
-     <jsp:include page="nav-bar.jsp"></jsp:include>
+  <jsp:include page="nav-bar.jsp"></jsp:include>
    
 
     <!-- Start All Title Box -->
@@ -54,111 +59,127 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-12">
-                    <h2>Services</h2>
-                    <ul class="breadcrumb">
-                        <li class="breadcrumb-item"><a href="#">Home</a></li>
-                        <li class="breadcrumb-item active">Services</li>
-                    </ul>
+                    <h2>Order History</h2>
                 </div>
             </div>
         </div>
     </div>
     <!-- End All Title Box -->
 
-    <!-- Start Gallery  -->
-    <div class="products-box">
+    <!-- Start Wishlist  -->
+    <div class="wishlist-box-main">
         <div class="container">
             <div class="row">
                 <div class="col-lg-12">
-                    <div class="title-all text-center">
-                        <h1>Our Gallery</h1>
-                        <p>Best-seller of this month.</p>
+                    <div class="table-main table-responsive">
+                       		 <table class="table">
+                            <thead>
+                                <tr>
+                                    <th class="w3">Product Names</th>
+                                    <th class="w1">Total Cost</th>
+                                    <th class="w5">Shipping Address</th>
+                                    <th class="w1">Status</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                       			<c:forEach items="${ordered}" var="order">
+                            	<tr>
+                                    <td class="w3">${order.carts}</td>
+                                    <td class="w1">${order.totalPayment}$</td>
+                                    <td class="w5">${order.shipping_address}</td>
+                                    <td class="w1">${order.status}</td>
+                                   </tr>
+                       			</c:forEach>
+                            </tbody>
+                        </table>
                     </div>
                 </div>
-            </div>
-            <div class="row">
-                <div class="col-lg-12">
-                    <div class="special-menu text-center">
-                        <div class="button-group filter-button-group">
-                            <button class="active" data-filter="*">All</button>
-                            <button data-filter=".1">Plants</button>
-                            <button data-filter=".3">Accessories</button>
-							<button data-filter=".2">Pots</button>
-							<button data-filter=".4">Decoration</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="row special-list">
-                <c:forEach items="${listProduct}" var="product">
-                	<div class="col-lg-3 col-md-6 special-grid ${product.catalog_id}">
-                    <div class="products-single fix">
-                        <div class="box-img-hover">
-                            <img id="show" src="${product.image_link}" class="img-fluid" alt="Image">
-                            <div class="mask-icon">
-                                <a class="cart" href="${pageContext.request.contextPath}/product/single?id=${product.product_id}">View Product</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                </c:forEach>
             </div>
         </div>
     </div>
-    <!-- End Gallery  -->
+    <!-- End Wishlist -->
 
     <!-- Start Instagram Feed  -->
     <div class="instagram-box">
         <div class="main-instagram owl-carousel owl-theme">
             <div class="item">
                 <div class="ins-inner-box">
-                    <img src="${url}/images/laleaf_ins.jpg" alt="" style ="width:248px;height:254px;"/>
+                    <img src="${url}/images/sources/instagram-img-01.jpg" alt="" />
+                    <div class="hov-in">
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                    </div>
                 </div>
             </div>
             <div class="item">
                 <div class="ins-inner-box">
-                    <img src="${url}/images/laleaf_ins1.jpg" alt="" style ="width:248px;height:254px;"/>
+                    <img src="${url}/images/sources/instagram-img-02.jpg" alt="" />
+                    <div class="hov-in">
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                    </div>
                 </div>
             </div>
             <div class="item">
                 <div class="ins-inner-box">
-                    <img src="${url}/images/laleaf_ins2.jpg" alt="" style ="width:248px;height:254px;"/>
+                    <img src="${url}/images/sources/instagram-img-03.jpg" alt="" />
+                    <div class="hov-in">
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                    </div>
                 </div>
             </div>
             <div class="item">
                 <div class="ins-inner-box">
-                    <img src="${url}/images/laleaf_ins3.jpg" alt=""  style ="width:248px;height:254px;"/>
+                    <img src="${url}/images/sources/instagram-img-04.jpg" alt="" />
+                    <div class="hov-in">
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                    </div>
                 </div>
             </div>
             <div class="item">
                 <div class="ins-inner-box">
-                    <img src="${url}/images/laleaf_ins4.jpg" alt="" style ="width:248px;height:254px;"/>
+                    <img src="${url}/images/sources/instagram-img-05.jpg" alt="" />
+                    <div class="hov-in">
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                    </div>
                 </div>
             </div>
             <div class="item">
                 <div class="ins-inner-box">
-                    <img src="${url}/images/laleaf_ins5.jpg" alt="" style ="width:248px;height:254px;"/>
+                    <img src="${url}/images/sources/instagram-img-06.jpg" alt="" />
+                    <div class="hov-in">
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                    </div>
                 </div>
             </div>
             <div class="item">
                 <div class="ins-inner-box">
-                    <img src="${url}/images/laleaf_ins6.jpg" alt="" style ="width:248px;height:254px;"/>
+                    <img src="${url}/images/sources/instagram-img-07.jpg" alt="" />
+                    <div class="hov-in">
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                    </div>
                 </div>
             </div>
             <div class="item">
                 <div class="ins-inner-box">
-                    <img src="${url}/images/laleaf_ins7.jpg" alt="" style ="width:248px;height:254px;"/>
+                    <img src="${url}/images/sources/instagram-img-08.jpg" alt="" />
+                    <div class="hov-in">
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                    </div>
                 </div>
             </div>
             <div class="item">
                 <div class="ins-inner-box">
-                    <img src="${url}/images/laleaf_ins8.jpg" alt="" style ="width:248px;height:254px;"/>
+                    <img src="${url}/images/sources/instagram-img-09.jpg" alt="" />
+                    <div class="hov-in">
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                    </div>
                 </div>
             </div>
             <div class="item">
                 <div class="ins-inner-box">
-                    <img src="${url}/images/laleaf_ins4.jpg" alt="" style ="width:248px;height:254px;"/>
+                    <img src="${url}/images/sources/instagram-img-05.jpg" alt="" />
+                    <div class="hov-in">
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                    </div>
                 </div>
             </div>
         </div>
@@ -194,7 +215,7 @@
 					<div class="col-lg-4 col-md-12 col-sm-12">
 						<div class="footer-top-box">
 							<h3>Social Media</h3>
-							<p>Follow me</p>
+							<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
 							<ul>
                                 <li><a href="#"><i class="fab fa-facebook" aria-hidden="true"></i></a></li>
                                 <li><a href="#"><i class="fab fa-twitter" aria-hidden="true"></i></a></li>
@@ -211,12 +232,13 @@
                 <div class="row">
                     <div class="col-lg-4 col-md-12 col-sm-12">
                         <div class="footer-widget">
-                            <h4>Covid Precautions</h4>
-                            <p> All customers and employees are required to wear a mask at all times. To encourage social distancing, only 3 customers will be allowed in the store at a time. Hand sanitizer for customers on site. No repotting services or returns allowed, but we are happy to set you with potting materials for home. All sales final during this time. </p> 							
+                            <h4>About Freshshop</h4>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p> 
+							<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p> 							
                         </div>
                     </div>
                     <div class="col-lg-4 col-md-12 col-sm-12">
-                        
+                       
                     </div>
                     <div class="col-lg-4 col-md-12 col-sm-12">
                         <div class="footer-link-contact">
@@ -240,7 +262,7 @@
     </footer>
     <!-- End Footer  -->
 
-   
+
     <a href="#" id="back-to-top" title="Back to top" style="display: none;">&uarr;</a>
 
     <!-- ALL JS FILES -->

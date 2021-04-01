@@ -1,5 +1,5 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%><%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%><%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
     
 <c:url value="/View/user" var="url" />
 <!DOCTYPE html>
@@ -25,88 +25,68 @@
     <link rel="apple-touch-icon" href="${url}/images/apple-touch-icon.png">
 
     <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="${url}/css/bootstrap.min.css">
     <!-- Site CSS -->
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="${url}/css/style.css">
     <!-- Responsive CSS -->
-    <link rel="stylesheet" href="css/responsive.css">
+    <link rel="stylesheet" href="${url}/css/responsive.css">
     <!-- Custom CSS -->
-    <link rel="stylesheet" href="css/custom.css">
+    <link rel="stylesheet" href="${url}/css/custom.css">
 
     <!--[if lt IE 9]>
       <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
       <script src="https://oss.maxcdn.com/libs/respond.${url}/js/1.4.2/respond.min.js"></script>
     <![endif]-->
 <style type="text/css">
-#show{
-	height: 300px;
-	width: 250px;
+    table { border: 0; }
+    table td { padding: 5px; }
+    
+.center{
+	width:30%;
+	margin-left:35%;
+}
+.r{
+	text-align: right;
 }
 </style>
 </head>
-
 <body>
-     <jsp:include page="nav-bar.jsp"></jsp:include>
-   
-
-    <!-- Start All Title Box -->
-    <div class="all-title-box">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12">
-                    <h2>Services</h2>
-                    <ul class="breadcrumb">
-                        <li class="breadcrumb-item"><a href="#">Home</a></li>
-                        <li class="breadcrumb-item active">Services</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- End All Title Box -->
-
-    <!-- Start Gallery  -->
-    <div class="products-box">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12">
-                    <div class="title-all text-center">
-                        <h1>Our Gallery</h1>
-                        <p>Best-seller of this month.</p>
-                    </div>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-lg-12">
-                    <div class="special-menu text-center">
-                        <div class="button-group filter-button-group">
-                            <button class="active" data-filter="*">All</button>
-                            <button data-filter=".1">Plants</button>
-                            <button data-filter=".3">Accessories</button>
-							<button data-filter=".2">Pots</button>
-							<button data-filter=".4">Decoration</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="row special-list">
-                <c:forEach items="${listProduct}" var="product">
-                	<div class="col-lg-3 col-md-6 special-grid ${product.catalog_id}">
-                    <div class="products-single fix">
-                        <div class="box-img-hover">
-                            <img id="show" src="${product.image_link}" class="img-fluid" alt="Image">
-                            <div class="mask-icon">
-                                <a class="cart" href="${pageContext.request.contextPath}/product/single?id=${product.product_id}">View Product</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                </c:forEach>
-            </div>
-        </div>
-    </div>
-    <!-- End Gallery  -->
+<jsp:include page="View/user/nav-bar.jsp"></jsp:include>
+<div align="center" class="center">
+    <h1>Payment Done. Thank you for purchasing our products</h1>
+    <br/>
+    <h2>Receipt Details:</h2>
+    <table class="table table-striped">
+        <tr>
+            <td><b>Merchant:</b></td>
+            <td style="text-align:center;"><strong>Laleaf store</strong></td>
+        </tr>
+        <tr>
+            <td><b>Payer:</b></td>
+            <td class="r">${payer.firstName} ${payer.lastName}</td>      
+        </tr>
+        <tr>
+            <td><b>Description:</b></td>
+            <td class="r">${transaction.description}</td>
+        </tr>
+        <tr>
+            <td><b>Subtotal:</b></td>
+            <td class="r">${transaction.amount.details.subtotal} USD</td>
+        </tr>
+        <tr>
+            <td><b>Shipping:</b></td>
+            <td class="r">${transaction.amount.details.shipping} USD</td>
+        </tr>
+        <tr>
+            <td><b>Tax:</b></td>
+            <td class="r">${transaction.amount.details.tax} USD</td>
+        </tr>
+        <tr>
+            <td><b>Total:</b></td>
+            <td class="r">${transaction.amount.total} USD</td>
+        </tr>                    
+    </table>
+</div>
 
     <!-- Start Instagram Feed  -->
     <div class="instagram-box">
@@ -114,51 +94,81 @@
             <div class="item">
                 <div class="ins-inner-box">
                     <img src="${url}/images/laleaf_ins.jpg" alt="" style ="width:248px;height:254px;"/>
+                    <div class="hov-in">
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                    </div>
                 </div>
             </div>
             <div class="item">
                 <div class="ins-inner-box">
                     <img src="${url}/images/laleaf_ins1.jpg" alt="" style ="width:248px;height:254px;"/>
+                    <div class="hov-in">
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                    </div>
                 </div>
             </div>
             <div class="item">
                 <div class="ins-inner-box">
                     <img src="${url}/images/laleaf_ins2.jpg" alt="" style ="width:248px;height:254px;"/>
+                    <div class="hov-in">
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                    </div>
                 </div>
             </div>
             <div class="item">
                 <div class="ins-inner-box">
                     <img src="${url}/images/laleaf_ins3.jpg" alt=""  style ="width:248px;height:254px;"/>
+                    <div class="hov-in">
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                    </div>
                 </div>
             </div>
             <div class="item">
                 <div class="ins-inner-box">
                     <img src="${url}/images/laleaf_ins4.jpg" alt="" style ="width:248px;height:254px;"/>
+                    <div class="hov-in">
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                    </div>
                 </div>
             </div>
             <div class="item">
                 <div class="ins-inner-box">
                     <img src="${url}/images/laleaf_ins5.jpg" alt="" style ="width:248px;height:254px;"/>
+                    <div class="hov-in">
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                    </div>
                 </div>
             </div>
             <div class="item">
                 <div class="ins-inner-box">
                     <img src="${url}/images/laleaf_ins6.jpg" alt="" style ="width:248px;height:254px;"/>
+                    <div class="hov-in">
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                    </div>
                 </div>
             </div>
             <div class="item">
                 <div class="ins-inner-box">
                     <img src="${url}/images/laleaf_ins7.jpg" alt="" style ="width:248px;height:254px;"/>
+                    <div class="hov-in">
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                    </div>
                 </div>
             </div>
             <div class="item">
                 <div class="ins-inner-box">
                     <img src="${url}/images/laleaf_ins8.jpg" alt="" style ="width:248px;height:254px;"/>
+                    <div class="hov-in">
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                    </div>
                 </div>
             </div>
             <div class="item">
                 <div class="ins-inner-box">
                     <img src="${url}/images/laleaf_ins4.jpg" alt="" style ="width:248px;height:254px;"/>
+                    <div class="hov-in">
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                    </div>
                 </div>
             </div>
         </div>
@@ -238,12 +248,6 @@
             </div>
         </div>
     </footer>
-    <!-- End Footer  -->
-
-   
-    <a href="#" id="back-to-top" title="Back to top" style="display: none;">&uarr;</a>
-
-    <!-- ALL JS FILES -->
     <script src="${url}/js/jquery-3.2.1.min.js"></script>
     <script src="${url}/js/popper.min.js"></script>
     <script src="${url}/js/bootstrap.min.js"></script>
@@ -260,5 +264,4 @@
     <script src="${url}/js/contact-form-script.js"></script>
     <script src="${url}/js/custom.js"></script>
 </body>
-
 </html>

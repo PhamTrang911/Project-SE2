@@ -28,10 +28,7 @@ if (session.getAttribute("admin-username") == null) {
 									<tr>
 										<th scope="col">Inspection</th>
 										<th scope="col">User ID</th>
-										<th scope="col">Product ID</th>
-										<th scope="col">Amount</th>
-										<th scope="col">Message</th>
-										<th scope="col">Discount ID</th>
+										<th scope="col">Products</th>
 										<th scope="col">Total Payment</th>
 										<th scope="col">Status</th>
 										<th scope="col">Created Day</th>
@@ -46,29 +43,22 @@ if (session.getAttribute("admin-username") == null) {
 											<td>
 												<button class="btn btn-danger">
 													<a
-														href="${pageContext.request.contextPath}/adminitration/orderreject?id=${order.transaction_id}">Reject</a>
+														href="${pageContext.request.contextPath}/adminitration/orderreject?id=${order.ordered_id}">Reject</a>
 												</button>
 												<button class="btn btn-success">
 													<a
-														href="${pageContext.request.contextPath}/adminitration/orderapprove?id=${order.transaction_id}">Approve</a>
+														href="${pageContext.request.contextPath}/adminitration/orderapprove?id=${order.ordered_id}">Approve</a>
 												</button>
 											</td>
-											<td>${order.user.name}</td>
-											<td>${order.user.email}</td>
-											<td>${order.user.phone}</td>
-											<td>${order.user.address}</td>
-											<td>${order.message}</td>
-											<td>${order.payment}$</td>
+											<td>${order.user_id}</td>
+											<td>${order.carts}</td>
+											<td>${order.totalPayment}$</td>
 											<td>${order.status}</td>
 											<td>${order.created}</td>
 											<td>
 												<button class="btn btn-danger">
 													<a
-														href="${pageContext.request.contextPath}/adminitration/orderdelete?id=${order.transaction_id}">Remove</a>
-												</button>
-												<button class="btn btn-danger">
-													<a
-														href="${pageContext.request.contextPath}/adminitration/list-ordereddetail?id=${order.user.user_id}">Details</a>
+														href="${pageContext.request.contextPath}/adminitration/orderdelete?id=${order.ordered_id}">Remove</a>
 												</button>
 
 											</td>
@@ -78,24 +68,16 @@ if (session.getAttribute("admin-username") == null) {
 										<c:otherwise>
 											<tr>
 											<td></td>
-											<td>${order.user.name}</td>
-											<td>${order.user.email}</td>
-											<td>${order.user.phone}</td>
-											<td>${order.user.address}</td>
-											<td>${order.message}</td>
-											<td>${order.payment}$</td>
+											<td>${order.user_id}</td>
+											<td>${order.carts}</td>
+											<td>${order.totalPayment}$</td>
 											<td>${order.status}</td>
 											<td>${order.created}</td>
 											<td>
 												<button class="btn btn-danger">
 													<a
-														href="${pageContext.request.contextPath}/adminitration/orderdelete?id=${order.transaction_id}">Remove</a>
+														href="${pageContext.request.contextPath}/adminitration/orderdelete?id=${order.ordered_id}">Remove</a>
 												</button>
-												<button class="btn btn-danger">
-													<a
-														href="${pageContext.request.contextPath}/adminitration/list-ordereddetail?id=${order.user.user_id}">Details</a>
-												</button>
-
 											</td>
 										</tr>
 										</c:otherwise>

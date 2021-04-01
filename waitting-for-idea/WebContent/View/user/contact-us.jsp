@@ -75,7 +75,7 @@
                     <div class="contact-form-right">
                         <h2>GET IN TOUCH</h2>
                         <p>If you has any problem, please contact with us. You're welcome!</p>
-                        <form id="contactForm">
+                        <form id="user/contactForm">
                             <div class="row">
                                 <div class="col-md-12">
                                     <div class="form-group">
@@ -116,7 +116,7 @@
                         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent urna diam, maximus ut ullamcorper quis, placerat id eros. Duis semper justo sed condimentum rutrum. Nunc tristique purus turpis. Maecenas vulputate. </p>
                         <ul>
                             <li>
-                                <p><i class="fas fa-map-marker-alt"></i>Address: Michael I. Days 9000 <br>Preston Street Wichita,<br> KS 87213 </p>
+                                <p><i class="fas fa-map-marker-alt"></i>Address: Km9 Nguyen Trai Street <br>Thanh Xuan<br>Ha Noi </p>
                             </li>
                             <li>
                                 <p><i class="fas fa-phone-square"></i>Phone: <a href="tel:+1-888705770">+1-888 705 770</a></p>
@@ -277,7 +277,7 @@
                             <h4>Contact Us</h4>
                             <ul>
                                 <li>
-                                    <p><i class="fas fa-map-marker-alt"></i>Address: Michael I. Days 3756 <br>Preston Street Wichita,<br> KS 67213 </p>
+                                    <p><i class="fas fa-map-marker-alt"></i>Address: Km9 Nguyen Trai Street <br>Thanh Xuan<br>Ha Noi </p>
                                 </li>
                                 <li>
                                     <p><i class="fas fa-phone-square"></i>Phone: <a href="tel:+1-888705770">+1-888 705 770</a></p>

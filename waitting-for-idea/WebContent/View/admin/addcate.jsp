@@ -16,7 +16,7 @@
 								<div class="form-group">
 									<label for="input-1">Name</label> <input type="text"
 										class="form-control" id="input-1" placeholder="Name"
-										name="cate-name">
+										name="cate-name"  required>
 								</div>
 								<div class="form-footer"><a class="btn btn-danger" href="${pageContext.request.contextPath}/adminitration/listCatalog">Cancel</a>
 									<button type="submit" class="btn btn-success">

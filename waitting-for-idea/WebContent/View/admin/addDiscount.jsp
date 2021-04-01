@@ -16,22 +16,22 @@
 								<div class="form-group">
 									<label for="input-1">Name</label> <input type="text"
 										class="form-control" id="input-1" placeholder="Name"
-										name="name">
+										name="name" required>
 								</div>
 								<div class="form-group">
 									<label for="input-1">Description</label> <input type="text"
 										class="form-control" id="input-1" placeholder="desciption"
-										name="des">
+										name="des" required>
 								</div>
 								<div class="form-group">
 									<label for="input-1">Min Payment</label> <input type="text"
 										class="form-control" id="input-1" placeholder="min"
-										name="min">
+										name="min" required>
 								</div>
 								<div class="form-group">
 									<label for="input-1">Percentage</label> <input type="text"
 										class="form-control" id="input-1" placeholder="%"
-										name="percent">
+										name="percent" required>
 								</div>
 								<div class="form-footer"><a class="btn btn-danger" href="${pageContext.request.contextPath}/adminitration/listDiscount">Cancel</a>
 									<button type="submit" class="btn btn-success">

@@ -16,14 +16,12 @@
 
 							<div class="form-group">
 								<label for="input-1">ID</label> <input type="text"
-									class="form-control" readonly="readonly" id="input-1" "Mã sản
-									phẩm" name="product-id" value="${product.product_id}">
+									class="form-control" readonly="readonly" id="input-1" name="product-id" value="${product.product_id}">
 							</div>
 
 							<div class="form-group">
 								<label for="input-1">Name</label> <input type="text"
-									class="form-control" id="input-1" "Tên sản
-									phẩm" name="product-name" value="${product.name}">
+									class="form-control" id="input-1" name="product-name" value="${product.name}" required>
 							</div>
 							<div class="form-group">
 								<label for="input-2">Catalog</label>
@@ -38,8 +36,8 @@
 							</div>
 							<div class="form-group">
 								<label for="input-1">Price</label> <input type="text"
-									class="form-control" id="input-1" "Giá" name="product-price"
-									value="${product.price}">
+									class="form-control" id="input-1" name="product-price"
+									value="${product.price}" required>
 							</div>
 
 							<div class="form-group">
@@ -54,8 +52,8 @@
 							</div>
 							<div class="form-group">
 								<label for="input-2">Discount (%)</label><input type="text"
-									class="form-control" id="input-1" "Giá" name="product-dis"
-									value="${product.discount}">
+									class="form-control" id="input-1" name="product-dis"
+									value="${product.discount}" required>
 							</div>
 							<div class="form-group">
 								<label for="input-2" class="col-form-label">Description</label>
@@ -68,7 +66,7 @@
 								<label for="input-1">Image</label> <input type="text"
 									class="form-control" id="input-1" readonly="readonly"
 									placeholder="Price" name="product-image"
-									value="${product.image_link }">
+									value="${product.image_link }" required>
 							</div>
 							<div class="form-footer">
 								<button class="btn btn-danger">

@@ -13,12 +13,11 @@
 							<table class="table table-striped">
 								<thead>
 									<tr>
-										
-										<th scope="col">Name</th>
+										<th scope="col">First Name</th>
+										<th scope="col">Last Name</th>
 										<th scope="col">Email</th>
 										<th scope="col">Phone</th>
 										<th scope="col">Date of Birth</th>
-										<th scope="col">Address</th>
 										<th scope="col">Created Day</th>
 									</tr>
 								</thead>
@@ -26,11 +25,11 @@
 									<c:forEach items="${listUser}" var="user">
 										<tr>
 											
-											<td>${user.name }</td>
+											<td>${user.firstName }</td>
+											<td>${user.lastName }</td>
 											<td>${user.email }</td>
 											<td>${user.phone }</td>
 											<td>${user.dob}</td>
-											<td>${user.address }</td>
 											<td>${user.created }</td>
 											<td>
 												<button class="btn btn-danger">

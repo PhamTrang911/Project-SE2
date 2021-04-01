@@ -25,88 +25,60 @@
     <link rel="apple-touch-icon" href="${url}/images/apple-touch-icon.png">
 
     <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="${url}/css/bootstrap.min.css" type="text/css">
     <!-- Site CSS -->
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="${url}/css/style.css" type="text/css">
     <!-- Responsive CSS -->
-    <link rel="stylesheet" href="css/responsive.css">
+    <link rel="stylesheet" href="${url}/css/responsive.css" type="text/css">
     <!-- Custom CSS -->
-    <link rel="stylesheet" href="css/custom.css">
-
+    <link rel="stylesheet" href="${url}/css/custom.css" type="text/css">
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Kiwi+Maru:wght@300&display=swap" rel="stylesheet">
     <!--[if lt IE 9]>
       <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-      <script src="https://oss.maxcdn.com/libs/respond.${url}/js/1.4.2/respond.min.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
-<style type="text/css">
-#show{
-	height: 300px;
-	width: 250px;
-}
-</style>
+    <style type="text/css">
+    .center{
+    	color: black;
+    	width: 50%;
+    	margin-left: 25%;
+    	font-family: 'Kiwi Maru', serif;
+    }
+    .wF{
+    	width:100%;
+    }
+    .center h3{
+    	font-weight: bold;
+    	text-align: center;
+    	font-size: 3em;
+    	margin: 10px 0;
+    }
+    .content{
+    	margin: 20px 0;
+    	text-align: justify;
+    }
+    .author{
+    	text-align: right;
+    	font-weight: bold;
+    }
+   </style>
 </head>
 
 <body>
-     <jsp:include page="nav-bar.jsp"></jsp:include>
    
+   <jsp:include page="nav-bar.jsp"></jsp:include>
 
-    <!-- Start All Title Box -->
-    <div class="all-title-box">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12">
-                    <h2>Services</h2>
-                    <ul class="breadcrumb">
-                        <li class="breadcrumb-item"><a href="#">Home</a></li>
-                        <li class="breadcrumb-item active">Services</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- End All Title Box -->
-
-    <!-- Start Gallery  -->
-    <div class="products-box">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12">
-                    <div class="title-all text-center">
-                        <h1>Our Gallery</h1>
-                        <p>Best-seller of this month.</p>
-                    </div>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-lg-12">
-                    <div class="special-menu text-center">
-                        <div class="button-group filter-button-group">
-                            <button class="active" data-filter="*">All</button>
-                            <button data-filter=".1">Plants</button>
-                            <button data-filter=".3">Accessories</button>
-							<button data-filter=".2">Pots</button>
-							<button data-filter=".4">Decoration</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="row special-list">
-                <c:forEach items="${listProduct}" var="product">
-                	<div class="col-lg-3 col-md-6 special-grid ${product.catalog_id}">
-                    <div class="products-single fix">
-                        <div class="box-img-hover">
-                            <img id="show" src="${product.image_link}" class="img-fluid" alt="Image">
-                            <div class="mask-icon">
-                                <a class="cart" href="${pageContext.request.contextPath}/product/single?id=${product.product_id}">View Product</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                </c:forEach>
-            </div>
-        </div>
-    </div>
-    <!-- End Gallery  -->
+	<div class="center">
+		<h3>${blog.title}</h3>
+		<img class="wF" alt="blog image" src="${blog.image_link}">
+		<div class="content">
+			<p>${blog.content}</p>
+		</div>
+		<div class="author">
+			<p>Author: ${blog.author}</p>
+		</div>
+	</div>
 
     <!-- Start Instagram Feed  -->
     <div class="instagram-box">
@@ -114,51 +86,81 @@
             <div class="item">
                 <div class="ins-inner-box">
                     <img src="${url}/images/laleaf_ins.jpg" alt="" style ="width:248px;height:254px;"/>
+                    <div class="hov-in">
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                    </div>
                 </div>
             </div>
             <div class="item">
                 <div class="ins-inner-box">
                     <img src="${url}/images/laleaf_ins1.jpg" alt="" style ="width:248px;height:254px;"/>
+                    <div class="hov-in">
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                    </div>
                 </div>
             </div>
             <div class="item">
                 <div class="ins-inner-box">
                     <img src="${url}/images/laleaf_ins2.jpg" alt="" style ="width:248px;height:254px;"/>
+                    <div class="hov-in">
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                    </div>
                 </div>
             </div>
             <div class="item">
                 <div class="ins-inner-box">
                     <img src="${url}/images/laleaf_ins3.jpg" alt=""  style ="width:248px;height:254px;"/>
+                    <div class="hov-in">
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                    </div>
                 </div>
             </div>
             <div class="item">
                 <div class="ins-inner-box">
                     <img src="${url}/images/laleaf_ins4.jpg" alt="" style ="width:248px;height:254px;"/>
+                    <div class="hov-in">
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                    </div>
                 </div>
             </div>
             <div class="item">
                 <div class="ins-inner-box">
                     <img src="${url}/images/laleaf_ins5.jpg" alt="" style ="width:248px;height:254px;"/>
+                    <div class="hov-in">
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                    </div>
                 </div>
             </div>
             <div class="item">
                 <div class="ins-inner-box">
                     <img src="${url}/images/laleaf_ins6.jpg" alt="" style ="width:248px;height:254px;"/>
+                    <div class="hov-in">
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                    </div>
                 </div>
             </div>
             <div class="item">
                 <div class="ins-inner-box">
                     <img src="${url}/images/laleaf_ins7.jpg" alt="" style ="width:248px;height:254px;"/>
+                    <div class="hov-in">
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                    </div>
                 </div>
             </div>
             <div class="item">
                 <div class="ins-inner-box">
                     <img src="${url}/images/laleaf_ins8.jpg" alt="" style ="width:248px;height:254px;"/>
+                    <div class="hov-in">
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                    </div>
                 </div>
             </div>
             <div class="item">
                 <div class="ins-inner-box">
                     <img src="${url}/images/laleaf_ins4.jpg" alt="" style ="width:248px;height:254px;"/>
+                    <div class="hov-in">
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                    </div>
                 </div>
             </div>
         </div>
@@ -180,16 +182,7 @@
 						</div>
 					</div>
 					<div class="col-lg-4 col-md-12 col-sm-12">
-						<div class="footer-top-box">
-							<h3>Newsletter</h3>
-							<form class="newsletter-box">
-								<div class="form-group">
-									<input class="" type="email" name="Email" placeholder="Email Address*" />
-									<i class="fa fa-envelope"></i>
-								</div>
-								<button class="btn hvr-hover" type="submit">Submit</button>
-							</form>
-						</div>
+						
 					</div>
 					<div class="col-lg-4 col-md-12 col-sm-12">
 						<div class="footer-top-box">
@@ -241,6 +234,7 @@
     <!-- End Footer  -->
 
    
+
     <a href="#" id="back-to-top" title="Back to top" style="display: none;">&uarr;</a>
 
     <!-- ALL JS FILES -->
@@ -251,7 +245,7 @@
     <script src="${url}/js/jquery.superslides.min.js"></script>
     <script src="${url}/js/bootstrap-select.js"></script>
     <script src="${url}/js/inewsticker.js"></script>
-    <script src="${url}/js/bootsnav.js."></script>
+    <script src="${url}/js/bootsnav.js"></script>
     <script src="${url}/js/images-loded.min.js"></script>
     <script src="${url}/js/isotope.min.js"></script>
     <script src="${url}/js/owl.carousel.min.js"></script>

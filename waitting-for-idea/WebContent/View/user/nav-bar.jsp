@@ -58,14 +58,14 @@
                     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-menu" aria-controls="navbars-rs-food" aria-expanded="false" aria-label="Toggle navigation">
                     <i class="fa fa-bars"></i>
                 </button>
-                    <a class="navbar-brand" href="index.html"><img src="${url}/images/laleaf_logo.jpg" class="logo" alt="" style ="width:108px;height:108px;border-radius: 50%;"></a>
+                    <a class="navbar-brand" href="${pageContext.request.contextPath}/user"><img src="${url}/images/laleaf_logo.jpg" class="logo" alt="" style ="width:108px;height:108px;border-radius: 50%;"></a>
                 </div>
                 <!-- End Header Navigation -->
 
                 <!-- Collect the nav links, forms, and other content for toggling -->
                 <div class="collapse navbar-collapse" id="navbar-menu">
                     <ul class="nav navbar-nav ml-auto" id="menu" data-in="fadeInDown" data-out="fadeOutUp">
-                        <li class="nav-item active"><a class="nav-link" href="index.html">Home</a></li>
+                        <li class="nav-item active"><a class="nav-link" href="${pageContext.request.contextPath}/user">Home</a></li>
                         
                         <li class="nav-item"><a href="${pageContext.request.contextPath}/product" class="nav-link">SHOP</a></li>
                         <li class="nav-item"><a class="nav-link" href="${pageContext.request.contextPath}/gallery">Gallery</a></li>

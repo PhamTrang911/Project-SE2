@@ -16,17 +16,17 @@
 							<div class="form-group">
 								<label for="input-2">Title</label> <input type="text"
 									class="form-control" id="input-2" value="${boardnew.title}"
-									name="new-title">
+									name="new-title" required>
 							</div>
 							<div class="form-group">
 								<label for="input-3">Content</label>
 								<textarea class="form-control" rows="4" id="input-17"
-									name="new-content">${boardnew.content}</textarea>
+									name="new-content" required>${boardnew.content}</textarea>
 							</div>
 							<div class="form-group">
 								<label for="input-2">Image</label> <input type="text"
 									class="form-control" id="input-10"
-									value="${boardnew.image_link}" name="new-image_link">
+									value="${boardnew.image_link}" name="new-image_link" required>
 							</div>
 							<div class="form-group">
 								<label for="input-4">Author</label>

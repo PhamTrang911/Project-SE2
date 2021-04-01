@@ -25,88 +25,82 @@
     <link rel="apple-touch-icon" href="${url}/images/apple-touch-icon.png">
 
     <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="${url}/css/bootstrap.min.css" type="text/css">
     <!-- Site CSS -->
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="${url}/css/style.css" type="text/css">
     <!-- Responsive CSS -->
-    <link rel="stylesheet" href="css/responsive.css">
+    <link rel="stylesheet" href="${url}/css/responsive.css" type="text/css">
     <!-- Custom CSS -->
-    <link rel="stylesheet" href="css/custom.css">
+    <link rel="stylesheet" href="${url}/css/custom.css" type="text/css">
 
     <!--[if lt IE 9]>
       <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-      <script src="https://oss.maxcdn.com/libs/respond.${url}/js/1.4.2/respond.min.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
-<style type="text/css">
-#show{
-	height: 300px;
-	width: 250px;
-}
-</style>
+    <style type="text/css">
+    .center{
+    	width:50%;
+    	margin-left: 25%;
+    }
+    .bone{
+    	height: 300px;
+    	display: flex;
+    	flex-flow: row;
+    	margin-bottom: 25px;
+    	background-color: lightgray;
+    	color: black;
+    }
+    .h3s{
+    	font-size: 1.5em;
+    	width:90%;
+    	white-space: pre-line;
+    	word-wrap    : break-word;
+		overflow-wrap: break-word;
+    }
+    .image{
+    	width: 35%;
+    	margin-right: 10px;
+    }
+    .text{
+    	margin: 15px;
+    	padding-right: 10px;
+    	width: 65%;
+    }
+    .hei{
+    	height: 200px;
+    	width: 90%;
+    	white-space: pre-line;
+    	word-wrap    : break-word;
+		overflow-wrap: break-word;
+    }
+    .hovers{
+    	color: green;
+    }
+    .center h1{
+    	font-size: 2em;
+    	font-weight: bold;
+    	text-align: center;
+    	margin: 25px;
+    }
+    	</style>
 </head>
 
 <body>
-     <jsp:include page="nav-bar.jsp"></jsp:include>
    
-
-    <!-- Start All Title Box -->
-    <div class="all-title-box">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12">
-                    <h2>Services</h2>
-                    <ul class="breadcrumb">
-                        <li class="breadcrumb-item"><a href="#">Home</a></li>
-                        <li class="breadcrumb-item active">Services</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- End All Title Box -->
-
-    <!-- Start Gallery  -->
-    <div class="products-box">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12">
-                    <div class="title-all text-center">
-                        <h1>Our Gallery</h1>
-                        <p>Best-seller of this month.</p>
-                    </div>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-lg-12">
-                    <div class="special-menu text-center">
-                        <div class="button-group filter-button-group">
-                            <button class="active" data-filter="*">All</button>
-                            <button data-filter=".1">Plants</button>
-                            <button data-filter=".3">Accessories</button>
-							<button data-filter=".2">Pots</button>
-							<button data-filter=".4">Decoration</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="row special-list">
-                <c:forEach items="${listProduct}" var="product">
-                	<div class="col-lg-3 col-md-6 special-grid ${product.catalog_id}">
-                    <div class="products-single fix">
-                        <div class="box-img-hover">
-                            <img id="show" src="${product.image_link}" class="img-fluid" alt="Image">
-                            <div class="mask-icon">
-                                <a class="cart" href="${pageContext.request.contextPath}/product/single?id=${product.product_id}">View Product</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                </c:forEach>
-            </div>
-        </div>
-    </div>
-    <!-- End Gallery  -->
+   <jsp:include page="nav-bar.jsp"></jsp:include>
+	
+	<div class="center">
+		<h1>All Blogs</h1>
+		<c:forEach items="${bns}" var="blog">
+		<div class="bone">
+		<img class="image" alt="blog img" src="${blog.image_link}">
+		<div class="text">
+			<a class="h3s hovers" style="text-decoration:none;" href="${pageContext.request.contextPath}/blog/view?id=${blog.broadNew_id}">${blog.title}</a>
+			<div class="hei text-truncate">${blog.content}</div>
+		</div>
+		</div>
+		</c:forEach>
+	</div>
 
     <!-- Start Instagram Feed  -->
     <div class="instagram-box">
@@ -114,51 +108,81 @@
             <div class="item">
                 <div class="ins-inner-box">
                     <img src="${url}/images/laleaf_ins.jpg" alt="" style ="width:248px;height:254px;"/>
+                    <div class="hov-in">
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                    </div>
                 </div>
             </div>
             <div class="item">
                 <div class="ins-inner-box">
                     <img src="${url}/images/laleaf_ins1.jpg" alt="" style ="width:248px;height:254px;"/>
+                    <div class="hov-in">
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                    </div>
                 </div>
             </div>
             <div class="item">
                 <div class="ins-inner-box">
                     <img src="${url}/images/laleaf_ins2.jpg" alt="" style ="width:248px;height:254px;"/>
+                    <div class="hov-in">
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                    </div>
                 </div>
             </div>
             <div class="item">
                 <div class="ins-inner-box">
                     <img src="${url}/images/laleaf_ins3.jpg" alt=""  style ="width:248px;height:254px;"/>
+                    <div class="hov-in">
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                    </div>
                 </div>
             </div>
             <div class="item">
                 <div class="ins-inner-box">
                     <img src="${url}/images/laleaf_ins4.jpg" alt="" style ="width:248px;height:254px;"/>
+                    <div class="hov-in">
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                    </div>
                 </div>
             </div>
             <div class="item">
                 <div class="ins-inner-box">
                     <img src="${url}/images/laleaf_ins5.jpg" alt="" style ="width:248px;height:254px;"/>
+                    <div class="hov-in">
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                    </div>
                 </div>
             </div>
             <div class="item">
                 <div class="ins-inner-box">
                     <img src="${url}/images/laleaf_ins6.jpg" alt="" style ="width:248px;height:254px;"/>
+                    <div class="hov-in">
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                    </div>
                 </div>
             </div>
             <div class="item">
                 <div class="ins-inner-box">
                     <img src="${url}/images/laleaf_ins7.jpg" alt="" style ="width:248px;height:254px;"/>
+                    <div class="hov-in">
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                    </div>
                 </div>
             </div>
             <div class="item">
                 <div class="ins-inner-box">
                     <img src="${url}/images/laleaf_ins8.jpg" alt="" style ="width:248px;height:254px;"/>
+                    <div class="hov-in">
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                    </div>
                 </div>
             </div>
             <div class="item">
                 <div class="ins-inner-box">
                     <img src="${url}/images/laleaf_ins4.jpg" alt="" style ="width:248px;height:254px;"/>
+                    <div class="hov-in">
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                    </div>
                 </div>
             </div>
         </div>
@@ -180,16 +204,7 @@
 						</div>
 					</div>
 					<div class="col-lg-4 col-md-12 col-sm-12">
-						<div class="footer-top-box">
-							<h3>Newsletter</h3>
-							<form class="newsletter-box">
-								<div class="form-group">
-									<input class="" type="email" name="Email" placeholder="Email Address*" />
-									<i class="fa fa-envelope"></i>
-								</div>
-								<button class="btn hvr-hover" type="submit">Submit</button>
-							</form>
-						</div>
+						
 					</div>
 					<div class="col-lg-4 col-md-12 col-sm-12">
 						<div class="footer-top-box">
@@ -241,6 +256,7 @@
     <!-- End Footer  -->
 
    
+
     <a href="#" id="back-to-top" title="Back to top" style="display: none;">&uarr;</a>
 
     <!-- ALL JS FILES -->
@@ -251,7 +267,7 @@
     <script src="${url}/js/jquery.superslides.min.js"></script>
     <script src="${url}/js/bootstrap-select.js"></script>
     <script src="${url}/js/inewsticker.js"></script>
-    <script src="${url}/js/bootsnav.js."></script>
+    <script src="${url}/js/bootsnav.js"></script>
     <script src="${url}/js/images-loded.min.js"></script>
     <script src="${url}/js/isotope.min.js"></script>
     <script src="${url}/js/owl.carousel.min.js"></script>

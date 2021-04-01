@@ -35,14 +35,15 @@ if (session.getAttribute("admin-username") == null) {
 									<tr>
 
 										<th scope="col">Title</th>
+										<th scope="col">Content</th>
 										<th scope="col">Image</th>
 										<th scope="col">Author</th>
-										<th scope="col">Date</th>
+										<th scope="col">Created</th>
 										<th scope="col">Action</th>
 									</tr>
 								</thead>
 								<tbody>
-									<c:forEach items="${boardnewList}" var="boardnew">
+									<c:forEach items="${broadnewList}" var="boardnew">
 										<tr>
 											<td>${boardnew.title}</td>
 											<td>${boardnew.content}</td>
@@ -52,12 +53,12 @@ if (session.getAttribute("admin-username") == null) {
 											<td>
 												<button class="btn btn-danger">
 													<a
-														href="${pageContext.request.contextPath}/adminitration/deleteNew?boardnew-id=${boardnew.boardnew_id}">Remove</a>
+														href="${pageContext.request.contextPath}/adminitration/deleteNew?boardnew-id=${boardnew.broadNew_id}">Remove</a>
 												</button>
 
 												<button class="btn btn-success">
 													<a
-														href="${pageContext.request.contextPath}/adminitration/editBroadnewForm?boardnew-id=${boardnew.boardnew_id}">Edit</a>
+														href="${pageContext.request.contextPath}/adminitration/editBroadnewForm?boardnew-id=${boardnew.broadNew_id}">Edit</a>
 												</button>
 											</td>
 										</tr>

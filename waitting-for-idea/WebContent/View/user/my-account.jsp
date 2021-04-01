@@ -37,7 +37,29 @@
       <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
       <script src="https://oss.maxcdn.com/libs/respond.${url}/js/1.4.2/respond.min.js"></script>
     <![endif]-->
-
+<style type="text/css">
+.center{
+	width:50%;
+	margin-left:25%;
+	margin-bottom: 25px;
+	font-size:1.5em;
+}
+.w100{
+	width:100%;
+}
+.btns{
+	display:flex;
+	flex-flow:row;
+	justify-content: space-around;
+	width: 100%;
+}
+.b{
+	border: none;
+}
+.w{
+	width: 25%;
+}
+</style>
 </head>
 
 <body>
@@ -49,193 +71,45 @@
             <div class="row">
                 <div class="col-lg-12">
                     <h2>My Account</h2>
-                    <ul class="breadcrumb">
-                        <li class="breadcrumb-item"><a href="#">Shop</a></li>
-                        <li class="breadcrumb-item active">My Account</li>
-                    </ul>
                 </div>
             </div>
         </div>
     </div>
     <!-- End All Title Box -->
-
-    <!-- Start My Account  -->
-    <div class="my-account-box-main">
-        <div class="container">
-            <div class="my-account-page">
-                <div class="row">
-                    <div class="col-lg-4 col-md-12">
-                        <div class="account-box">
-                            <div class="service-box">
-                                <div class="service-icon">
-                                    <a href="#"> <i class="fa fa-gift"></i> </a>
-                                </div>
-                                <div class="service-desc">
-                                    <h4>Your Orders</h4>
-                                    <p>Track, return, or buy things again</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 col-md-12">
-                        <div class="account-box">
-                            <div class="service-box">
-                                <div class="service-icon">
-                                    <a href="#"><i class="fa fa-lock"></i> </a>
-                                </div>
-                                <div class="service-desc">
-                                    <h4>Login &amp; security</h4>
-                                    <p>Edit login, name, and mobile number</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 col-md-12">
-                        <div class="account-box">
-                            <div class="service-box">
-                                <div class="service-icon">
-                                    <a href="#"> <i class="fa fa-location-arrow"></i> </a>
-                                </div>
-                                <div class="service-desc">
-                                    <h4>Your Addresses</h4>
-                                    <p>Edit addresses for orders and gifts</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 col-md-12">
-                        <div class="account-box">
-                            <div class="service-box">
-                                <div class="service-icon">
-                                    <a href="#"> <i class="fa fa-credit-card"></i> </a>
-                                </div>
-                                <div class="service-desc">
-                                    <h4>Payment options</h4>
-                                    <p>Edit or add payment methods</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 col-md-12">
-                        <div class="account-box">
-                            <div class="service-box">
-                                <div class="service-icon">
-                                    <a href="#"> <i class="fab fa-paypal"></i> </a>
-                                </div>
-                                <div class="service-desc">
-                                    <h4>PayPal</h4>
-                                    <p>View benefits and payment settings</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 col-md-12">
-                        <div class="account-box">
-                            <div class="service-box">
-                                <div class="service-icon">
-                                    <a href="#"> <i class="fab fa-amazon"></i> </a>
-                                </div>
-                                <div class="service-desc">
-                                    <h4>Amazon Pay balance</h4>
-                                    <p>Add money to your balance</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="bottom-box">
-                    <div class="row">
-                        <div class="col-lg-4 col-md-12">
-                            <div class="account-box">
-                                <div class="service-box">
-                                    <div class="service-desc">
-                                        <h4>Gold &amp; Diamond Jewellery</h4>
-                                        <ul>
-                                            <li> <a href="#">Apps and more</a> </li>
-                                            <li> <a href="#">Content and devices</a> </li>
-                                            <li> <a href="#">Music settings</a> </li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-lg-4 col-md-12">
-                            <div class="account-box">
-                                <div class="service-box">
-                                    <div class="service-desc">
-                                        <h4>Handloom &amp; Handicraft Store</h4>
-                                        <ul>
-                                            <li> <a href="#">Advertising preferences </a> </li>
-                                            <li> <a href="#">Communication preferences</a> </li>
-                                            <li> <a href="#">SMS alert preferences</a> </li>
-                                            <li> <a href="#">Message center</a> </li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-lg-4 col-md-12">
-                            <div class="account-box">
-                                <div class="service-box">
-                                    <div class="service-desc">
-                                        <h4>The Designer Boutique</h4>
-                                        <ul>
-                                            <li> <a href="#">Amazon Pay</a> </li>
-                                            <li> <a href="#">Bank accounts for refunds</a> </li>
-                                            <li> <a href="#">Coupons</a> </li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-lg-4 col-md-12">
-                            <div class="account-box">
-                                <div class="service-box">
-                                    <div class="service-desc">
-                                        <h4>Gift Boxes, Gift Tags, Greeting Cards</h4>
-                                        <ul>
-                                            <li> <a href="#">Leave delivery feedback</a> </li>
-                                            <li> <a href="#">Lists</a> </li>
-                                            <li> <a href="#">Photo ID proofs</a> </li>
-                                            <li> <a href="#">Profile</a> </li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-lg-4 col-md-12">
-                            <div class="account-box">
-                                <div class="service-box">
-                                    <div class="service-desc">
-                                        <h4>Other accounts</h4>
-                                        <ul>
-                                            <li> <a href="#">Amazon Business registration</a> </li>
-                                            <li> <a href="#">Seller account</a> </li>
-                                            <li> <a href="#">Amazon Web Services</a> </li>
-                                            <li> <a href="#">Login with Amazon</a> </li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-lg-4 col-md-12">
-                            <div class="account-box">
-                                <div class="service-box">
-                                    <div class="service-desc">
-                                        <h4>Shopping programs and rentals</h4>
-                                        <ul>
-                                            <li> <a href="#">Subscribe &amp; Save</a> </li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- End My Account -->
+<div class="center">
+	<form action="update">
+	<table class="table">
+		<tr>
+			<td colspan="2"><b>Personal infomation:</b></td>
+		</tr>
+		<tr>
+			<td>First Name:</td>
+			<td><input name="first_name" class="from-control w100 b" readonly value="${user.firstName}" required="required"></td>
+		</tr>
+		<tr>
+			<td>Last Name:</td>
+			<td><input name="last_name" class="from-control w100 b" readonly value="${user.lastName}" required="required"></td>
+		</tr>
+		<tr>
+			<td>Email:</td>
+			<td><input name="email" class="from-control w100 b" readonly value="${user.email}" required="required"></td>
+		</tr>
+		<tr>
+			<td>Password:</td>
+			<td><input id="pass" name="pass" type="password" class="from-control w100 b" readonly value="${user.password}" required="required"><input type="checkbox" onclick="myFunction()">Show Password</td>
+		</tr>
+		<tr>
+			<td>Phone:</td>
+			<td><input name="phone" class="from-control w100 b" readonly value="${user.phone}" required="required"></td>
+		</tr>
+		<tr>
+			<td>Date of birth:</td>
+			<td><input name="dob" type="date" class="from-control w100 b" readonly value="${user.dob}" required="required"></td>
+		</tr>
+	</table>
+	<div class="btns"><input class="btn btn-primary w" readonly id="1" value="Edit"><input type="submit" readonly class="btn btn-primary w" hidden id="2" value="Submit"><input class="btn btn-primary w" readonly hidden id="3" value="Cancel"></div>
+	</form>
+</div>
 
     <!-- Start Instagram Feed  -->
     <div class="instagram-box">
@@ -382,7 +256,7 @@
                             <h4>Contact Us</h4>
                             <ul>
                                 <li>
-                                    <p><i class="fas fa-map-marker-alt"></i>Address: Michael I. Days 3756 <br>Preston Street Wichita,<br> KS 67213 </p>
+                                    <p><i class="fas fa-map-marker-alt"></i>Address: Km9 Nguyen Trai Street <br>Thanh Xuan<br>Ha Noi </p>
                                 </li>
                                 <li>
                                     <p><i class="fas fa-phone-square"></i>Phone: <a href="tel:+1-888705770">+1-888 705 770</a></p>
@@ -403,6 +277,38 @@
     <a href="#" id="back-to-top" title="Back to top" style="display: none;">&uarr;</a>
 
     <!-- ALL JS FILES -->
+    <script type="text/javascript">
+    	let edit = document.getElementById("1");
+    	let submit = document.getElementById("2");
+    	let cancel = document.getElementById("3");
+    	let inputs = document.getElementsByTagName("input");
+    	edit.addEventListener("click",function(e){
+    		for(let i = 0; i < inputs.length; i++){
+    			inputs[i].readOnly = false;
+    			inputs[i].classList.remove("b");
+    		}
+    		submit.hidden = false;
+    		cancel.hidden = false;
+    		edit.hidden = true;
+    	})
+    	cancel.addEventListener("click",function(e){
+    		for(let i = 0; i < inputs.length; i++){
+    			inputs[i].readOnly = true;
+    			inputs[i].classList.add("b");
+    		}
+    		edit.hidden = false;
+    		submit.hidden = true;
+    		cancel.hidden = true;
+    	})
+    	function myFunction() {
+  var x = document.getElementById("pass");
+  if (x.type === "password") {
+    x.type = "text";
+  } else {
+    x.type = "password";
+  }
+}
+    </script>
     <script src="${url}/js/jquery-3.2.1.min.js"></script>
     <script src="${url}/js/popper.min.js"></script>
     <script src="${url}/js/bootstrap.min.js"></script>

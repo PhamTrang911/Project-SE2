@@ -1,5 +1,5 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%><%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%><%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
     
 <c:url value="/View/user" var="url" />
 <!DOCTYPE html>
@@ -15,7 +15,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <!-- Site Metas -->
-    <title>ThewayShop - Ecommerce Bootstrap 4 HTML Template</title>
+    <title>La Leaf - Begin your life in the garden</title>
     <meta name="keywords" content="">
     <meta name="description" content="">
     <meta name="author" content="">
@@ -25,146 +25,130 @@
     <link rel="apple-touch-icon" href="${url}/images/apple-touch-icon.png">
 
     <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="${url}/css/bootstrap.min.css">
     <!-- Site CSS -->
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="${url}/css/style.css">
     <!-- Responsive CSS -->
-    <link rel="stylesheet" href="css/responsive.css">
+    <link rel="stylesheet" href="${url}/css/responsive.css">
     <!-- Custom CSS -->
-    <link rel="stylesheet" href="css/custom.css">
+    <link rel="stylesheet" href="${url}/css/custom.css">
 
     <!--[if lt IE 9]>
       <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
       <script src="https://oss.maxcdn.com/libs/respond.${url}/js/1.4.2/respond.min.js"></script>
     <![endif]-->
-
+<style type="text/css">
+.r{
+	border:none;
+	text-align:right;
+}
+.center{
+	width:50%;
+	margin-left:25%;
+}
+</style>
+<style type="text/css">
+    table { border: 0; }
+    table td { padding: 5px; }
+</style>
 </head>
-
 <body>
-  <jsp:include page="nav-bar.jsp"></jsp:include>
-   
+  <jsp:include page="/View/user/nav-bar.jsp"></jsp:include>
+<div align="center" class="center">
+    <h1>Please Review Before Paying</h1>
+    <form action="execute_payment" method="post">
+    <table class="table table-striped">
+        <tr>
+            <td colspan="2"><b>Transaction Details:</b></td>
+            <td style="display: none;">
+                <input type="hidden" name="paymentId" value="${param.paymentId}" />
+                <input type="hidden" name="PayerID" value="${param.PayerID}" />
+                <input hidden name="total" value="${transaction.amount.total}">
+                <input hidden name="shiping" value="${shippingAddress.line1}">
+                <input hidden name="shiping2" value="${shippingAddress.city}">
+                <input hidden name="shiping3" value="${shippingAddress.state}">
+            </td>
+        </tr>
+        <tr>
+            <td>Description:</td>
+            <td>${transaction.description}</td>
+        </tr>
+        <tr>
+            <td>Subtotal:</td>
+            <td>${transaction.amount.details.subtotal} USD</td>
+        </tr>
+        <tr>
+            <td>Shipping:</td>
+            <td>${transaction.amount.details.shipping} USD</td>
+        </tr>
+        <tr>
+            <td>Tax:</td>
+            <td>${transaction.amount.details.tax} USD</td>
+        </tr>
+        <tr>
+            <td>Total:</td>
+            <td>${transaction.amount.total} USD</td>
+        </tr>
+        <tr><td><br/></td><td></td></tr>
+        <tr>
+            <td colspan="2"><b>Payer Information:</b></td>
+        </tr>
+        <tr>
+            <td>First Name:</td>
+            <td>${payer.firstName}</td>
+        </tr>
+        <tr>
+            <td>Last Name:</td>
+            <td>${payer.lastName}</td>
+        </tr>
+        <tr>
+            <td>Email:</td>
+            <td>${payer.email}</td>
+        </tr>
+        <tr><td><br/></td></tr>
+        <tr>
+            <td colspan="2"><b>Shipping Address:</b></td>
+        </tr>
+        <tr>
+            <td>Recipient Name:</td>
+            <td>${shippingAddress.recipientName}</td>
+        </tr>
+        <tr>
+            <td>Line 1:</td>
+            <td>${shippingAddress.line1}</td>
+        </tr>
+        <tr>
+            <td>City:</td>
+            <td>${shippingAddress.city}</td>
+        </tr>
+        <tr>
+            <td>State:</td>
+            <td>${shippingAddress.state}</td>
+        </tr>
+        <tr>
+            <td>Country Code:</td>
+            <td>${shippingAddress.countryCode}</td>
+        </tr>
+        <tr>
+            <td>Postal Code:</td>
+            <td>${shippingAddress.postalCode}</td>
+        </tr>
+        <tr>
+            <td colspan="2" align="center">
+                <input type="submit" class="form-control btn-success" value="Pay Now" />
+            </td>
+        </tr>    
+    </table>
+    </form>
+</div>
 
-    <!-- Start All Title Box -->
-    <div class="all-title-box">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12">
-                    <h2>Wishlist</h2>
-                    <ul class="breadcrumb">
-                        <li class="breadcrumb-item"><a href="#">Shop</a></li>
-                        <li class="breadcrumb-item active">Wishlist</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- End All Title Box -->
-
-    <!-- Start Wishlist  -->
-    <div class="wishlist-box-main">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12">
-                    <div class="table-main table-responsive">
-                        <table class="table">
-                            <thead>
-                                <tr>
-                                    <th>Images</th>
-                                    <th>Product Name</th>
-                                    <th>Unit Price </th>
-                                    <th>Stock</th>
-                                    <th>Add Item</th>
-                                    <th>Remove</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td class="thumbnail-img">
-                                        <a href="#">
-									<img class="img-fluid" src="${url}/images/img-pro-01.jpg" alt="" />
-								</a>
-                                    </td>
-                                    <td class="name-pr">
-                                        <a href="#">
-									Lorem ipsum dolor sit amet
-								</a>
-                                    </td>
-                                    <td class="price-pr">
-                                        <p>$ 80.0</p>
-                                    </td>
-                                    <td class="quantity-box">In Stock</td>
-                                    <td class="add-pr">
-                                        <a class="btn hvr-hover" href="#">Add to Cart</a>
-                                    </td>
-                                    <td class="remove-pr">
-                                        <a href="#">
-									<i class="fas fa-times"></i>
-								</a>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td class="thumbnail-img">
-                                        <a href="#">
-									<img class="img-fluid" src="${url}/images/img-pro-02.jpg" alt="" />
-								</a>
-                                    </td>
-                                    <td class="name-pr">
-                                        <a href="#">
-									Lorem ipsum dolor sit amet
-								</a>
-                                    </td>
-                                    <td class="price-pr">
-                                        <p>$ 60.0</p>
-                                    </td>
-                                    <td class="quantity-box">In Stock</td>
-                                    <td class="add-pr">
-                                        <a class="btn hvr-hover" href="#">Add to Cart</a>
-                                    </td>
-                                    <td class="remove-pr">
-                                        <a href="#">
-									<i class="fas fa-times"></i>
-								</a>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td class="thumbnail-img">
-                                        <a href="#">
-									<img class="img-fluid" src="${url}/images/img-pro-03.jpg" alt="" />
-								</a>
-                                    </td>
-                                    <td class="name-pr">
-                                        <a href="#">
-									Lorem ipsum dolor sit amet
-								</a>
-                                    </td>
-                                    <td class="price-pr">
-                                        <p>$ 30.0</p>
-                                    </td>
-                                    <td class="quantity-box">In Stock</td>
-                                    <td class="add-pr">
-                                        <a class="btn hvr-hover" href="#">Add to Cart</a>
-                                    </td>
-                                    <td class="remove-pr">
-                                        <a href="#">
-									<i class="fas fa-times"></i>
-								</a>
-                                    </td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- End Wishlist -->
 
     <!-- Start Instagram Feed  -->
     <div class="instagram-box">
         <div class="main-instagram owl-carousel owl-theme">
             <div class="item">
                 <div class="ins-inner-box">
-                    <img src="${url}/images/instagram-img-01.jpg" alt="" />
+                    <img src="${url}/images/laleaf_ins.jpg" alt="" style ="width:248px;height:254px;"/>
                     <div class="hov-in">
                         <a href="#"><i class="fab fa-instagram"></i></a>
                     </div>
@@ -172,7 +156,7 @@
             </div>
             <div class="item">
                 <div class="ins-inner-box">
-                    <img src="${url}/images/instagram-img-02.jpg" alt="" />
+                    <img src="${url}/images/laleaf_ins1.jpg" alt="" style ="width:248px;height:254px;"/>
                     <div class="hov-in">
                         <a href="#"><i class="fab fa-instagram"></i></a>
                     </div>
@@ -180,7 +164,7 @@
             </div>
             <div class="item">
                 <div class="ins-inner-box">
-                    <img src="${url}/images/instagram-img-03.jpg" alt="" />
+                    <img src="${url}/images/laleaf_ins2.jpg" alt="" style ="width:248px;height:254px;"/>
                     <div class="hov-in">
                         <a href="#"><i class="fab fa-instagram"></i></a>
                     </div>
@@ -188,7 +172,7 @@
             </div>
             <div class="item">
                 <div class="ins-inner-box">
-                    <img src="${url}/images/instagram-img-04.jpg" alt="" />
+                    <img src="${url}/images/laleaf_ins3.jpg" alt=""  style ="width:248px;height:254px;"/>
                     <div class="hov-in">
                         <a href="#"><i class="fab fa-instagram"></i></a>
                     </div>
@@ -196,7 +180,7 @@
             </div>
             <div class="item">
                 <div class="ins-inner-box">
-                    <img src="${url}/images/instagram-img-05.jpg" alt="" />
+                    <img src="${url}/images/laleaf_ins4.jpg" alt="" style ="width:248px;height:254px;"/>
                     <div class="hov-in">
                         <a href="#"><i class="fab fa-instagram"></i></a>
                     </div>
@@ -204,7 +188,7 @@
             </div>
             <div class="item">
                 <div class="ins-inner-box">
-                    <img src="${url}/images/instagram-img-06.jpg" alt="" />
+                    <img src="${url}/images/laleaf_ins5.jpg" alt="" style ="width:248px;height:254px;"/>
                     <div class="hov-in">
                         <a href="#"><i class="fab fa-instagram"></i></a>
                     </div>
@@ -212,7 +196,7 @@
             </div>
             <div class="item">
                 <div class="ins-inner-box">
-                    <img src="${url}/images/instagram-img-07.jpg" alt="" />
+                    <img src="${url}/images/laleaf_ins6.jpg" alt="" style ="width:248px;height:254px;"/>
                     <div class="hov-in">
                         <a href="#"><i class="fab fa-instagram"></i></a>
                     </div>
@@ -220,7 +204,7 @@
             </div>
             <div class="item">
                 <div class="ins-inner-box">
-                    <img src="${url}/images/instagram-img-08.jpg" alt="" />
+                    <img src="${url}/images/laleaf_ins7.jpg" alt="" style ="width:248px;height:254px;"/>
                     <div class="hov-in">
                         <a href="#"><i class="fab fa-instagram"></i></a>
                     </div>
@@ -228,7 +212,7 @@
             </div>
             <div class="item">
                 <div class="ins-inner-box">
-                    <img src="${url}/images/instagram-img-09.jpg" alt="" />
+                    <img src="${url}/images/laleaf_ins8.jpg" alt="" style ="width:248px;height:254px;"/>
                     <div class="hov-in">
                         <a href="#"><i class="fab fa-instagram"></i></a>
                     </div>
@@ -236,7 +220,7 @@
             </div>
             <div class="item">
                 <div class="ins-inner-box">
-                    <img src="${url}/images/instagram-img-05.jpg" alt="" />
+                    <img src="${url}/images/laleaf_ins4.jpg" alt="" style ="width:248px;height:254px;"/>
                     <div class="hov-in">
                         <a href="#"><i class="fab fa-instagram"></i></a>
                     </div>
@@ -275,7 +259,7 @@
 					<div class="col-lg-4 col-md-12 col-sm-12">
 						<div class="footer-top-box">
 							<h3>Social Media</h3>
-							<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+							<p>Follow me</p>
 							<ul>
                                 <li><a href="#"><i class="fab fa-facebook" aria-hidden="true"></i></a></li>
                                 <li><a href="#"><i class="fab fa-twitter" aria-hidden="true"></i></a></li>
@@ -292,20 +276,19 @@
                 <div class="row">
                     <div class="col-lg-4 col-md-12 col-sm-12">
                         <div class="footer-widget">
-                            <h4>About Freshshop</h4>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p> 
-							<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p> 							
+                            <h4>Covid Precautions</h4>
+                            <p> All customers and employees are required to wear a mask at all times. To encourage social distancing, only 3 customers will be allowed in the store at a time. Hand sanitizer for customers on site. No repotting services or returns allowed, but we are happy to set you with potting materials for home. All sales final during this time. </p> 							
                         </div>
                     </div>
                     <div class="col-lg-4 col-md-12 col-sm-12">
-                       
+                        
                     </div>
                     <div class="col-lg-4 col-md-12 col-sm-12">
                         <div class="footer-link-contact">
                             <h4>Contact Us</h4>
                             <ul>
                                 <li>
-                                    <p><i class="fas fa-map-marker-alt"></i>Address: Michael I. Days 3756 <br>Preston Street Wichita,<br> KS 67213 </p>
+                                    <p><i class="fas fa-map-marker-alt"></i>Address: Km9 Nguyen Trai Street <br>Thanh Xuan<br>Ha Noi </p>
                                 </li>
                                 <li>
                                     <p><i class="fas fa-phone-square"></i>Phone: <a href="tel:+1-888705770">+1-888 705 770</a></p>
@@ -320,12 +303,6 @@
             </div>
         </div>
     </footer>
-    <!-- End Footer  -->
-
-
-    <a href="#" id="back-to-top" title="Back to top" style="display: none;">&uarr;</a>
-
-    <!-- ALL JS FILES -->
     <script src="${url}/js/jquery-3.2.1.min.js"></script>
     <script src="${url}/js/popper.min.js"></script>
     <script src="${url}/js/bootstrap.min.js"></script>
@@ -342,5 +319,4 @@
     <script src="${url}/js/contact-form-script.js"></script>
     <script src="${url}/js/custom.js"></script>
 </body>
-
 </html>

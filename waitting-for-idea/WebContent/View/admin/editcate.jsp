@@ -22,7 +22,7 @@
 							<div class="form-group">
 								<label for="input-1">Name </label> <input type="text"
 									class="form-control" id="input-1" name="name"
-									value="${catelist.name }">
+									value="${catelist.name }" required>
 							</div>
 							<div class="form-footer">
 								<button class="btn btn-danger">

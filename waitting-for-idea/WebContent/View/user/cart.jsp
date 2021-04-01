@@ -37,7 +37,12 @@
       <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
       <script src="https://oss.maxcdn.com/libs/respond.${url}/js/1.4.2/respond.min.js"></script>
     <![endif]-->
-
+<style type="text/css">
+.r{
+	border:none;
+	text-align:right;
+}
+</style>
 </head>
 
 <body>
@@ -49,10 +54,6 @@
             <div class="row">
                 <div class="col-lg-12">
                     <h2>Cart</h2>
-                    <ul class="breadcrumb">
-                        <li class="breadcrumb-item"><a href="#">Shop</a></li>
-                        <li class="breadcrumb-item active">Cart</li>
-                    </ul>
                 </div>
             </div>
         </div>
@@ -79,12 +80,13 @@
                             <tbody>
                                 <c:forEach items="${carts}" var="c">
                                 	<tr>
-                                    <td class="thumbnail-img"><img class="img-fluid" src="${c.image_link}" alt="" /></td>
-                                    <td class="name-pr">${c.name}</td>
-                                    <td class="price-pr"><p class="price">${c.price}</p></td>
-                                    <td class="quantity-box"><input class="number" type="number" size="4" value="1" min="0" step="1"></td>
+                                    <td class="thumbnail-img"><img class="img-fluid" src="${c.p_image}" alt="" /></td>
+                                    <td class="name-pr">${c.p_name}</td>
+                                    <td class="price-pr">${c.p_price}</td>
+                                    <td class="quantity-box">${c.amount}</td>
+                                    <td class="total">${c.p_price*c.amount}</td>
                                     <td class="remove-pr">
-                                        <a href="#">
+                                        <a href="${pageContext.request.contextPath}/cart/delete?id=${c.cart_id}">
 									<i class="fas fa-times"></i>
 								</a>
                                     </td>
@@ -104,53 +106,74 @@
                             <select id="discount" class="form-control">
                             		<option selected>None</option>
                             	<c:forEach items="${discount}" var="dis">
-                            		<option></option>
+                            		<option value="${dis.percentage}" onclick="saveId(${dis.discount_id})">${dis.name}&nbsp;-&nbsp;${dis.percentage}%</option>
                             	</c:forEach>
                             </select>
                             <div class="input-group-append">
-                                <button class="btn btn-theme" type="button">Apply Coupon</button>
+                                <button id="btn_coupon" class="btn btn-theme" type="button">Apply Coupon</button>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-6 col-sm-6">
-                    <div class="update-box">
-                        <input value="Update Cart" type="submit">
-                    </div>
-                </div>
             </div>
-
+                <form action="${pageContext.request.contextPath}/user/checkout">
             <div class="row my-5">
-                <div class="col-lg-8 col-sm-12"></div>
+                <div class="col-lg-6 col-sm-12">
+                <div class="col-md-12 col-lg-12">
+                            <div class="shipping-method-box">
+                                <div class="title-left">
+                                    <h3>Shipping Method</h3>
+                                </div>
+                                <div class="mb-4">
+                                    <div class="custom-control custom-radio">
+                                        <input id="shippingOption1" value="0" name="shipping-option" class="custom-control-input" checked="checked" type="radio">
+                                        <label class="custom-control-label" for="shippingOption1">Standard Delivery</label> <span class="float-right font-weight-bold">FREE</span> </div>
+                                    <div class="ml-4 mb-2 small">(3-7 business days)</div>
+                                    <div class="custom-control custom-radio">
+                                        <input id="shippingOption2" value="2" name="shipping-option" class="custom-control-input" type="radio">
+                                        <label class="custom-control-label" for="shippingOption2">Express Delivery</label> <span class="float-right font-weight-bold">$2</span> </div>
+                                    <div class="ml-4 mb-2 small">(2-4 business days)</div>
+                                    <div class="custom-control custom-radio">
+                                        <input id="shippingOption3" value="5" name="shipping-option" class="custom-control-input" type="radio">
+                                        <label class="custom-control-label" for="shippingOption3">Next Business day</label> <span class="float-right font-weight-bold">$5</span> </div>
+                                </div>
+                            </div>
+                        </div>
+                </div>
+                <div class="col-lg-2 col-sm-12"></div>
                 <div class="col-lg-4 col-sm-12">
                     <div class="order-box">
                         <h3>Order summary</h3>
                         <div class="d-flex">
-                            <h4>Sub Total</h4>
-                            <div id="sum" class="ml-auto font-weight-bold"></div>
+                            <h4>Total Product</h4>
+                            <input id="sum" readonly value="0" name="sum" class="ml-auto font-weight-bold r"/>$
                         </div>
                         <div class="d-flex">
                             <h4>Discount</h4>
-                            <div id="disc" class="ml-auto font-weight-bold"></div>
+                            <input id="disc" readonly value="0" name="disc" class="ml-auto font-weight-bold r"/>%
                         </div>
                         <hr class="my-1">
                         <div class="d-flex">
+                            <h4>Sub Total</h4>
+                            <input id="sub" readonly value="0" name="sub" class="ml-auto font-weight-bold r"/>$
+                        </div>
+                        <div class="d-flex">
                             <h4>Tax</h4>
-                            <div id="tax" class="ml-auto font-weight-bold"></div>
+                            <input id="tax" readonly name="tax" value="2" class="ml-auto font-weight-bold r"/>$
                         </div>
                         <div class="d-flex">
                             <h4>Shipping Cost</h4>
-                            <div id="ship" class="ml-auto font-weight-bold"></div>
+                            <input id="ship" value="0" readonly name="ship" class="ml-auto font-weight-bold r"/>$
                         </div>
                         <hr>
                         <div class="d-flex gr-total">
                             <h5>Grand Total</h5>
-                            <div id="total" class="ml-auto h5"></div>
+                            <input id="total" readonly name="total" class="ml-auto h5 r"/>$
                         </div>
-                        <hr> </div>
+                        <hr> </div><input name="cart_ids" hidden value="${cart_ids}"/>
                 </div>
-                <div class="col-12 d-flex shopping-box"><a href="checkout.html" class="ml-auto btn hvr-hover">Checkout</a> </div>
-            </div>
+                <div class="col-12 d-flex shopping-box" style="padding-left: 68%;"><button class="form-control hvr-hover">Checkout</button> </div>
+            </div></form>
 
         </div>
     </div>
@@ -300,7 +323,7 @@
                             <h4>Contact Us</h4>
                             <ul>
                                 <li>
-                                    <p><i class="fas fa-map-marker-alt"></i>Address: Michael I. Days 3756 <br>Preston Street Wichita,<br> KS 67213 </p>
+                                    <p><i class="fas fa-map-marker-alt"></i>Address: Km9 Nguyen Trai Street <br>Thanh Xuan<br>Ha Noi </p>
                                 </li>
                                 <li>
                                     <p><i class="fas fa-phone-square"></i>Phone: <a href="tel:+1-888705770">+1-888 705 770</a></p>
@@ -320,6 +343,42 @@
     <a href="#" id="back-to-top" title="Back to top" style="display: none;">&uarr;</a>
 
     <!-- ALL JS FILES -->
+    <script type="text/javascript">
+    	let sum = document.getElementById("sum");
+    	let disc = document.getElementById("disc");
+    	let sub = document.getElementById("sub");
+    	let tax = document.getElementById("tax");
+    	let ship = document.getElementById("ship");
+    	let total = document.getElementById("total");
+    	sum.value = sums();
+    	sub.value = sum.value;
+    	total.value = parseFloat(sum.value)+parseFloat(tax.value)+parseFloat(ship.value);
+
+    	function sums(){
+    		let sumN = 0.0;
+    		let prices = document.getElementsByClassName("total");
+    		
+    		for(let i = 0; i < prices.length;i++){
+    			sumN += parseFloat(prices[i].innerHTML);
+    		}
+    		return sumN;
+    	}
+    	
+    	let btn = document.getElementById("btn_coupon");
+    	btn.addEventListener("click",function(e){
+    		disc.value = document.getElementById("discount").value;
+    		sub.value = parseFloat(sum.value) - parseFloat(sum.value)*parseFloat(disc.value)/100;
+    		total.value = parseFloat(sub.value)+parseFloat(tax.value)+parseFloat(ship.value);
+    	});
+    	
+    	let radio = document.getElementsByClassName("custom-radio")
+    	for(let j = 0; j<radio.length;j++){
+    		radio[j].addEventListener("click",function(e){
+    			ship.value = radio[j].getElementsByTagName("input")[0].value;
+    			total.value = parseFloat(sub.value)+parseFloat(tax.value)+parseFloat(ship.value);
+    		})
+    	}
+    </script>
     <script src="${url}/js/jquery-3.2.1.min.js"></script>
     <script src="${url}/js/popper.min.js"></script>
     <script src="${url}/js/bootstrap.min.js"></script>

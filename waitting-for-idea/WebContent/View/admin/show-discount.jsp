@@ -30,9 +30,9 @@
 									<c:forEach items="${discount}" var="dis">
 										<tr>
 											
-											<td>${dis.name }</td>
-											<td>${dis.description }</td>
-											<td>${dis.minPayment }$</td>
+											<td>${dis.name}</td>
+											<td>${dis.description}</td>
+											<td>${dis.minPayment}$</td>
 											<td>${dis.percentage}%</td>
 											<td>
 												<button class="btn btn-danger">
