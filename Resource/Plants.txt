@@ -1,33 +1,33 @@
 1, Plants
-Each product must have: catalog_id, name, price, status, description, discount, image_link
+Each product must have: catalog_id, NAME, price, STATUS, description, discount, image_link
 
 1. Cactus
-INSERT INTO product (catalog_id, name, price, status, description, discount, image_link) VALUES 
+INSERT INTO product (catalog_id, NAME, price, STATUS, description, discount, image_link) VALUES 
 (1, "Cactus", 8.5 , "AVAILABLE", "A cactus is a member of the plant family Cactaceae. The word &quot;cactus&quot;
- derives, through Latin, from the Ancient Greek &quot;kaktos&quot;, a name originally used by Theophrastus for 
+ derives, through Latin, from the Ancient Greek &quot;kaktos&quot;, a NAME originally used by Theophrastus for 
 a spiny plant whose identity is not certain. Cacti occur in a wide range of shapes and sizes.Cactus plants are 
-able to thrive in dry climates because they store water in their stems. Cactus is also an ornamental tree and 
+able to thrive in dry climates because they store water in their stems. Cactus is also an orNAMEntal tree and 
 is popular in displaying and beautifying office spaces, living rooms or shops, hotels, coffee shops ...
 Cacti also has a very good ability to absorb toxic gases", 0, " https://i.ibb.co/TmXWhVC/xuong-rong-2.jpg ");
 
 2. Succulent
-INSERT INTO product (catalog_id, name, price, status, description, discount, image_link) VALUES 
+INSERT INTO product (catalog_id, NAME, price, STATUS, description, discount, image_link) VALUES 
 (1, " Succulent ", 8 , "AVAILABLE", " Succulent plants may store water in various structures, such as leaves and 
-stems. ... Succulents are often grown as ornamental plants because of their striking and unusual appearance. 
-About 60 different plant families contain succulents. Succulent is also an ornamental tree and is popular in 
+stems. ... Succulents are often grown as orNAMEntal plants because of their striking and unusual appearance. 
+About 60 different plant families contain succulents. Succulent is also an orNAMEntal tree and is popular in 
 displaying and beautifying office spaces, living rooms or shops, hotels, coffee shop", 0, 
 " https://i.ibb.co/8xRvMsM/succulent-3.jpg");
 
 3. palm-tree (cây cọ nhật)
-INSERT INTO product (catalog_id, name, price, status, description, discount, image_link) 
+INSERT INTO product (catalog_id, NAME, price, STATUS, description, discount, image_link) 
 VALUES (1, "palm-tree ", 13 , "AVAILABLE", " Palm trees are among the best indoor air-improving plants. Brushes 
 help clean the air from chemicals like ammonia and avoid insects. Plants also have the ability to reduce heavy 
 metals in the air. With fancy green leaves, the birthday brush creates a very good highlight in the room. 
-The Japanese Palm is one of the most beautiful ornamental plants. You can use it for the desk, the railing, 
+The Japanese Palm is one of the most beautiful orNAMEntal plants. You can use it for the desk, the railing, 
 the living room table", 0, " https://i.ibb.co/9T0Gg0g/c-y-c-nh-t-3.jpg ");
 
 4. Palour palm (cây cau tiểu tram)
-INSERT INTO product (catalog_id, name, price, status, description, discount, image_link) 
+INSERT INTO product (catalog_id, NAME, price, STATUS, description, discount, image_link) 
 VALUES (1, " Palour palm ", 7.5 , "AVAILABLE", " Palour palm is a small shrub, about 20-200 cm in height. 
 Palour palm has leaf-like leaves, double leaves like areca leaves. Leaves are long, pointed, dark green, 
 soft and glossy, smooth, with well-defined veins. Minor brooch areca leaf grows sparsely from the main stem. 
@@ -36,7 +36,7 @@ and vibrant beauty.", 0, " https://i.ibb.co/MVY6LCb/Palour-palm-cau-tieu-tram-1.
 
 5. Dumb Cane (cây vạn niên thanh)
 
-INSERT INTO product (catalog_id, name, price, status, description, discount, image_link) 
+INSERT INTO product (catalog_id, NAME, price, STATUS, description, discount, image_link) 
 VALUES (1, " Dumb Cane ", 9.5 , "AVAILABLE", " The Dumb Cane plant is a strong species that will thrive in 
 any light conditions other than direct sunlight. Its easy to care for style and resilience to neglect 
 make it a wonderful house plant......
@@ -44,7 +44,7 @@ This native to the West Indies will flower in the right conditions, but these fl
 The beauty of the dumb cane plant comes from the unique pattern found on every leaf.", 1, " https://i.ibb.co/bKj1k2S/Van-nien-thanh-2.jpg");
 
 6. Peace Lily ( cây lan ý)
-INSERT INTO product (catalog_id, name, price, status, description, discount, image_link) 
+INSERT INTO product (catalog_id, NAME, price, STATUS, description, discount, image_link) 
 VALUES (1, " Peace Lily ", 11 , "AVAILABLE", " Peace lilies are sturdy plants with glossy, dark green oval 
 leaves that narrow to a point. The leaves rise directly from the soil. These plants also periodically produce 
 lightly fragrant white flowers that resemble calla lilies. The long-lasting flowers start out pale green and 
@@ -52,7 +52,7 @@ slowly turn creamy white as they open. Peace lilies have many benefits like: It 
 Prevents Mildew Formation,… It is a best choice for your house.", 0.5, " https://i.ibb.co/vzdN4Fm/cay-lan-y-1.jpg"); 
 
 7. Boot Lily (cây thủy tùng)
-INSERT INTO product (catalog_id, name, price, status, description, discount, image_link) 
+INSERT INTO product (catalog_id, NAME, price, STATUS, description, discount, image_link) 
 VALUES (1, " Boot Lily ", 20 , "AVAILABLE", " To talk about the hydrangea plants, it is impossible not to 
 mention the yew tree. Yew tree is a woody species that lives along rivers and lakes and has good wood quality. 
 Located at the crossroads between soil and water, the tree has both the hardness and strength of the cedar without 
@@ -62,15 +62,15 @@ together, looking very beautiful. Nowadays, they are popular species of phir for
 classrooms, bedrooms, and working rooms.", 0, " https://i.ibb.co/Y2Cnw3q/cay-thuy-tung-1.jpg ");  
 
 8. Kaleidoscope (cây vạn lộc)
-INSERT INTO product (catalog_id, name, price, status, description, discount, image_link) 
-VALUES (1, " Kaleidoscope ", 15 , "AVAILABLE", " The kaleidoscope has another name as the natural tree. Small-sized 
-trees have eye-catching colors, so they are very popular for ornamental purposes. The kaleidoscope has a very good 
+INSERT INTO product (catalog_id, NAME, price, STATUS, description, discount, image_link) 
+VALUES (1, " Kaleidoscope ", 15 , "AVAILABLE", " The kaleidoscope has another NAME as the natural tree. Small-sized 
+trees have eye-catching colors, so they are very popular for orNAMEntal purposes. The kaleidoscope has a very good 
 air filtration ability, so indoor plants are both beautiful and help fresh air. The kaleidoscope is red in color, 
 so it is very suitable for people with fire. This is a plant that brings good luck and good luck to humans. 
 Planting water buds indoors will attract fortune and make growers have many advantages in life.", 0, " https://i.ibb.co/m58kjK4/c-y-v-n-l-c-2.jpg ");  
 
 9. Sansevieria trifasciata ( cây lưỡi hổ)
-INSERT INTO product (catalog_id, name, price, status, description, discount, image_link) VALUES 
+INSERT INTO product (catalog_id, NAME, price, STATUS, description, discount, image_link) VALUES 
 (1, " Sansevieria trifasciata ", 7.5 , "AVAILABLE", " Sansevieria trifasciata  is always at the top of the list of air 
 purifiers. The leaves of the tiger's tongue tree are long, with yellow lines spreading evenly across the leaves like 
 the pattern on the tiger's fur, so the tree is called the tiger's tongue. Sansevieria trifasciata  is considered to be 
@@ -78,7 +78,7 @@ a very good detachment tree. The tree has yellow veins with the color of the soi
 landlord and is quite popular today.", 0, " https://i.ibb.co/WfHw8V4/cay-luoi-ho-2.jpg ");  
 
 10. Aroid Palm  ( Cây kim tiền )
-INSERT INTO product (catalog_id, name, price, status, description, discount, image_link) 
+INSERT INTO product (catalog_id, NAME, price, STATUS, description, discount, image_link) 
 VALUES (1, " Aroid Palm  ", 9.5 , "AVAILABLE", " Sansevieria trifasciata  is always at the top of the list of air purifiers.
  The leaves of the tiger's tongue tree are long, with yellow lines spreading evenly across the leaves like the pattern on 
 the tiger's fur, so the tree is called the tiger's tongue. Sansevieria trifasciata  is considered to be a very good 
@@ -86,39 +86,39 @@ detachment tree. The tree has yellow veins with the color of the soil, so it is 
 quite popular today.", 0, " https://i.ibb.co/vJzfMkb/cay-kim-tien-2.jpg ");  
 
 11. Eastern ( Cây hạnh phúc)
-INSERT INTO product (catalog_id, name, price, status, description, discount, image_link) 
+INSERT INTO product (catalog_id, NAME, price, STATUS, description, discount, image_link) 
 VALUES (1, " Eastern  ", 25 , "AVAILABLE", " Eastern is a tall and beautiful bonsai with a beauty from the base to the top.
  On the tree, there are fresh, smooth xnah foliage that represent strong hope and confidence. The tree has a sense of 
 originality and charm and shows the luxury of the owner when planting a tree happily in the garden. Each time you mention 
 the tree of happiness, people will feel peaceful and warm inside.",0.5, " https://i.ibb.co/ZSdC5wQ/cay-hanh-phuc-1.jpg ");
   
 12. Baby Rubber Plant (Cây trường sinh)
-INSERT INTO product (catalog_id, name, price, status, description, discount, image_link) 
+INSERT INTO product (catalog_id, NAME, price, STATUS, description, discount, image_link) 
 VALUES (1, "Baby Rubber Plant ", 15 , "AVAILABLE", " Baby Rubber Plant has high applicability in today's life. 
 The cool green color of the large leaves increases the ability to clean the air, absorb pollutants such as formaldehyde, 
 carbondioxide, ... The thick thick leaves absorb harmful rays from the equipment. Electronic and feels like stretch for 
 people or stress, have to work a lot. In addition, the tree is also a meaningful gift for loved ones with the meaning 
-of wishing health, well-being and happiness. With the name "immortality", the tree represents longevity, connection, 
+of wishing health, well-being and happiness. With the NAME "immortality", the tree represents longevity, connection, 
 fortune and luck. So when there is a longevity tree in your home or work area, it will bring you many good things.", 0, 
 " https://i.ibb.co/fC64rBy/Cay-truong-sinh-1.jpg ");  
 
 13. Spider Plant (Cây dây nhện)
-INSERT INTO product (catalog_id, name, price, status, description, discount, image_link) 
+INSERT INTO product (catalog_id, NAME, price, STATUS, description, discount, image_link) 
 VALUES (1, " Spider Plant ", 6 , "AVAILABLE", " Spider plants are always capable of photosynthesis under minimal light. 
 It quickly absorbs toxins from the air such as Carbon monoxide, Formaldehyde, gasoline and Styrene. In addition, 
 it can convert carcinogenic gases in the air such as formic aldehydes into sugars and ammonium acids. 
 A small pot of plants is enough to clean the air in a 200m2 space.", 0.5, " https://i.ibb.co/x7ss9zm/C-y-d-y-nh-n.jpg "); 
  
 14. Laurel tree (Cây Nguyệt Quế)
-INSERT INTO product (catalog_id, name, price, status, description, discount, image_link) 
+INSERT INTO product (catalog_id, NAME, price, STATUS, description, discount, image_link) 
 VALUES (1, " Laurel tree ", 17 , "AVAILABLE", " Laurel tree is a perennial, fragrant shrub originating in the countries 
 of the Mediterranean, suitable in humid and shady lands. For a long time, people still considered the pink laurel as 
 a symbol of "glory and victory". Native to the subtropical land, this plant is suitable for humid air, shade, 
 and warm water. They absorb the moisture in the air, creating an open environment.", 0, " https://i.ibb.co/QkcCZfj/C-y-Nguy-t-Qu.jpg ");  
 
 15. Lucky Tree (Cây tài lộc)
-INSERT INTO product (catalog_id, name, price, status, description, discount, image_link) 
-VALUES (1, " Lucky Tree ", 28 , "AVAILABLE", " The name makes this flower special. And this is also one of the 
+INSERT INTO product (catalog_id, NAME, price, STATUS, description, discount, image_link) 
+VALUES (1, " Lucky Tree ", 28 , "AVAILABLE", " The NAME makes this flower special. And this is also one of the 
 feng-shui species that quite a lot of people choose to put in their family's living room. The Lucky tree has a 
 cool shape, the stem is plentiful and soft, strong. Most of the people choose the tree of fortune according to 
 the feng-shui concept because it helps them bring a lot of fortune, wealth, and wealth.", 0, 

@@ -9,23 +9,13 @@
     <welcome-file>default.htm</welcome-file>
     <welcome-file>default.jsp</welcome-file>
   </welcome-file-list>
-  
-  <servlet>
-  	<servlet-name>Admin</servlet-name>
-  	<servlet-class>com.servlet.adminServlet</servlet-class>
-  </servlet>
-  <servlet-mapping>
-  	<servlet-name>Admin</servlet-name>
-  	<url-pattern>/admins</url-pattern>
-  </servlet-mapping>
-  
   <servlet>
   	<servlet-name>Loginadmin</servlet-name>
   	<servlet-class>com.servlet.loginAdminServlet</servlet-class>
   </servlet>
   <servlet-mapping>
   	<servlet-name>Loginadmin</servlet-name>
-  	<url-pattern>/loginAdmin</url-pattern>
+  	<url-pattern>/admin</url-pattern>
   </servlet-mapping>
   
   <servlet>
@@ -45,4 +35,7 @@
   	<servlet-name>login</servlet-name>
   	<url-pattern>/login</url-pattern>
   </servlet-mapping>
+   <session-config>
+    <session-timeout>20</session-timeout>
+  </session-config>
 </web-app>
