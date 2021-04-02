@@ -34,6 +34,7 @@ public class userServlet extends HttpServlet{
 	private broadnewDao bd;
 	private String email;
 	private orderedDao od;
+	private ArrayList<Cart> cs;
 	@Override
 	public void init() throws ServletException {
 		// TODO Auto-generated method stub
@@ -43,6 +44,7 @@ public class userServlet extends HttpServlet{
 		dd = new discountDao();
 		bd = new broadnewDao();
 		od = new orderedDao();
+		cs = new ArrayList<Cart>();
 	}
 	
 	@Override
@@ -50,23 +52,35 @@ public class userServlet extends HttpServlet{
 		// TODO Auto-generated method stub
 		req.setCharacterEncoding("utf-8");
 			email = (String) req.getSession().getAttribute("user_email");
-			if(email==null||email=="") {
-				resp.sendRedirect(req.getContextPath()+"/login");
-				return;
-			}else {
-			req.setAttribute("cart", cd.allInCartOfUser(ud.getUserByEmail(email).getUser_id()).size());
+			email = (String) req.getSession().getAttribute("user_email");
+			if(email!=null&&email!="") {
+				cs = cd.allInCartOfUser(ud.getUserByEmail(email).getUser_id());
+			}
+			req.setAttribute("cart", cs.size());
 			String action = req.getPathInfo();
 			if(action == null) {
 				showShop(req, resp);
 			}else{
 				switch (action) {
 				case "/cart":
+					if(email==null||email=="") {
+						resp.sendRedirect(req.getContextPath()+"/login");
+						return;
+					}
 					showCart(req, resp);
 					break;
 				case "/profile":
+					if(email==null||email=="") {
+						resp.sendRedirect(req.getContextPath()+"/login");
+						return;
+					}
 					accountInfo(req, resp);
 					break;
 				case "/history":
+					if(email==null||email=="") {
+						resp.sendRedirect(req.getContextPath()+"/login");
+						return;
+					}
 					purchaseInfo(req, resp);
 					break;
 				case "/logout":
@@ -83,7 +97,6 @@ public class userServlet extends HttpServlet{
 				}
 			}
 			return;
-			}
 	}
 	private void update(HttpServletRequest req, HttpServletResponse resp) throws IOException {
 		String fN = req.getParameter("first-name");

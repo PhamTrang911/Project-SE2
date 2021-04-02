@@ -113,7 +113,7 @@
 				<div class="col-lg-4 col-sm-12">
                     <div class="contact-info-left">
                         <h2>CONTACT INFO</h2>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent urna diam, maximus ut ullamcorper quis, placerat id eros. Duis semper justo sed condimentum rutrum. Nunc tristique purus turpis. Maecenas vulputate. </p>
+                        <p>We have built a commerce website where everybody can view and order many kinds of trees, pots, accessories... with a lot of discounts. Therefore, people will be comfortable to select products for themselves.</p>
                         <ul>
                             <li>
                                 <p><i class="fas fa-map-marker-alt"></i>Address: Km9 Nguyen Trai Street <br>Thanh Xuan<br>Ha Noi </p>
@@ -298,7 +298,7 @@
     <a href="#" id="back-to-top" title="Back to top" style="display: none;">&uarr;</a>
 
     <!-- ALL JS FILES -->
-    <script src="${url}/js/jquery-3.2.1.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="${url}/js/popper.min.js"></script>
     <script src="${url}/js/bootstrap.min.js"></script>
     <!-- ALL PLUGINS -->

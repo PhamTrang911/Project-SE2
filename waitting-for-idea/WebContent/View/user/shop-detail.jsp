@@ -334,7 +334,7 @@
   
     <a href="#" id="back-to-top" title="Back to top" style="display: none;">&uarr;</a>
     <!-- ALL JS FILES -->
-    <script src="${url}/js/jquery-3.2.1.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="${url}/js/popper.min.js"></script>
     <script src="${url}/js/bootstrap.min.js"></script>
     <!-- ALL PLUGINS -->

@@ -62,18 +62,27 @@ public class productServlet extends HttpServlet{
 			listProduct(request, response);
 		}else {
 			switch (action) {
+			case "/0":
+				normal();
+				resetShop(request, response);
+				break;
 			case "/1":
 				index = "1";
-				toName();
+				toNameAsc();
 				resetShop(request, response);
 				break;
 			case "/2":
 				index = "2";
-				HtoL();
+				toNameDes();
 				resetShop(request, response);
 				break;
 			case "/3":
 				index = "3";
+				HtoL();
+				resetShop(request, response);
+				break;
+			case "/4":
+				index = "4";
 				LtoH();
 				resetShop(request, response);
 				break;
@@ -159,7 +168,7 @@ public class productServlet extends HttpServlet{
 	
 	private void HtoL() {
 		for(int j = 0; j < listProduct.size()-1;j++) {
-			for(int i = 1; i < listProduct.size();i++) {
+			for(int i = j; i < listProduct.size();i++) {
 				if(temp.get(j).getPrice()<temp.get(i).getPrice()) {
 					Collections.swap(temp, j, i);
 				}
@@ -169,7 +178,7 @@ public class productServlet extends HttpServlet{
 	
 	private void LtoH() {
 		for(int j = 0; j < listProduct.size()-1;j++) {
-			for(int i = 1; i < listProduct.size();i++) {
+			for(int i = j; i < listProduct.size();i++) {
 				if(temp.get(j).getPrice()>temp.get(i).getPrice()) {
 					Collections.swap(temp, j, i);
 				}
@@ -177,14 +186,12 @@ public class productServlet extends HttpServlet{
 		}
 	}
 	
-	private void toName() {
-		for(int j = 0; j < listProduct.size()-1;j++) {
-			for(int i = 1; i < listProduct.size();i++) {
-				if(temp.get(j).compareTo(temp.get(i))>0) {
-					Collections.swap(temp, j, i);
-				}
-			}
-		}
+	private void toNameAsc() {
+		temp = pd.lstProductByNameAsc();
+	}
+	
+	private void toNameDes() {
+		temp = pd.lstProductByNameDes();
 	}
 	
 	private void normal(){

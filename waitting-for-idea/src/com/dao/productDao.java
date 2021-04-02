@@ -48,6 +48,67 @@ public class productDao {
 		return products;
 	}
 	
+	public ArrayList<Product> lstProductByNameAsc() {
+		ArrayList<Product> products = new ArrayList<Product>();
+		String sql = "SELECT * FROM product ORDER BY NAME ASC"; 
+		PreparedStatement ps;
+		ResultSet rs;
+		try {
+			ps = conn.prepareStatement(sql);
+			rs = ps.executeQuery();
+
+			while(rs.next()) {
+				 int product_id = rs.getInt("product_id");
+				 int catalog_id = rs.getInt("catalog_id");
+				 String name = rs.getString("NAME");
+				 float price = rs.getFloat("price");
+				 String status = rs.getString("STATUS");
+				 String description = rs.getString("description");
+				 float dis = rs.getFloat("discount");
+				 String image_link = rs.getString("image_link");
+				 Date created = rs.getDate("created");
+				 
+				 Product p = new Product(product_id, catalog_id, name, price, status, description, dis, image_link, created);
+				 products.add(p);
+			}
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		return products;
+	}
+	public ArrayList<Product> lstProductByNameDes() {
+		ArrayList<Product> products = new ArrayList<Product>();
+		String sql = "SELECT * FROM product ORDER BY NAME DESC"; 
+		PreparedStatement ps;
+		ResultSet rs;
+		try {
+			ps = conn.prepareStatement(sql);
+			rs = ps.executeQuery();
+
+			while(rs.next()) {
+				 int product_id = rs.getInt("product_id");
+				 int catalog_id = rs.getInt("catalog_id");
+				 String name = rs.getString("NAME");
+				 float price = rs.getFloat("price");
+				 String status = rs.getString("STATUS");
+				 String description = rs.getString("description");
+				 float dis = rs.getFloat("discount");
+				 String image_link = rs.getString("image_link");
+				 Date created = rs.getDate("created");
+				 
+				 Product p = new Product(product_id, catalog_id, name, price, status, description, dis, image_link, created);
+				 products.add(p);
+			}
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		return products;
+	}
+	
 	public Product getProductById(int id) {
 		Product p = null;
 		String sql = "SELECT * FROM product WHERE product_id="+id;

@@ -65,7 +65,7 @@
                 <!-- Collect the nav links, forms, and other content for toggling -->
                 <div class="collapse navbar-collapse" id="navbar-menu">
                     <ul class="nav navbar-nav ml-auto" id="menu" data-in="fadeInDown" data-out="fadeOutUp">
-                        <li class="nav-item active"><a class="nav-link" href="${pageContext.request.contextPath}/user">Home</a></li>
+                        <li class="nav-item"><a class="nav-link" href="${pageContext.request.contextPath}/home">Home</a></li>
                         
                         <li class="nav-item"><a href="${pageContext.request.contextPath}/product" class="nav-link">SHOP</a></li>
                         <li class="nav-item"><a class="nav-link" href="${pageContext.request.contextPath}/gallery">Gallery</a></li>
@@ -109,7 +109,7 @@
     <!-- End Top Search -->
 <a href="#" id="back-to-top" title="Back to top" style="display: none;">&uarr;</a>
     <!-- ALL JS FILES -->
-    <script src="${url}/js/jquery-3.2.1.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="${url}/js/popper.min.js"></script>
     <script src="${url}/js/bootstrap.min.js"></script>
     <!-- ALL PLUGINS -->

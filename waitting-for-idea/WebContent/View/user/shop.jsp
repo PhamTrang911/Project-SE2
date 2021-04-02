@@ -81,9 +81,10 @@
                                     <span>Sort by </span>
                                     <select id="c" value="0" class="form-control" onChange="filter(this.value)">
 										<option value="0">Nothing</option>
-										<option value="1">Name</option>
-										<option value="2">High Price -&gt; Low Price</option>
-										<option value="3">Low Price -&gt; High Price</option>
+										<option value="1">Name Ascending</option>
+										<option value="2">Name Descending</option>
+										<option value="3">High Price -&gt; Low Price</option>
+										<option value="4">Low Price -&gt; High Price</option>
 									</select>
                                 </div>
                                 <p>Showing all ${size} results </p>
@@ -285,16 +286,6 @@
 						</div>
 					</div>
 					<div class="col-lg-4 col-md-12 col-sm-12">
-						<div class="footer-top-box">
-							<h3>Newsletter</h3>
-							<form class="newsletter-box">
-								<div class="form-group">
-									<input class="" type="email" name="Email" placeholder="Email Address*" />
-									<i class="fa fa-envelope"></i>
-								</div>
-								<button class="btn hvr-hover" type="submit">Submit</button>
-							</form>
-						</div>
 					</div>
 					<div class="col-lg-4 col-md-12 col-sm-12">
 						<div class="footer-top-box">
@@ -365,7 +356,7 @@ function filter(value){
     </script>
     </c:if>
     <!-- ALL JS FILES -->
-    <script src="${url}/js/jquery-3.2.1.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="${url}/js/popper.min.js"></script>
     <script src="${url}/js/bootstrap.min.js"></script>
     <!-- ALL PLUGINS -->

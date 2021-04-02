@@ -60,7 +60,7 @@ public class signupServlet extends HttpServlet{
 	}
 	
 	private void submitInfo(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		User u = new User(request.getParameter("first_name"),request.getParameter("last_name"),request.getParameter("phone"),request.getParameter("dob"),request.getParameter("email"),request.getParameter("password"));
+		User u = new User(request.getParameter("first_name"),request.getParameter("last_name"),request.getParameter("email"),request.getParameter("phone"),request.getParameter("dob"),request.getParameter("password"));
 		ud.insertUser(u);
 		response.sendRedirect(request.getContextPath()+"/login");
 		return;
