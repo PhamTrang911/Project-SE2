@@ -33,6 +33,23 @@ public class orderedDao {
 		return r;
 	}
 	
+	public ArrayList<Order> listOrderByUser(int user_id){
+		ArrayList<Order> r = new ArrayList<Order>();
+		String sql = "SELECT * FROM ordered WHERE user_id="+user_id;
+		try {
+			PreparedStatement ps = conn.prepareStatement(sql);
+			ResultSet rs = ps.executeQuery();
+			while(rs.next()) {
+				r.add(new Order(rs.getInt(1), rs.getInt(2), rs.getString(3), rs.getInt(4), rs.getString(5), rs.getString(6), rs.getDate(7)));
+			}
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		return r;
+	}
+	
 	public Order getOneById(int id) {
 		String sql = "SELECT * FROM ordered WHERE ordered_id="+id;
 		Order r = null;
@@ -92,10 +109,9 @@ public class orderedDao {
 	}
 	
 	public void approveReject(int id, String s) {
-		String sql = "UPDATE ordered SET (STATUS) =\""+s+"\" WHERE ordered_id="+id;
+		String sql = "UPDATE ordered SET STATUS=\""+s+"\" WHERE ordered_id="+id;
 		try {
 			PreparedStatement ps = conn.prepareStatement(sql);
-			ps.setString(1, s);
 			ps.execute();
 		} catch (Exception e) {
 			e.printStackTrace();

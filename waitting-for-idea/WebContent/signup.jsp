@@ -242,7 +242,6 @@ input {
                 <h1>Sign in</h1> 
                 <input type="email" placeholder="Email" name="email" />
                 <input type="password" placeholder="Password" name="password" />
-                <a href="#">Forgot your password?</a>
                 <button>Sign In</button>
             </form>
         </div>

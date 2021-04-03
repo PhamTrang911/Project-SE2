@@ -374,7 +374,8 @@ public class adminServlet extends HttpServlet{
 	}
 	
 	private void showListAdmin(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		request.setAttribute("adminList", ad.listAdmin());
+		ArrayList<Admin> ads = ad.listAdmin();
+		request.setAttribute("adminList", ads.subList(1,ads.size()));
 		RequestDispatcher rs = request.getRequestDispatcher("/View/admin/admin.jsp");
 		rs.forward(request, response);
 	}

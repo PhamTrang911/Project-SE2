@@ -52,7 +52,6 @@ public class userServlet extends HttpServlet{
 		// TODO Auto-generated method stub
 		req.setCharacterEncoding("utf-8");
 			email = (String) req.getSession().getAttribute("user_email");
-			email = (String) req.getSession().getAttribute("user_email");
 			if(email!=null&&email!="") {
 				cs = cd.allInCartOfUser(ud.getUserByEmail(email).getUser_id());
 			}
@@ -160,7 +159,7 @@ public class userServlet extends HttpServlet{
 
 	
 	private void purchaseInfo(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-		ArrayList<Order> orders = od.listOrder();
+		ArrayList<Order> orders = od.listOrderByUser(ud.getUserByEmail(email).getUser_id());
 		req.setAttribute("ordered", orders);
 		RequestDispatcher rd = req.getRequestDispatcher("/View/user/history.jsp");
 		rd.forward(req, resp);
