@@ -110,6 +110,11 @@ public class productServlet extends HttpServlet{
 				showSingleProduct(request,response);
 				break;
 			case "/review":
+				String email = (String) request.getSession().getAttribute("user_email");
+				if(email==null||email=="") {
+					response.sendRedirect(request.getContextPath()+"/login");
+					return;
+				}
 				addReview(request,response);
 				break;
 			default:

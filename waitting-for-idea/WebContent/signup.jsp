@@ -261,7 +261,7 @@ input {
         </div>
     </div>
 
-        <a  href="${pageContext.request.contextPath}/admin/login">go to admin login</a>
+        <a  href="${pageContext.request.contextPath}/admin/login"><b>GO TO ADMIN LOGIN</b></a>
     <script>
         const signUpButton = document.getElementById('signUp');
         const signInButton = document.getElementById('signIn');
