@@ -56,7 +56,7 @@ public class productServlet extends HttpServlet{
 
 		if(request.getSession().getAttribute("user_email")!=null) {
 			request.setAttribute("cart", cd.allInCartOfUser(ud.getUserByEmail(request.getSession().getAttribute("user_email")).getUser_id()).size());
-		}
+		}// set card number if user has logged in
 		String action = request.getPathInfo();
 		if(action == null) {
 			listProduct(request, response);
@@ -114,7 +114,7 @@ public class productServlet extends HttpServlet{
 				if(email==null||email=="") {
 					response.sendRedirect(request.getContextPath()+"/login");
 					return;
-				}
+				}//check if user has logged in to the website
 				addReview(request,response);
 				break;
 			default:
@@ -124,25 +124,30 @@ public class productServlet extends HttpServlet{
 		return;
 	}
 	
+	/*
+	 * add comment to a product
+	 */
 	private void addReview(HttpServletRequest request, HttpServletResponse response) throws IOException {
-		String user_email = (String) request.getSession().getAttribute("user_email");
-		System.out.print(user_email);
+		String user_email = (String) request.getSession().getAttribute("user_email");//get session attribute
 		String user_name = ud.getUserByEmail(user_email).getLastName();
 		String comment = request.getParameter("comment");
 		rd.insert(new Review(current_id, user_name, user_email, comment));
 		response.sendRedirect(request.getContextPath()+"/product/single?id="+current_id);
 	}
 
+	/*
+	 * view details of selected product
+	 */
 	private void showSingleProduct(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		int id = Integer.parseInt(request.getParameter("id"));
-		current_id = id;
-		Product p = pd.getProductById(id);
-		ArrayList<Product> ps = pd.getProductByCatalog(p.getCatalog_id());
+		int id = Integer.parseInt(request.getParameter("id"));//get parameter "id"
+		current_id = id; // assign id to current_id for later use
+		Product p = pd.getProductById(id); //get object from database
+		ArrayList<Product> ps = pd.getProductByCatalog(p.getCatalog_id()); //
 		ArrayList<Review> rs = rd.listReview(id);
-		request.setAttribute("comments", rs);
+		request.setAttribute("comments", rs);//pass data to jsp by attribute
 		request.setAttribute("lstProduct", ps);
 		request.setAttribute("product", p);
-		request.getRequestDispatcher("/View/user/shop-detail.jsp").forward(request, response);;
+		request.getRequestDispatcher("/View/user/shop-detail.jsp").forward(request, response);
 	}
 
 	@Override
@@ -167,10 +172,16 @@ public class productServlet extends HttpServlet{
 		rd.forward(request, response);
 	}
 	
+	/*
+	 * reset view after do something
+	 */
 	private void resetShop(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException{
 		response.sendRedirect(request.getContextPath()+"/product");
 	}
-	
+
+	/*
+	 * sort product by price descending
+	 */
 	private void HtoL() {
 		for(int j = 0; j < listProduct.size()-1;j++) {
 			for(int i = j; i < listProduct.size();i++) {
@@ -181,6 +192,9 @@ public class productServlet extends HttpServlet{
 		}
 	}
 	
+	/*
+	 * sort product by price ascending
+	 */
 	private void LtoH() {
 		for(int j = 0; j < listProduct.size()-1;j++) {
 			for(int i = j; i < listProduct.size();i++) {
@@ -191,22 +205,37 @@ public class productServlet extends HttpServlet{
 		}
 	}
 	
+	/*
+	 * sort product by name ascending
+	 */
 	private void toNameAsc() {
 		temp = pd.lstProductByNameAsc();
 	}
 	
+	/*
+	 * sort product by name descending
+	 */
 	private void toNameDes() {
 		temp = pd.lstProductByNameDes();
-	}
+	} 
 	
+	/*
+	 * reset sorted list product
+	 */
 	private void normal(){
 		temp = (ArrayList<Product>) listProduct.clone();
 	}
 	
+	/*
+	 * filter product by catalog
+	 */
 	private void cate(int i) {
 		temp = pd.getProductByCatalog(i);
 	}
 	
+	/*
+	 * handle search product
+	 */
 	private void search(HttpServletRequest request) {
 		ArrayList<Product> temp2 = new ArrayList<Product>();
 		String text = request.getParameter("search-box");

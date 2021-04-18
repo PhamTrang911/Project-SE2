@@ -29,7 +29,10 @@ public class PaymentServices {
         return getApprovalLink(approvedPayment);
  
     }
-     
+    
+    /*
+     * set payer info to a Payer model
+     */
     private Payer getPayerInformation(String payerInfor) {
     	String[] a = payerInfor.split(",");
     	Payer payer = new Payer();

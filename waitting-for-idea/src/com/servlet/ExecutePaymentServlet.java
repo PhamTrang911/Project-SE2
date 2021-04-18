@@ -35,7 +35,6 @@ public class ExecutePaymentServlet extends HttpServlet {
         String ship = request.getParameter("shiping");
         String ship2 = request.getParameter("shiping2");
         String ship3 = request.getParameter("shiping3");
-        System.out.print(ship+","+ship2+","+ship3);
         try {
             PaymentServices paymentServices = new PaymentServices();
             Payment payment = paymentServices.executePayment(paymentId, payerId);
