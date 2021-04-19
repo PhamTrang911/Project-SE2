@@ -68,7 +68,7 @@
         </div>
     </div>
     <!-- End All Title Box -->
-
+	<p id="added" hidden>${added}</p>
     <!-- Start Shop Page  -->
     <div class="shop-box-inner">
         <div class="container">
@@ -347,14 +347,15 @@ function filter(value){
 	window.location = "https://laleaf.herokuapp.com/product/"+value;
 }
 </script>
-
-<c:if test="${not empty add}">
     <script>
-    window.addEventListener("load",function(){
-         alert("${add}");
+    let added = document.getElementById("added");
+    if(added.innerHTML!=""){
+    	window.addEventListener("load",function(){
+            alert(added.innerHTML);
+       })
     }
     </script>
-    </c:if>
+    
     <!-- ALL JS FILES -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="${url}/js/popper.min.js"></script>

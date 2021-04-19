@@ -243,6 +243,7 @@ input {
                 <input type="email" placeholder="Email" name="email" />
                 <input type="password" placeholder="Password" name="password" />
                 <button>Sign In</button>
+                <p style="color:red; display:${failed}">Wrong email or password, please try again!</p>
             </form>
         </div>
         <div class="overlay-container">

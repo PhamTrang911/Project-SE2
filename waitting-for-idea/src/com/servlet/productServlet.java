@@ -165,6 +165,11 @@ public class productServlet extends HttpServlet{
 	}
 	
 	private void listProduct(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException{
+		String added = (String) request.getSession().getAttribute("addToCart");
+		if(added!=null) {
+			request.setAttribute("added", added);
+			request.getSession().removeAttribute("addToCart");
+		}
 		request.setAttribute("index", index);
 		request.setAttribute("size", temp.size());
 		request.setAttribute("listProduct", temp);

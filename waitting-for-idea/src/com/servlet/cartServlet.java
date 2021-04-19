@@ -1,6 +1,7 @@
 package com.servlet;
 
 import java.io.IOException;
+import java.util.ArrayList;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -73,16 +74,28 @@ public class cartServlet extends HttpServlet{
 	}
 
 	private void addItem(HttpServletRequest request, HttpServletResponse response) throws IOException {
-		// TODO Auto-generated method stub
 		int user_id = ud.getUserByEmail(email).getUser_id();
 		int product_id = Integer.parseInt(request.getParameter("product_id"));
+		
+		ArrayList<Integer> cart= (ArrayList<Integer>) request.getSession().getAttribute("cart");
+		if(cart==null){
+			cart = new ArrayList<Integer>();
+		}
+		if(cart.contains(product_id)) {
+			request.getSession().setAttribute("addToCart", "Product already in your cart, please check again!");
+			response.sendRedirect(request.getContextPath()+"/product");
+			return;
+		}
+		cart.add(product_id);
+		request.getSession().setAttribute("cart", cart);
+		
 		String pName = request.getParameter("p_name");
 		float pPrice = Float.parseFloat(request.getParameter("p_price"));
 		String pImage = request.getParameter("p_image");
 		int amount = Integer.parseInt(request.getParameter("quantity"));
 		Cart c = new Cart(user_id, product_id, pName,pPrice, pImage, amount);
 		cd.insert(c);
+		request.getSession().setAttribute("addToCart", "Product added!");
 		response.sendRedirect(request.getContextPath()+"/product");
-		request.setAttribute("add", "Product added!");
 	}
 }

@@ -16,16 +16,16 @@ import com.model.User;
 public class signupServlet extends HttpServlet{
 	private static final long serialVersionUID = 1L;
 	private userDao ud;
+	private static String failed;
 	@Override
 	public void init() throws ServletException {
-		// TODO Auto-generated method stub
 		super.init();
 		ud = new userDao();
+		failed = "none";
 	}
 	
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-		// TODO Auto-generated method stub
 		req.setCharacterEncoding("utf-8");
 		
 		String action = req.getPathInfo();
@@ -46,15 +46,15 @@ public class signupServlet extends HttpServlet{
 
 	@Override
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-		// TODO Auto-generated method stub
 		try {
 			doGet(req, resp);
 		} catch (Exception e) {
-			// TODO: handle exception
 		}
 	}
 	
 	private void showSignin(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		request.setAttribute("failed", failed);
+		failed = "none";
 		request.getRequestDispatcher("/signup.jsp").forward(request, response);
 		return;
 	}
@@ -77,6 +77,7 @@ public class signupServlet extends HttpServlet{
 			resp.sendRedirect(req.getContextPath()+"/user");
 			return;
 		}else {
+			failed = "block";
 			resp.sendRedirect(req.getContextPath()+"/login");
 		}
 	}
