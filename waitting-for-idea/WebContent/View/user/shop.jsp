@@ -344,7 +344,7 @@ if(null!=<%=request.getAttribute("index")%>){
 	document.getElementById("c").value = <%=request.getAttribute("index")%>;
 }
 function filter(value){
-	window.location = "https://laleaf.herokuapp.com/product/"+value;
+	window.location = "https://laleaf-hanu.herokuapp.com/product/"+value;
 }
 </script>
     <script>

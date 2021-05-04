@@ -49,8 +49,8 @@ public class PaymentServices {
      
     private RedirectUrls getRedirectURLs() {
     	RedirectUrls redirectUrls = new RedirectUrls();
-        redirectUrls.setCancelUrl("https://laleaf.herokuapp.com/user/cancel_payment");
-        redirectUrls.setReturnUrl("https://laleaf.herokuapp.com/review_payment");
+        redirectUrls.setCancelUrl("https://laleaf-hanu.herokuapp.com/user/cancel_payment");
+        redirectUrls.setReturnUrl("https://laleaf-hanu.herokuapp.com/review_payment");
          
         return redirectUrls;
     }
