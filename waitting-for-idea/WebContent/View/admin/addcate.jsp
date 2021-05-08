@@ -10,7 +10,7 @@
 					<div class="card-body">
 						<div class="card-title">Add Topic</div>
 						<hr>
-						<form action="${pageContext.request.contextPath}/admin/addCatalog"
+						<form action="${pageContext.request.contextPath}/adminitration/addCatalog"
 							method="post">
 							
 								<div class="form-group">

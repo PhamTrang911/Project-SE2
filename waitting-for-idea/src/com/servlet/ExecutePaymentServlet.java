@@ -31,7 +31,7 @@ public class ExecutePaymentServlet extends HttpServlet {
             throws ServletException, IOException {
         String paymentId = request.getParameter("paymentId");
         String payerId = request.getParameter("PayerID");
-        String total = request.getParameter("total");
+        Float total = Float.parseFloat(request.getParameter("total"));
         String ship = request.getParameter("shiping");
         String ship2 = request.getParameter("shiping2");
         String ship3 = request.getParameter("shiping3");
@@ -54,8 +54,9 @@ public class ExecutePaymentServlet extends HttpServlet {
             	}
             	carts += ","+c.get(i).getP_name();
             }
-            od.insert(new Order(user_id, carts, Float.parseFloat(total), ship+","+ship2+","+ship3, "pending"));
+            od.insert(new Order(user_id, carts, total, ship+","+ship2+","+ship3, "pending"));
             cd.clear();
+            request.setAttribute("cart", cd.allInCartOfUser(user_id).size());
             request.getRequestDispatcher("receipt.jsp").forward(request, response);
              
         } catch (PayPalRESTException ex) {
